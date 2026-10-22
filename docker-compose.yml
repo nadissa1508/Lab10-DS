@@ -1,0 +1,5 @@
+services:
+  observatorio:
+    build: ./dashboard
+    ports:
+      - "8080:80"
