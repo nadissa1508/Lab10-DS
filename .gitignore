@@ -1,0 +1,12 @@
+node_modules/
+dist/
+__pycache__/
+.venv/
+
+# Base original de microdatos: confidencial, nunca se versiona
+*.xlsx
+*.xls
+data/raw/Base_*
+
+# Material personal y referencias fuera del repositorio
+mio/
