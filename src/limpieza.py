@@ -17,10 +17,12 @@ import json
 import shutil
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 RAIZ = Path(__file__).resolve().parent.parent
-RUTA_CRUDO = RAIZ / "data" / "raw" / "series_mensuales.csv"
+CRUDO = RAIZ / "data" / "raw"
+RUTA_CRUDO = CRUDO / "series_mensuales.csv"
 RUTA_SALIDA = RAIZ / "data" / "processed" / "series.json"
 RUTA_TABLERO = RAIZ / "dashboard" / "public" / "data" / "series.json"
 
@@ -72,10 +74,91 @@ def construir(df: pd.DataFrame) -> dict:
     return {"meses": meses, "conjunto": conjunto, "series": series}
 
 
+# Salidas de los notebooks de los Laboratorios 1 y 2 (ver notebooks/exportar_labs_1_y_2.md).
+PRONOSTICOS = ["pronosticos_total.csv", "pronosticos_regiones.csv", "pronosticos_fronteras.csv", "pronosticos_lstm.csv"]
+METRICAS = ["metricas_total.csv", "metricas_regiones.csv", "metricas_fronteras.csv"]
+# Nombres de las series en los CSV de catch22 (Laboratorio 2) -> clave del tablero.
+NOMBRES_CATCH22 = {
+    "Total (obligatoria)": "total",
+    "Región: América del Centro": "region_america_central",
+    "Región: América del Norte": "region_america_norte",
+    "Región: Europa": "region_europa",
+    "Frontera: 01 La Aurora": "frontera_aurora",
+    "Frontera: 07 Valle Nuevo": "frontera_valle_nuevo",
+    "Frontera: 09 San Cristóbal": "frontera_san_cristobal",
+}
+
+
+def leer_opcionales(nombres: list[str]) -> pd.DataFrame | None:
+    """Concatena los CSV que existan; avisa de los que falten en lugar de fallar."""
+    rutas = [CRUDO / n for n in nombres]
+    faltan = [r.name for r in rutas if not r.exists()]
+    if faltan:
+        print(f"Aviso: no se encontraron {faltan}; el tablero mostrará esas partes como no disponibles.")
+    presentes = [pd.read_csv(r) for r in rutas if r.exists()]
+    return pd.concat(presentes, ignore_index=True) if presentes else None
+
+
+def redondear(valores) -> list:
+    return [None if pd.isna(v) else round(float(v)) for v in valores]
+
+
+def construir_modelos(meses: list[str]) -> dict:
+    """Pronósticos del conjunto de prueba, métricas, curvas de pérdida y similitud entre series."""
+    salida = {"pronosticos": [], "metricas": [], "perdidas": [], "similitud": []}
+    pron = leer_opcionales(PRONOSTICOS)
+    if pron is not None:
+        # La LSTM «un paso» usa el valor real del mes anterior: no es comparable con los
+        # pronósticos a 63 meses de los demás modelos, así que no se publica.
+        pron = pron[pron["detalle"] != "LSTM un paso"]
+        pron["mes"] = pd.to_datetime(pron["fecha"]).dt.strftime("%Y-%m")
+        aic = {}
+        metr = leer_opcionales(METRICAS)
+        if metr is not None:
+            aic = {(r.serie, r.detalle): (r.AIC, r.BIC) for r in metr.itertuples()}
+        for (serie, detalle), g in pron.groupby(["serie", "detalle"], sort=False):
+            g = g.sort_values("mes")
+            err = g["predicho"] - g["real"]
+            a, b = aic.get((serie, detalle), (np.nan, np.nan))
+            salida["pronosticos"].append({
+                "serie": serie, "modelo": g["modelo"].iat[0], "detalle": detalle,
+                "desde": meses.index(g["mes"].iat[0]),
+                "predicho": redondear(g["predicho"]), "li": redondear(g["li"]), "ls": redondear(g["ls"]),
+            })
+            salida["metricas"].append({
+                "serie": serie, "modelo": g["modelo"].iat[0], "detalle": detalle,
+                "MAE": round(float(err.abs().mean())), "RMSE": round(float(np.sqrt((err ** 2).mean()))),
+                "AIC": None if pd.isna(a) else round(float(a), 1), "BIC": None if pd.isna(b) else round(float(b), 1),
+            })
+    perd = leer_opcionales(["perdidas_lstm.csv"])
+    if perd is not None:
+        for (serie, config), g in perd.groupby(["serie", "config"], sort=False):
+            salida["perdidas"].append({
+                "serie": serie, "config": config, "mejor_epoca": int(g["mejor_epoca"].iat[0]),
+                "ajuste": [round(float(v), 4) for v in g["perdida_ajuste"]],
+                "validacion": [round(float(v), 4) for v in g["perdida_validacion"]],
+            })
+    pca = leer_opcionales(["pca_catch22.csv"])
+    grupos = leer_opcionales(["grupos_catch22.csv"])
+    if pca is not None:
+        pca = pca.rename(columns={pca.columns[0]: "nombre"})
+        grupo = {}
+        if grupos is not None:
+            grupo = dict(zip(grupos["serie"], grupos["grupo K-medias"]))
+        for r in pca.itertuples():
+            salida["similitud"].append({
+                "serie": NOMBRES_CATCH22[r.nombre], "PC1": round(r.PC1, 3), "PC2": round(r.PC2, 3),
+                "grupo": None if r.nombre not in grupo else int(grupo[r.nombre]),
+                "var_PC1": round(r.var_PC1, 3), "var_PC2": round(r.var_PC2, 3),
+            })
+    return salida
+
+
 def main() -> None:
     df = cargar()
     validar(df)
     salida = construir(df)
+    salida["modelos"] = construir_modelos(salida["meses"])
     RUTA_SALIDA.parent.mkdir(parents=True, exist_ok=True)
     RUTA_SALIDA.write_text(json.dumps(salida, ensure_ascii=False), encoding="utf8")
     RUTA_TABLERO.parent.mkdir(parents=True, exist_ok=True)

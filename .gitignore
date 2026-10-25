@@ -10,3 +10,14 @@ data/raw/Base_*
 
 # Material personal y referencias fuera del repositorio
 mio/
+
+# Entornos, cachés y archivos del sistema o del editor
+.env
+.env.*
+.ipynb_checkpoints/
+.vite/
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

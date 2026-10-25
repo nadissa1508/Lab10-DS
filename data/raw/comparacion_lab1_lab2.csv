@@ -1,0 +1,7 @@
+serie,modelo,horizonte,MAE,RMSE,MAE / nivel medio
+Total mensual de viajeros,Lab 1 — Prophet,63 meses (recursivo),132304.0,139549.0,0.5475769856397447
+Total mensual de viajeros,Lab 2 — LSTM,63 meses (recursivo),124415.03305410723,151167.59592593522,0.5149262967713542
+Total mensual de viajeros,Lab 2 — LSTM (referencia),1 mes adelante,40947.610896734186,55287.65463414999,0.169473102430636
+Región: América del Centro,Lab 1 — Prophet,63 meses (recursivo),62484.78663084379,67837.60346084149,0.3879092485670149
+Región: América del Centro,Lab 2 — LSTM,63 meses (recursivo),86055.86350593591,106804.56650140611,0.5342398869758678
+Región: América del Centro,Lab 2 — LSTM (referencia),1 mes adelante,34161.32171701397,47144.34746574825,0.21207550432382727
