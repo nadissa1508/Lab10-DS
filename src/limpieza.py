@@ -52,10 +52,15 @@ def validar(df: pd.DataFrame) -> None:
         raise ValueError("Hay filas duplicadas para una misma serie y fecha")
     if (df["viajeros"].dropna() < 0).any():
         raise ValueError("Hay valores negativos de viajeros")
+    if not np.isfinite(df['viajeros'].dropna()).all():
+        raise ValueError('Hay valores infinitos de viajeros')
     for serie, g in df.groupby("serie"):
-        meses = pd.date_range(g["fecha"].min(), g["fecha"].max(), freq="MS")
-        if len(meses) != len(g):
-            raise ValueError(f"La serie {serie} tiene meses faltantes")
+        meses = pd.date_range('2009-01-01', '2026-06-01', freq='MS')
+        if not pd.DatetimeIndex(g['fecha']).sort_values().equals(meses):
+            raise ValueError(f"La serie {serie} no cubre los 210 meses esperados")
+        esperado = np.where(g['fecha'] <= pd.Timestamp('2021-03-01'), 'train', 'test')
+        if not (g['conjunto'].to_numpy() == esperado).all():
+            raise ValueError(f'Partición temporal incorrecta en {serie}')
     if df["viajeros"].isna().any():
         print("Aviso: hay meses sin dato; el tablero los mostrará como 'Sin dato', no como cero.")
 
@@ -118,12 +123,21 @@ def construir_modelos(meses: list[str]) -> dict:
             aic = {(r.serie, r.detalle): (r.AIC, r.BIC) for r in metr.itertuples()}
         for (serie, detalle), g in pron.groupby(["serie", "detalle"], sort=False):
             g = g.sort_values("mes")
+            esperado = pd.date_range('2021-04-01', '2026-06-01', freq='MS').strftime('%Y-%m').tolist()
+            if serie not in NOMBRES or g['mes'].tolist() != esperado:
+                raise ValueError(f'Pronóstico incompleto o duplicado: {serie} / {detalle}')
+            if not np.isfinite(g[['real', 'predicho']].to_numpy()).all():
+                raise ValueError(f'Pronóstico no finito: {serie} / {detalle}')
+            if not (g['li'].isna() == g['ls'].isna()).all() or (g['li'] > g['ls']).any():
+                raise ValueError(f'Intervalos inconsistentes: {serie} / {detalle}')
             err = g["predicho"] - g["real"]
             a, b = aic.get((serie, detalle), (np.nan, np.nan))
             salida["pronosticos"].append({
                 "serie": serie, "modelo": g["modelo"].iat[0], "detalle": detalle,
                 "desde": meses.index(g["mes"].iat[0]),
+                "real": [float(v) for v in g['real']],
                 "predicho": redondear(g["predicho"]), "li": redondear(g["li"]), "ls": redondear(g["ls"]),
+                "nivel_intervalo": 0.8 if g['li'].notna().any() else None,
             })
             salida["metricas"].append({
                 "serie": serie, "modelo": g["modelo"].iat[0], "detalle": detalle,
@@ -147,10 +161,23 @@ def construir_modelos(meses: list[str]) -> dict:
             grupo = dict(zip(grupos["serie"], grupos["grupo K-medias"]))
         for r in pca.itertuples():
             salida["similitud"].append({
-                "serie": NOMBRES_CATCH22[r.nombre], "PC1": round(r.PC1, 3), "PC2": round(r.PC2, 3),
+                "serie": NOMBRES_CATCH22[r.nombre], "PC1": float(r.PC1), "PC2": float(r.PC2),
                 "grupo": None if r.nombre not in grupo else int(grupo[r.nombre]),
-                "var_PC1": round(r.var_PC1, 3), "var_PC2": round(r.var_PC2, 3),
+                "var_PC1": float(r.var_PC1), "var_PC2": float(r.var_PC2),
             })
+    ruta_matriz = CRUDO / 'matriz_catch22.csv'
+    if ruta_matriz.exists():
+        matriz = pd.read_csv(ruta_matriz, index_col=0)
+        x = matriz.to_numpy(dtype=float)
+        if x.shape != (7, 22) or not np.isfinite(x).all():
+            raise ValueError('La matriz catch22 debe contener 7 x 22 valores finitos')
+        if not np.allclose(x.mean(axis=0), 0, atol=1e-6) or not np.allclose(x.std(axis=0), 1, atol=1e-6):
+            raise ValueError('La matriz catch22 no está estandarizada como espera el mapa')
+        distancias = np.sqrt(((x[:, None] - x[None, :]) ** 2).sum(axis=2))
+        salida['distancias_catch22'] = {
+            'series': [NOMBRES_CATCH22[n] for n in matriz.index],
+            'valores': distancias.tolist(),
+        }
     return salida
 
 
@@ -159,8 +186,14 @@ def main() -> None:
     validar(df)
     salida = construir(df)
     salida["modelos"] = construir_modelos(salida["meses"])
+    # Cada curva se compara con su misma serie observada, nunca con otro universo.
+    por_clave = {s['clave']: s['valores'] for s in salida['series']}
+    for p in salida['modelos']['pronosticos']:
+        esperado = por_clave[p['serie']][p['desde']:p['desde'] + len(p['real'])]
+        if not np.allclose(esperado, p['real'], atol=0.51, rtol=0):
+            raise ValueError(f"Los observados no coinciden con la serie histórica: {p['serie']}")
     RUTA_SALIDA.parent.mkdir(parents=True, exist_ok=True)
-    RUTA_SALIDA.write_text(json.dumps(salida, ensure_ascii=False), encoding="utf8")
+    RUTA_SALIDA.write_text(json.dumps(salida, ensure_ascii=False, allow_nan=False), encoding="utf8")
     RUTA_TABLERO.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(RUTA_SALIDA, RUTA_TABLERO)
     print(f"{len(salida['meses'])} meses, {len(salida['series'])} series -> {RUTA_SALIDA.relative_to(RAIZ)}")

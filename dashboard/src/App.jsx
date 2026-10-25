@@ -4,19 +4,22 @@ import Participacion from './components/Participacion.jsx'
 import Recuperacion from './components/Recuperacion.jsx'
 import Glosario from './components/Glosario.jsx'
 import ErrorModelos, { TablaModelos } from './components/ErrorModelos.jsx'
+import Pronosticos from './components/Pronosticos.jsx'
+import Similitud from './components/Similitud.jsx'
 import { useSeries, nf, fmtCorto, etiquetaMes, sumaRango } from './data.js'
 
 const TITULOS = {
   resumen: 'Resumen: ¿cuántos viajeros llegan y de dónde?',
   temporal: 'Estacionalidad: ¿cuándo llegan y quién se recuperó?',
   modelos: 'Modelos y confianza: ¿qué pronóstico conviene usar?',
+  pronostico: 'Pronósticos: ¿cómo se comparan las estimaciones con lo observado?',
 }
 
 const PAGINAS = [
   { id: 'resumen', nombre: 'Resumen', icono: '▦', activa: true },
   { id: 'demanda', nombre: 'Demanda y mercados', icono: '◔' },
   { id: 'temporal', nombre: 'Estacionalidad', icono: '∿', activa: true },
-  { id: 'pronostico', nombre: 'Pronósticos', icono: '↗' },
+  { id: 'pronostico', nombre: 'Pronósticos', icono: '↗', activa: true },
   { id: 'modelos', nombre: 'Modelos y confianza', icono: '✓', activa: true },
 ]
 
@@ -38,6 +41,7 @@ export default function App() {
   const [modelo, setModelo] = useState('Prophet')
   const [nivel, setNivel] = useState('mensual')
   const [rango, setRango] = useState(null)
+  const [visible, setVisible] = useState({ historico: true, participacion: true })
 
   const r = rango ?? [0, datos ? datos.meses.length - 1 : 0]
   const serie = datos?.series.find((s) => s.clave === clave)
@@ -54,7 +58,8 @@ export default function App() {
       if (v < min) { min = v; iMin = i }
     }
     const total = sumaRango(serie.valores, r[0], r[1])
-    return { total, prom: total / (r[1] - r[0] + 1), max, iMax, min, iMin }
+    const n = serie.valores.slice(r[0], r[1] + 1).filter(Number.isFinite).length
+    return { total, prom: n ? total / n : null, max, iMax, min, iMin, n }
   }, [serie, r[0], r[1]])
 
   if (error) return <p className="estado">No se pudieron cargar los datos: {error}</p>
@@ -93,35 +98,43 @@ export default function App() {
                 <button key={n} className={nivel === n ? 'on' : ''} aria-pressed={nivel === n} onClick={() => setNivel(n)}>{n}</button>
               ))}
             </div>
-            <button className="reset" onClick={() => { setClave('total'); setModelo('Prophet'); setNivel('mensual'); setRango(null) }}>Restablecer filtros</button>
+            <label>Desde<select value={r[0]} onChange={e => setRango([+e.target.value, r[1]])}>{datos.meses.map((m, i) => <option key={m} value={i}>{etiquetaMes(m)}</option>)}</select></label>
+            <label>Hasta<select value={r[1]} onChange={e => setRango([r[0], +e.target.value])}>{datos.meses.map((m, i) => <option key={m} value={i}>{etiquetaMes(m)}</option>)}</select></label>
+            <button className="reset" onClick={() => { setClave('total'); setModelo('Prophet'); setNivel('mensual'); setRango(null); setVisible({ historico: true, participacion: true }) }}>Restablecer filtros</button>
             <button className="reset ayuda" onClick={() => setGlosario(true)}>? Glosario</button>
           </div>
         </header>
 
+        <p className="aviso"><b>Interpretación:</b> cifras académicas, no oficiales. La metodología cambia en enero de 2023 y 2026 solo contiene enero-junio. Los períodos agregados suman únicamente los meses seleccionados.</p>
         <section className="kpis" aria-label="Indicadores del período seleccionado">
           <Kpi titulo="Viajeros en el período" valor={vacio ? '—' : nf.format(k.total)} nota={`${etiquetaMes(datos.meses[r[0]])} – ${etiquetaMes(datos.meses[r[1]])}`} />
-          <Kpi titulo="Promedio mensual" valor={vacio ? '—' : nf.format(k.prom)} nota={serie.nombre} />
-          <Kpi titulo="Mes más alto" valor={vacio ? '—' : fmtCorto(k.max)} nota={vacio ? '' : etiquetaMes(datos.meses[k.iMax])} />
-          <Kpi titulo="Mes más bajo" valor={vacio ? '—' : fmtCorto(k.min)} nota={vacio ? '' : etiquetaMes(datos.meses[k.iMin])} />
+          <Kpi titulo="Promedio mensual" valor={vacio || !k.n ? '—' : nf.format(k.prom)} nota={serie.nombre} />
+          <Kpi titulo="Mes más alto" valor={vacio || !k.n ? '—' : fmtCorto(k.max)} nota={vacio || !k.n ? '' : etiquetaMes(datos.meses[k.iMax])} />
+          <Kpi titulo="Mes más bajo" valor={vacio || !k.n ? '—' : fmtCorto(k.min)} nota={vacio || !k.n ? '' : etiquetaMes(datos.meses[k.iMin])} />
         </section>
 
-        {pagina === 'resumen' && <div className="grid">
-          <section className="card">
+        {vacio && <p className="vacio" role="alert">La fecha inicial debe ser anterior o igual a la final. Ajuste las fechas o restablezca los filtros.</p>}
+        {!vacio && pagina === 'resumen' && <><div className="controles-vista" aria-label="Visualizaciones visibles">
+          <label className="check"><input type="checkbox" checked={visible.historico} onChange={e => setVisible({ ...visible, historico: e.target.checked })} /> Ver serie histórica</label>
+          <label className="check"><input type="checkbox" checked={visible.participacion} onChange={e => setVisible({ ...visible, participacion: e.target.checked })} /> Ver participación</label>
+        </div><div className={'grid' + (!visible.historico || !visible.participacion ? ' grid-1' : '')}>
+          {visible.historico && <section className="card">
             <h2>Evolución de los viajeros: {serie.nombre}</h2>
             <p className="sub">Arrastre la barra inferior para acercarse a un período; cambie el nivel de detalle arriba. La franja rosa marca la pandemia (mar 2020 – dic 2021).</p>
             {vacio ? <p className="vacio">No hay información para el período seleccionado.</p>
               : <SerieHistorica datos={datos} serie={serie} nivel={nivel} rango={r} onRango={setRango} />}
-          </section>
+          </section>}
 
-          <section className="card">
+          {visible.participacion && <section className="card">
             <h2>¿Quién aporta más viajeros?</h2>
             <p className="sub">Porcentaje del total nacional en el período visible. Haga clic en una barra para ver su serie a la izquierda.</p>
             <Participacion datos={datos} seleccion={clave} rango={r} onSeleccion={(c) => setClave(c === clave ? 'total' : c)} />
             <p className="nota">Regiones y fronteras son cortes distintos del mismo total: no se suman entre sí.</p>
-          </section>
-        </div>}
+          </section>}
+          {!visible.historico && !visible.participacion && <p className="vacio">Seleccione una visualización para explorar los datos.</p>}
+        </div></>}
 
-        {pagina === 'temporal' && <div className="grid grid-1">
+        {!vacio && pagina === 'temporal' && <div className="grid grid-1">
           <section className="card">
             <h2>¿Qué mercados ya volvieron al nivel de 2019?</h2>
             <p className="sub">Cada línea compara los viajeros de un período con los mismos meses de 2019 (100 = igual que en 2019; 80 = 20 % menos). Haga clic en una línea para seleccionar esa serie en todo el tablero.</p>
@@ -130,7 +143,12 @@ export default function App() {
           </section>
         </div>}
 
-        {pagina === 'modelos' && <div className="grid">
+        {!vacio && pagina === 'pronostico' && <section className="card">
+          <h2>V6 · Observado frente a pronóstico: {serie.nombre}</h2>
+          <p className="sub">Compare modelos ya calculados sobre los mismos meses y aumente o reduzca el detalle. El modelo elegido en V7 se conserva cuando está disponible.</p>
+          <Pronosticos datos={datos} serie={serie} modelo={modelo} onModelo={setModelo} nivel={nivel} rango={r} />
+        </section>}
+        {!vacio && pagina === 'modelos' && <><div className="grid">
           <section className="card">
             <h2>¿Qué modelo se equivoca menos con {serie.nombre}?</h2>
             <p className="sub">Error de cada modelo al pronosticar abril 2021 – junio 2026, meses que no vio al aprender. Barra más corta = más confiable. Entre paréntesis, el error como porcentaje de lo que llega en un mes promedio. Haga clic en un modelo para elegirlo en el tablero.</p>
@@ -143,7 +161,11 @@ export default function App() {
             <TablaModelos datos={datos} clave={clave} modelo={modelo} onModelo={setModelo} />
             <p className="nota"><b>Limitación:</b> todos los modelos aprendieron con datos que terminan en plena pandemia (mar 2021) y se evalúan a 63 meses de distancia, por eso sus errores son altos. Sirven para comparar modelos entre sí y como orden de magnitud, no como cifra exacta para planificar.</p>
           </section>
-        </div>}
+        </div><section className="card similitud">
+          <h2>V9 · ¿Qué series tienen un comportamiento parecido?</h2>
+          <p className="sub">Compare los perfiles de catch22 del Laboratorio 2. Seleccionar una serie actualiza las demás secciones.</p>
+          <Similitud datos={datos} seleccion={clave} onSeleccion={setClave} />
+        </section></>}
       </main>
       <Glosario abierto={glosario} onCerrar={() => setGlosario(false)} />
     </div>

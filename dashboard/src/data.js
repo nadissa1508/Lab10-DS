@@ -10,7 +10,7 @@ export function useSeries() {
   const [error, setError] = useState(null)
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/series.json')
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error('No se pudo leer el archivo de datos'); return r.json() })
       .then(setDatos)
       .catch((e) => setError(e.message))
   }, [])
