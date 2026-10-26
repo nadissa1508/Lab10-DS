@@ -17,6 +17,8 @@ export const TERMINOS = [
   ['LSTM', 'Red neuronal que aprende patrones a partir de los últimos 12 meses. Solo se entrenó para el total nacional y América del Centro.'],
   ['Seasonal naive', 'Referencia mínima: supone que cada mes repite el mismo mes del año anterior. Un modelo útil debe equivocarse menos que esta referencia.'],
   ['Curva de aprendizaje', 'Muestra cómo baja el error de la red neuronal mientras entrena. Si el error de validación deja de bajar o sube, la red empieza a memorizar en lugar de aprender.'],
+  ['Mapa de calor (año × mes)', 'Tabla de colores: cada fila es un año y cada columna un mes o trimestre; más oscuro significa más viajeros. «Patrón del año» compara cada mes con el promedio de su propio año (100 = igual al promedio).'],
+  ['Composición por vía y tipo', 'Reparto del total de viajeros según el medio de entrada (terrestre, aérea, marítima) o según el tipo de viajero (turista o excursionista). Cada reparto suma el total por separado.'],
   ['Similitud entre series (catch22)', 'Resume cada serie con 22 medidas de forma (tendencia, regularidad, picos) y ubica cerca las que se comportan parecido.'],
 ]
 
