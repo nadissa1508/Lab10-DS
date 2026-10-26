@@ -48,7 +48,7 @@ export default function Composicion({ datos, nivel, rango, onRango }) {
       animation: false,
       textStyle: { fontFamily: FUENTE },
       legend: { top: 0, left: 0, textStyle: { color: C.texto, fontSize: 12 }, itemWidth: 14, itemHeight: 12 },
-      grid: { left: 64, right: 24, top: 40, bottom: 40 },
+      grid: { left: 64, right: 24, top: 44, bottom: 40 },
       tooltip: {
         trigger: 'axis', axisPointer: { type: 'shadow' }, confine: true, backgroundColor: '#fff', borderColor: C.borde, textStyle: { color: C.texto },
         formatter: (ps) => {
@@ -67,8 +67,7 @@ export default function Composicion({ datos, nivel, rango, onRango }) {
         axisLine: { lineStyle: { color: C.borde } }, axisTick: { show: false },
       },
       yAxis: {
-        type: 'value', max: pct ? 100 : undefined, name: pct ? '% del total' : 'Viajeros', nameTextStyle: { color: C.textoSuave, align: 'left', fontSize: 12 },
-        axisLabel: { color: C.textoSuave, fontSize: 12, formatter: (v) => (pct ? `${v} %` : fmtCorto(v)) }, splitLine: { lineStyle: { color: '#E6ECF1' } },
+        type: 'value', max: pct ? 100 : undefined, axisLabel: { color: C.textoSuave, fontSize: 12, formatter: (v) => (pct ? `${v} %` : fmtCorto(v)) }, splitLine: { lineStyle: { color: '#E6ECF1' } },
       },
       series: [...categorias].reverse().map((cat) => ({
         name: cat.nombre, type: 'bar', stack: 'total', barCategoryGap: nivel === 'mensual' ? '10%' : '30%', cursor: 'pointer',

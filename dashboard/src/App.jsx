@@ -169,7 +169,7 @@ export default function App() {
           <h2>V8 · ¿La red neuronal aprendió bien o memorizó?</h2>
           <p className="sub">Línea continua: error en los datos con los que aprende. Línea punteada: error en datos que no ve. Si la punteada deja de bajar o sube mientras la continua sigue bajando, la red está memorizando (ver «Curva de aprendizaje» en el glosario). Arrastre la barra inferior para acercarse a ciertas épocas.</p>
           <CurvasLstm datos={datos} clave={clave} onSeleccion={setClave} />
-          <p className="nota"><b>Limitación:</b> son las curvas del Laboratorio 2, solo para el total nacional y América del Centro; la «mejor época» es la de menor error de validación. No se entrenó ninguna red nueva.</p>
+          <p className="nota"><b>Limitación:</b> son las curvas del Laboratorio 2, solo para el total nacional y América del Centro. El marcador con número indica la «mejor época», la de menor error de validación. No se entrenó ninguna red nueva.</p>
         </section></>}
         {!vacio && pagina === 'modelos' && <><div className="grid">
           <section className="card">

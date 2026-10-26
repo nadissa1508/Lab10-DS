@@ -5,7 +5,7 @@ import { C, FUENTE } from '../theme.js'
 // Visualización 8. Curvas de aprendizaje de la red neuronal LSTM (Laboratorio 2): error
 // de ajuste (datos que ve al aprender) y de validación (datos que no ve) por época, para
 // dos configuraciones. Solo existen para el total nacional y América del Centro.
-const COLOR = [C.marino, C.azul]
+const COLOR = [C.marino, '#3F86B0']
 
 export default function CurvasLstm({ datos, clave, onSeleccion }) {
   const todas = datos.modelos?.perdidas ?? []
@@ -37,7 +37,7 @@ export default function CurvasLstm({ datos, clave, onSeleccion }) {
         return [
           { name: `${corto}: ajuste`, type: 'line', showSymbol: false, data: c.ajuste, lineStyle: { color: COLOR[k % 2], width: 2 }, itemStyle: { color: COLOR[k % 2] } },
           { name: `${corto}: validación`, type: 'line', showSymbol: false, data: c.validacion, lineStyle: { color: COLOR[k % 2], width: 2.5, type: 'dashed' }, itemStyle: { color: COLOR[k % 2] },
-            markPoint: { symbol: 'pin', symbolSize: 46, itemStyle: { color: C.azul }, label: { color: '#fff', fontSize: 10, formatter: () => `mejor ${c.mejor_epoca}` },
+            markPoint: { symbol: 'pin', symbolSize: 40, itemStyle: { color: C.azul }, label: { color: '#fff', fontSize: 11, formatter: () => `${c.mejor_epoca}` },
               data: [{ coord: [c.mejor_epoca - 1, c.validacion[c.mejor_epoca - 1]] }] } },
         ]
       }),
