@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 import * as echarts from 'echarts/core'
 import { LineChart, BarChart, ScatterChart, HeatmapChart } from 'echarts/charts'
-import { GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, MarkAreaComponent, MarkLineComponent, VisualMapComponent } from 'echarts/components'
+import { GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, MarkAreaComponent, MarkLineComponent, MarkPointComponent, VisualMapComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
 
-echarts.use([LineChart, BarChart, ScatterChart, HeatmapChart, GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, MarkAreaComponent, MarkLineComponent, VisualMapComponent, CanvasRenderer])
+echarts.use([LineChart, BarChart, ScatterChart, HeatmapChart, GridComponent, TooltipComponent, LegendComponent, DataZoomComponent, MarkAreaComponent, MarkLineComponent, MarkPointComponent, VisualMapComponent, CanvasRenderer])
 
 // Envoltura mínima de ECharts: crea la instancia una vez, aplica la opción y
 // reenvía los eventos que el padre necesite.
