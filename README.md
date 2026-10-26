@@ -46,10 +46,11 @@ docker compose up --build
 
 El tablero queda en http://localhost:8080.
 
-## Aportes de Vianka integrados
+## Últimos cambios realizados
 
 - V1 conserva zoom y detalle; las fechas y la selección de gráficas se controlan desde el resumen.
 - V6 muestra observado y estimaciones de los modelos exportados, sus errores y límites mensuales disponibles.
+- V3 (mapa de calor año × mes), V5 (composición por vía y tipo) y V8 (curvas de aprendizaje LSTM) completan las ocho visualizaciones mínimas.
 - V9 permite explorar el PCA y las distancias catch22 con selección compartida.
 - Preguntas, alcance y criterios de interpretación: [diseño de Vianka](docs/diseno_vianka.md).
 - Historial del equipo y pendientes: [revisión de aportes](docs/aportes_y_pendientes.md).
@@ -65,8 +66,7 @@ El exportador verifica los 210 totales mensuales contra el histórico del equipo
 `data/processed/composicion_mensual.csv` y `dashboard/public/data/composicion.json`. No copia el Excel ni expone microdatos.
 
 Para comprobar la aplicación, desde `dashboard`: `npm test`, `npm run test:render` y `npm run build`.
-Resultados y límites de la comprobación: [validación de Vianka](docs/validacion_vianka.md).
-Los pendientes de V3, V5 y V8 deben cerrarse para alcanzar ocho visualizaciones; V9 no cuenta dos veces por sus dos modos.
+El tablero ya tiene nueve visualizaciones (V1 a V9); V9 no cuenta dos veces por sus dos modos y las tarjetas, controles y tabla de modelos no cuentan.
 
 ## Datos y confidencialidad
 
