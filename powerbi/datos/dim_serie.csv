@@ -1,0 +1,8 @@
+serie_id,serie,grupo,orden,etiqueta
+total,Total nacional,General,1,Total nacional
+region_america_central,América del Centro,Región,2,Región · América del Centro
+region_america_norte,América del Norte,Región,3,Región · América del Norte
+region_europa,Europa,Región,4,Región · Europa
+frontera_aurora,01 La Aurora,Frontera,5,Frontera · 01 La Aurora
+frontera_valle_nuevo,07 Valle Nuevo,Frontera,6,Frontera · 07 Valle Nuevo
+frontera_san_cristobal,09 San Cristóbal,Frontera,7,Frontera · 09 San Cristóbal

@@ -1,0 +1,7 @@
+modelo_id,modelo,rol,orden
+prophet,Prophet,Principal,1
+holt_winters,Holt-Winters,Principal,2
+lstm,LSTM,Principal,3
+seasonal_naive,Seasonal naive,Referencia,4
+arima,ARIMA,Complementario,5
+suavizamiento,Suavizamiento exp. simple,Complementario,6

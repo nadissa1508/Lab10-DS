@@ -1,0 +1,126 @@
+// Medidas DAX del informe (Laboratorio 12).
+// Cree una tabla vacía para agruparlas (Inicio > Escribir datos > tabla "Medidas") y agregue cada
+// una con Nueva medida. El nombre va antes del signo igual.
+//
+// Regla central: las 7 series no se suman entre sí, porque regiones y fronteras son cortes del
+// mismo total. Por eso ninguna medida suma directamente sobre todas las series: si hay una sola
+// serie en el contexto se usa esa, y si no, el Total nacional.
+// REMOVEFILTERS(dim_serie) evita que un filtro sobre otra columna de dim_serie, como `etiqueta`,
+// choque con el filtro sobre serie_id y devuelva vacío.
+
+
+// ---- Observados: V1, V2 y tarjetas ----------------------------------------------------------
+
+Viajeros =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    CALCULATE (
+        SUM ( hechos_viajeros[viajeros] ),
+        REMOVEFILTERS ( dim_serie ),
+        dim_serie[serie_id] = SerieActiva
+    )
+// Formato: número entero con separador de miles.
+
+Viajeros total nacional =
+CALCULATE (
+    SUM ( hechos_viajeros[viajeros] ),
+    REMOVEFILTERS ( dim_serie ),
+    dim_serie[serie_id] = "total"
+)
+// Denominador de la participación. Respeta el período seleccionado.
+
+Participación =
+DIVIDE ( [Viajeros], [Viajeros total nacional] )
+// Formato: porcentaje con 1 decimal.
+
+Promedio mensual =
+DIVIDE ( [Viajeros], COUNTROWS ( VALUES ( dim_fecha[fecha] ) ) )
+// Formato: número entero con separador de miles.
+
+Mes más alto (valor) =
+MAXX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )
+
+Mes más alto (mes) =
+MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], DESC ), dim_fecha[mes_anio] )
+
+Mes más bajo (valor) =
+MINX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )
+
+Mes más bajo (mes) =
+MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], ASC ), dim_fecha[mes_anio] )
+
+
+// ---- Textos dinámicos: identifican la selección activa --------------------------------------
+
+Título V1 =
+"Evolución de los viajeros: " & SELECTEDVALUE ( dim_serie[serie], "Total nacional" )
+
+Aviso sin datos =
+IF (
+    ISBLANK ( [Viajeros] ),
+    "No hay información para esta selección. Use Restablecer filtros.",
+    ""
+)
+
+
+// ---- Modelos: V6, V7 y tabla comparativa ----------------------------------------------------
+// Solo dan resultado con un modelo en el contexto: sumar pronósticos de varios modelos no
+// significa nada. La evaluación es sobre el conjunto de prueba (abr 2021 a jun 2026).
+
+Pronóstico =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            SUM ( hechos_pronosticos[predicho] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+// Formato: número entero con separador de miles.
+
+MAE =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            MIN ( metricas_modelos[MAE] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+// MIN no agrega nada: hay una sola fila por serie y modelo. Se usa para que la métrica nunca se sume.
+
+RMSE =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            MIN ( metricas_modelos[RMSE] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+
+MAE como % del mes promedio =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            MIN ( metricas_modelos[MAE_pct_nivel] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+// Permite leer el error sin depender del tamaño de cada serie. Formato: porcentaje sin decimales.
+
+Aviso modelo sin datos =
+IF (
+    HASONEVALUE ( dim_modelo[modelo_id] ) && ISBLANK ( [MAE] ),
+    "Este modelo no está disponible para la serie elegida. LSTM solo existe para el Total nacional y América del Centro.",
+    ""
+)

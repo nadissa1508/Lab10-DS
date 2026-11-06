@@ -1,0 +1,23 @@
+{
+  "name": "Observatorio de turismo",
+  "dataColors": ["#023859", "#26658C", "#011C40", "#4A5F73", "#54ACBF", "#D6336C"],
+  "good": "#26658C",
+  "neutral": "#54ACBF",
+  "bad": "#D6336C",
+  "maximum": "#023859",
+  "center": "#54ACBF",
+  "minimum": "#A7EBF2",
+  "firstLevelElements": "#011C40",
+  "secondLevelElements": "#4A5F73",
+  "thirdLevelElements": "#D5DEE6",
+  "fourthLevelElements": "#4A5F73",
+  "background": "#FFFFFF",
+  "secondaryBackground": "#D5DEE6",
+  "tableAccent": "#26658C",
+  "textClasses": {
+    "callout": { "fontSize": 24, "fontFace": "Segoe UI Semibold", "color": "#023859" },
+    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#011C40" },
+    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#011C40" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#011C40" }
+  }
+}
