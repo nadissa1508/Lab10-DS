@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "tabla_modelos",
+  "position": {
+    "x": 20,
+    "y": 660,
+    "z": 8,
+    "width": 1240,
+    "height": 170,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "objects": {},
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Comparación de modelos: prueba abr 2021 a jun 2026'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#011C40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_modelo"
+                    }
+                  },
+                  "Property": "modelo"
+                }
+              },
+              "queryRef": "dim_modelo.modelo",
+              "nativeQueryRef": "modelo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "MAE"
+                }
+              },
+              "queryRef": "Medidas.MAE",
+              "nativeQueryRef": "MAE"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "RMSE"
+                }
+              },
+              "queryRef": "Medidas.RMSE",
+              "nativeQueryRef": "RMSE"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "MAE como % del mes promedio"
+                }
+              },
+              "queryRef": "Medidas.MAE como % del mes promedio",
+              "nativeQueryRef": "MAE como % del mes promedio"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "pronosticos",
+  "displayName": "Pronósticos",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "pronosticos_config",
+      "target": "v6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pronosticos_modelo",
+      "target": "v8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pronosticos_fecha",
+      "target": "v8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "pronosticos_modelo",
+      "target": "aviso_lstm",
+      "type": "NoFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F3F6F9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

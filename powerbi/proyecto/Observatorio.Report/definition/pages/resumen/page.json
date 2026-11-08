@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "resumen",
+  "displayName": "Resumen",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "v1",
+      "target": "v2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "v2",
+      "target": "v1",
+      "type": "DataFilter"
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F3F6F9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

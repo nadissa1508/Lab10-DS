@@ -1,15 +1,8 @@
-// Consultas de Power Query del informe (Laboratorio 12).
-// Cada bloque es una consulta: Inicio > Transformar datos > Nueva consulta > Consulta en blanco >
-// Editor avanzado, y pegue el contenido. Póngale a la consulta el nombre indicado.
-//
-// Las columnas se tipan con la referencia cultural "en-US" porque los CSV usan punto decimal.
-// Sin ella, un equipo con configuración regional de coma decimal leería mal las cifras.
+// Importa CSV en UTF-8 y conserva el punto decimal con en-US.
 
 
 // ---- Parámetro: RutaDatos -------------------------------------------------------------------
-// Inicio > Administrar parámetros > Nuevo. Nombre: RutaDatos. Tipo: Texto.
-// Valor: ruta completa a powerbi\datos\ y terminada en barra invertida. Ejemplo:
-// C:\Users\usuario\Documents\Lab10-DS\powerbi\datos\
+// Carpeta absoluta powerbi\datos\, terminada en barra invertida.
 
 
 // ---- dim_serie ------------------------------------------------------------------------------

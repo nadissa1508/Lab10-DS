@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v9",
+  "position": {
+    "x": 650,
+    "y": 340,
+    "z": 7,
+    "width": 610,
+    "height": 300,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "objects": {},
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Similitud de series: catch22 y PCA'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#011C40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_serie"
+                    }
+                  },
+                  "Property": "etiqueta"
+                }
+              },
+              "queryRef": "dim_serie.etiqueta",
+              "nativeQueryRef": "etiqueta"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "similitud_series"
+                    }
+                  },
+                  "Property": "grupo_kmedias"
+                }
+              },
+              "queryRef": "similitud_series.grupo_kmedias",
+              "nativeQueryRef": "grupo_kmedias"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "similitud_series"
+                        }
+                      },
+                      "Property": "PC1"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(similitud_series.PC1)",
+              "nativeQueryRef": "PC1"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "similitud_series"
+                        }
+                      },
+                      "Property": "PC2"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(similitud_series.PC2)",
+              "nativeQueryRef": "PC2"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "glosario_texto",
+  "position": {
+    "x": 20,
+    "y": 240,
+    "z": 3,
+    "width": 1240,
+    "height": 600,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Viajero: turista más excursionista.\nEstacionalidad: patrón que se repite entre meses del año.\nRecuperación: comparación con los mismos meses de 2019; 100 indica el mismo nivel.\nEstimación: resultado de un modelo para los meses de prueba.\nIntervalo del 80 %: rango de incertidumbre del pronóstico mensual.\nMAE: error absoluto promedio; menor es mejor.\nRMSE: error que da mayor peso a las fallas grandes; menor es mejor.\nLSTM: red neuronal disponible para el total nacional y América del Centro.\népoca: recorrido por los datos durante el entrenamiento.\nMSE estandarizado: pérdida del entrenamiento; no se expresa en viajeros.\nCatch22: 22 características que resumen el comportamiento de una serie.\nPCA: proyección de esas características a dos ejes. La cercanía no demuestra causas.\nSeasonal naive: referencia que repite el mismo mes del año anterior.\nCambio de fuente: desde 2023 se usa el sistema depurado del INGUAT.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "15pt",
+                      "color": "#011C40"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#011C40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

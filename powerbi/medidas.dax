@@ -1,15 +1,7 @@
-// Medidas DAX del informe (Laboratorio 12).
-// Cree una tabla vacía para agruparlas (Inicio > Escribir datos > tabla "Medidas") y agregue cada
-// una con Nueva medida. El nombre va antes del signo igual.
-//
-// Regla central: las 7 series no se suman entre sí, porque regiones y fronteras son cortes del
-// mismo total. Por eso ninguna medida suma directamente sobre todas las series: si hay una sola
-// serie en el contexto se usa esa, y si no, el Total nacional.
-// REMOVEFILTERS(dim_serie) evita que un filtro sobre otra columna de dim_serie, como `etiqueta`,
-// choque con el filtro sobre serie_id y devuelva vacío.
+// Usa una sola serie; la selección inicial es el total nacional.
 
 
-// ---- Observados: V1, V2 y tarjetas ----------------------------------------------------------
+// Valores observados.
 
 Viajeros =
 VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
@@ -27,7 +19,7 @@ CALCULATE (
     REMOVEFILTERS ( dim_serie ),
     dim_serie[serie_id] = "total"
 )
-// Denominador de la participación. Respeta el período seleccionado.
+// Conserva el período seleccionado.
 
 Participación =
 DIVIDE ( [Viajeros], [Viajeros total nacional] )
@@ -50,7 +42,7 @@ Mes más bajo (mes) =
 MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], ASC ), dim_fecha[mes_anio] )
 
 
-// ---- Textos dinámicos: identifican la selección activa --------------------------------------
+// Identifica la selección.
 
 Título V1 =
 "Evolución de los viajeros: " & SELECTEDVALUE ( dim_serie[serie], "Total nacional" )
@@ -63,9 +55,7 @@ IF (
 )
 
 
-// ---- Modelos: V6, V7 y tabla comparativa ----------------------------------------------------
-// Solo dan resultado con un modelo en el contexto: sumar pronósticos de varios modelos no
-// significa nada. La evaluación es sobre el conjunto de prueba (abr 2021 a jun 2026).
+// Evalúa cada modelo sobre los 63 meses de prueba.
 
 Pronóstico =
 VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
@@ -91,7 +81,7 @@ RETURN
             dim_serie[serie_id] = SerieActiva
         )
     )
-// MIN no agrega nada: hay una sola fila por serie y modelo. Se usa para que la métrica nunca se sume.
+// Existe una fila por serie y modelo.
 
 RMSE =
 VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
@@ -116,7 +106,7 @@ RETURN
             dim_serie[serie_id] = SerieActiva
         )
     )
-// Permite leer el error sin depender del tamaño de cada serie. Formato: porcentaje sin decimales.
+// Formato: porcentaje sin decimales.
 
 Aviso modelo sin datos =
 IF (
@@ -124,3 +114,81 @@ IF (
     "Este modelo no está disponible para la serie elegida. LSTM solo existe para el Total nacional y América del Centro.",
     ""
 )
+
+// Compara únicamente los mismos meses de 2019.
+Viajeros mismos meses 2019 =
+VAR Meses = VALUES ( dim_fecha[mes_num] )
+RETURN
+    CALCULATE (
+        [Viajeros],
+        REMOVEFILTERS ( dim_fecha ),
+        dim_fecha[anio] = 2019,
+        TREATAS ( Meses, dim_fecha[mes_num] )
+    )
+
+Índice de recuperación =
+IF (
+    MIN ( dim_fecha[anio] ) >= 2019,
+    DIVIDE ( [Viajeros], [Viajeros mismos meses 2019] ) * 100
+)
+
+Nivel 2019 =
+IF ( NOT ISBLANK ( [Índice de recuperación] ), 100 )
+
+Límite inferior 80 % =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            SUM ( hechos_pronosticos[li] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+
+Límite superior 80 % =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+RETURN
+    IF (
+        HASONEVALUE ( dim_modelo[modelo_id] ),
+        CALCULATE (
+            SUM ( hechos_pronosticos[ls] ),
+            REMOVEFILTERS ( dim_serie ),
+            dim_serie[serie_id] = SerieActiva
+        )
+    )
+
+Pérdida de ajuste =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], "Modelo A (20 neuronas, 1 capa(s), dropout 0.0)" )
+RETURN
+    CALCULATE (
+        AVERAGE ( perdidas_lstm[perdida_ajuste] ),
+        REMOVEFILTERS ( dim_serie ),
+        dim_serie[serie_id] = SerieActiva,
+        perdidas_lstm[config] = Configuracion
+    )
+
+Pérdida de validación =
+VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], "Modelo A (20 neuronas, 1 capa(s), dropout 0.0)" )
+RETURN
+    CALCULATE (
+        AVERAGE ( perdidas_lstm[perdida_validacion] ),
+        REMOVEFILTERS ( dim_serie ),
+        dim_serie[serie_id] = SerieActiva,
+        perdidas_lstm[config] = Configuracion
+    )
+
+Aviso entrenamiento =
+IF (
+    ISBLANK ( [Pérdida de ajuste] ),
+    "LSTM solo está disponible para el total nacional y América del Centro.",
+    "MSE estandarizado; no está expresado en viajeros. El filtro de fechas no cambia el entrenamiento."
+)
+
+Selección activa =
+SELECTEDVALUE ( dim_serie[serie], "Total nacional" ) & " | " &
+FORMAT ( MIN ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" ) & " a " &
+FORMAT ( MAX ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" )

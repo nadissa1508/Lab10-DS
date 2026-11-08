@@ -1,6 +1,14 @@
 {
   "name": "Observatorio de turismo",
-  "dataColors": ["#023859", "#26658C", "#011C40", "#4A5F73", "#54ACBF", "#D6336C"],
+  "dataColors": [
+    "#023859",
+    "#26658C",
+    "#011C40",
+    "#4A5F73",
+    "#335F75",
+    "#456B7B",
+    "#60788A"
+  ],
   "good": "#26658C",
   "neutral": "#54ACBF",
   "bad": "#D6336C",
@@ -15,9 +23,25 @@
   "secondaryBackground": "#D5DEE6",
   "tableAccent": "#26658C",
   "textClasses": {
-    "callout": { "fontSize": 24, "fontFace": "Segoe UI Semibold", "color": "#023859" },
-    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#011C40" },
-    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#011C40" },
-    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#011C40" }
+    "callout": {
+      "fontSize": 24,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#023859"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#011C40"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#011C40"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#011C40"
+    }
   }
 }

@@ -1,0 +1,984 @@
+{
+  "name": "Observatorio",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "es-GT",
+    "sourceQueryCulture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "RutaDatos",
+        "kind": "m",
+        "expression": "\"C:\\Users\\ninan\\OneDrive\\Documentos\\Escritorio\\UVG\\VIII SEMESTRE\\Data Science\\Lab10-DS\\powerbi\\datos\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "dim_fecha",
+        "columns": [
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "anio",
+            "dataType": "int64",
+            "sourceColumn": "anio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "trimestre_num",
+            "dataType": "int64",
+            "sourceColumn": "trimestre_num",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "trimestre",
+            "dataType": "string",
+            "sourceColumn": "trimestre",
+            "summarizeBy": "none",
+            "sortByColumn": "trimestre_num"
+          },
+          {
+            "name": "mes_num",
+            "dataType": "int64",
+            "sourceColumn": "mes_num",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "mes",
+            "dataType": "string",
+            "sourceColumn": "mes",
+            "summarizeBy": "none",
+            "sortByColumn": "mes_num"
+          },
+          {
+            "name": "mes_anio",
+            "dataType": "string",
+            "sourceColumn": "mes_anio",
+            "summarizeBy": "none",
+            "sortByColumn": "fecha"
+          },
+          {
+            "name": "conjunto",
+            "dataType": "string",
+            "sourceColumn": "conjunto",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pandemia",
+            "dataType": "string",
+            "sourceColumn": "pandemia",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_fecha",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_fecha.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"anio\", Int64.Type}, {\"trimestre_num\", Int64.Type}, {\"trimestre\", type text}, {\"mes_num\", Int64.Type}, {\"mes\", type text}, {\"mes_anio\", type text}, {\"conjunto\", type text}, {\"pandemia\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Periodo",
+            "levels": [
+              {
+                "name": "anio",
+                "ordinal": 0,
+                "column": "anio"
+              },
+              {
+                "name": "trimestre",
+                "ordinal": 1,
+                "column": "trimestre"
+              },
+              {
+                "name": "mes",
+                "ordinal": 2,
+                "column": "mes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dim_modelo",
+        "columns": [
+          {
+            "name": "modelo_id",
+            "dataType": "string",
+            "sourceColumn": "modelo_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "modelo",
+            "dataType": "string",
+            "sourceColumn": "modelo",
+            "summarizeBy": "none",
+            "sortByColumn": "orden"
+          },
+          {
+            "name": "rol",
+            "dataType": "string",
+            "sourceColumn": "rol",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "orden",
+            "dataType": "int64",
+            "sourceColumn": "orden",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_modelo",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_modelo.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"modelo_id\", type text}, {\"modelo\", type text}, {\"rol\", type text}, {\"orden\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_serie",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "serie",
+            "dataType": "string",
+            "sourceColumn": "serie",
+            "summarizeBy": "none",
+            "sortByColumn": "orden"
+          },
+          {
+            "name": "grupo",
+            "dataType": "string",
+            "sourceColumn": "grupo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "orden",
+            "dataType": "int64",
+            "sourceColumn": "orden",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "etiqueta",
+            "dataType": "string",
+            "sourceColumn": "etiqueta",
+            "summarizeBy": "none",
+            "sortByColumn": "orden"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_serie",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_serie.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"serie\", type text}, {\"grupo\", type text}, {\"orden\", Int64.Type}, {\"etiqueta\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "hechos_pronosticos",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "modelo_id",
+            "dataType": "string",
+            "sourceColumn": "modelo_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "detalle",
+            "dataType": "string",
+            "sourceColumn": "detalle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "predicho",
+            "dataType": "double",
+            "sourceColumn": "predicho",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "li",
+            "dataType": "double",
+            "sourceColumn": "li",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ls",
+            "dataType": "double",
+            "sourceColumn": "ls",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "error",
+            "dataType": "double",
+            "sourceColumn": "error",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "hechos_pronosticos",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"hechos_pronosticos.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"fecha\", type date}, {\"modelo_id\", type text}, {\"detalle\", type text}, {\"predicho\", type number}, {\"li\", type number}, {\"ls\", type number}, {\"error\", type number}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "hechos_viajeros",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ]
+          },
+          {
+            "name": "viajeros",
+            "dataType": "double",
+            "sourceColumn": "viajeros",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "hechos_viajeros",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"hechos_viajeros.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"fecha\", type date}, {\"viajeros\", type number}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "metricas_modelos",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "modelo_id",
+            "dataType": "string",
+            "sourceColumn": "modelo_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "detalle",
+            "dataType": "string",
+            "sourceColumn": "detalle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MAE",
+            "dataType": "double",
+            "sourceColumn": "MAE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "RMSE",
+            "dataType": "double",
+            "sourceColumn": "RMSE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MAE_pct_nivel",
+            "dataType": "double",
+            "sourceColumn": "MAE_pct_nivel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "RMSE_pct_nivel",
+            "dataType": "double",
+            "sourceColumn": "RMSE_pct_nivel",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AIC",
+            "dataType": "double",
+            "sourceColumn": "AIC",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BIC",
+            "dataType": "double",
+            "sourceColumn": "BIC",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "meses_evaluados",
+            "dataType": "int64",
+            "sourceColumn": "meses_evaluados",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "conjunto_evaluacion",
+            "dataType": "string",
+            "sourceColumn": "conjunto_evaluacion",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "metricas_modelos",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"metricas_modelos.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"modelo_id\", type text}, {\"detalle\", type text}, {\"MAE\", type number}, {\"RMSE\", type number}, {\"MAE_pct_nivel\", type number}, {\"RMSE_pct_nivel\", type number}, {\"AIC\", type number}, {\"BIC\", type number}, {\"meses_evaluados\", Int64.Type}, {\"conjunto_evaluacion\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "perdidas_lstm",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "config",
+            "dataType": "string",
+            "sourceColumn": "config",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "epoca",
+            "dataType": "int64",
+            "sourceColumn": "epoca",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "perdida_ajuste",
+            "dataType": "double",
+            "sourceColumn": "perdida_ajuste",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "perdida_validacion",
+            "dataType": "double",
+            "sourceColumn": "perdida_validacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mejor_epoca",
+            "dataType": "int64",
+            "sourceColumn": "mejor_epoca",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "perdidas_lstm",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"perdidas_lstm.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"config\", type text}, {\"epoca\", Int64.Type}, {\"perdida_ajuste\", type number}, {\"perdida_validacion\", type number}, {\"mejor_epoca\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "similitud_series",
+        "columns": [
+          {
+            "name": "serie_id",
+            "dataType": "string",
+            "sourceColumn": "serie_id",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "PC1",
+            "dataType": "double",
+            "sourceColumn": "PC1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PC2",
+            "dataType": "double",
+            "sourceColumn": "PC2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "grupo_kmedias",
+            "dataType": "int64",
+            "sourceColumn": "grupo_kmedias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "var_PC1",
+            "dataType": "double",
+            "sourceColumn": "var_PC1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "var_PC2",
+            "dataType": "double",
+            "sourceColumn": "var_PC2",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "similitud_series",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"similitud_series.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"PC1\", type number}, {\"PC2\", type number}, {\"grupo_kmedias\", Int64.Type}, {\"var_PC1\", type number}, {\"var_PC2\", type number}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Medidas",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "isHidden": true,
+            "summarizeBy": "none"
+          }
+        ],
+        "measures": [
+          {
+            "name": "Viajeros",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    CALCULATE (",
+              "        SUM ( hechos_viajeros[viajeros] ),",
+              "        REMOVEFILTERS ( dim_serie ),",
+              "        dim_serie[serie_id] = SerieActiva",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Viajeros total nacional",
+            "expression": [
+              "CALCULATE (",
+              "    SUM ( hechos_viajeros[viajeros] ),",
+              "    REMOVEFILTERS ( dim_serie ),",
+              "    dim_serie[serie_id] = \"total\"",
+              ")"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Participación",
+            "expression": [
+              "DIVIDE ( [Viajeros], [Viajeros total nacional] )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Promedio mensual",
+            "expression": [
+              "DIVIDE ( [Viajeros], COUNTROWS ( VALUES ( dim_fecha[fecha] ) ) )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Mes más alto (valor)",
+            "expression": [
+              "MAXX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Mes más alto (mes)",
+            "expression": [
+              "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], DESC ), dim_fecha[mes_anio] )"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Mes más bajo (valor)",
+            "expression": [
+              "MINX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Mes más bajo (mes)",
+            "expression": [
+              "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], ASC ), dim_fecha[mes_anio] )"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Título V1",
+            "expression": [
+              "\"Evolución de los viajeros: \" & SELECTEDVALUE ( dim_serie[serie], \"Total nacional\" )"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Aviso sin datos",
+            "expression": [
+              "IF (",
+              "    ISBLANK ( [Viajeros] ),",
+              "    \"No hay información para esta selección. Use Restablecer filtros.\",",
+              "    \"\"",
+              ")"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Pronóstico",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            SUM ( hechos_pronosticos[predicho] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "MAE",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            MIN ( metricas_modelos[MAE] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "RMSE",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            MIN ( metricas_modelos[RMSE] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "MAE como % del mes promedio",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            MIN ( metricas_modelos[MAE_pct_nivel] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Aviso modelo sin datos",
+            "expression": [
+              "IF (",
+              "    HASONEVALUE ( dim_modelo[modelo_id] ) && ISBLANK ( [MAE] ),",
+              "    \"Este modelo no está disponible para la serie elegida. LSTM solo existe para el Total nacional y América del Centro.\",",
+              "    \"\"",
+              ")"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Viajeros mismos meses 2019",
+            "expression": [
+              "VAR Meses = VALUES ( dim_fecha[mes_num] )",
+              "RETURN",
+              "    CALCULATE (",
+              "        [Viajeros],",
+              "        REMOVEFILTERS ( dim_fecha ),",
+              "        dim_fecha[anio] = 2019,",
+              "        TREATAS ( Meses, dim_fecha[mes_num] )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Índice de recuperación",
+            "expression": [
+              "IF (",
+              "    MIN ( dim_fecha[anio] ) >= 2019,",
+              "    DIVIDE ( [Viajeros], [Viajeros mismos meses 2019] ) * 100",
+              ")"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Nivel 2019",
+            "expression": [
+              "IF ( NOT ISBLANK ( [Índice de recuperación] ), 100 )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "0.0"
+          },
+          {
+            "name": "Límite inferior 80 %",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            SUM ( hechos_pronosticos[li] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Límite superior 80 %",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "RETURN",
+              "    IF (",
+              "        HASONEVALUE ( dim_modelo[modelo_id] ),",
+              "        CALCULATE (",
+              "            SUM ( hechos_pronosticos[ls] ),",
+              "            REMOVEFILTERS ( dim_serie ),",
+              "            dim_serie[serie_id] = SerieActiva",
+              "        )",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Pérdida de ajuste",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], \"Modelo A (20 neuronas, 1 capa(s), dropout 0.0)\" )",
+              "RETURN",
+              "    CALCULATE (",
+              "        AVERAGE ( perdidas_lstm[perdida_ajuste] ),",
+              "        REMOVEFILTERS ( dim_serie ),",
+              "        dim_serie[serie_id] = SerieActiva,",
+              "        perdidas_lstm[config] = Configuracion",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "0.0000"
+          },
+          {
+            "name": "Pérdida de validación",
+            "expression": [
+              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], \"Modelo A (20 neuronas, 1 capa(s), dropout 0.0)\" )",
+              "RETURN",
+              "    CALCULATE (",
+              "        AVERAGE ( perdidas_lstm[perdida_validacion] ),",
+              "        REMOVEFILTERS ( dim_serie ),",
+              "        dim_serie[serie_id] = SerieActiva,",
+              "        perdidas_lstm[config] = Configuracion",
+              "    )"
+            ],
+            "displayFolder": "Indicadores",
+            "formatString": "0.0000"
+          },
+          {
+            "name": "Aviso entrenamiento",
+            "expression": [
+              "IF (",
+              "    ISBLANK ( [Pérdida de ajuste] ),",
+              "    \"LSTM solo está disponible para el total nacional y América del Centro.\",",
+              "    \"MSE estandarizado; no está expresado en viajeros. El filtro de fechas no cambia el entrenamiento.\"",
+              ")"
+            ],
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Selección activa",
+            "expression": [
+              "SELECTEDVALUE ( dim_serie[serie], \"Total nacional\" ) & \" | \" &",
+              "FORMAT ( MIN ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" ) & \" a \" &",
+              "FORMAT ( MAX ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" )"
+            ],
+            "displayFolder": "Indicadores"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Medidas",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "#table(type table [Id = Int64.Type], {{1}})"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "53266940-349e-5e1a-9001-4a4ac492c692",
+        "fromTable": "hechos_viajeros",
+        "fromColumn": "serie_id",
+        "fromCardinality": "many",
+        "toTable": "dim_serie",
+        "toColumn": "serie_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "94f141b1-574a-5b7e-9768-00722ecab019",
+        "fromTable": "hechos_pronosticos",
+        "fromColumn": "serie_id",
+        "fromCardinality": "many",
+        "toTable": "dim_serie",
+        "toColumn": "serie_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "53bd9fb0-4bdf-5553-a3d4-00c4b6cb3070",
+        "fromTable": "metricas_modelos",
+        "fromColumn": "serie_id",
+        "fromCardinality": "many",
+        "toTable": "dim_serie",
+        "toColumn": "serie_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "a9a5bc5a-9b39-5c41-b465-3dabcdff0710",
+        "fromTable": "perdidas_lstm",
+        "fromColumn": "serie_id",
+        "fromCardinality": "many",
+        "toTable": "dim_serie",
+        "toColumn": "serie_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "18ce84fb-c43e-5bba-9aac-bb2e964aa067",
+        "fromTable": "similitud_series",
+        "fromColumn": "serie_id",
+        "fromCardinality": "many",
+        "toTable": "dim_serie",
+        "toColumn": "serie_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "9b62d063-69f4-5f25-a228-ec9476d4ea9f",
+        "fromTable": "hechos_viajeros",
+        "fromColumn": "fecha",
+        "fromCardinality": "many",
+        "toTable": "dim_fecha",
+        "toColumn": "fecha",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "8c12f5c2-0166-5ec3-8e72-7715dd357662",
+        "fromTable": "hechos_pronosticos",
+        "fromColumn": "fecha",
+        "fromCardinality": "many",
+        "toTable": "dim_fecha",
+        "toColumn": "fecha",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "97d7fefb-986f-5cfb-b026-abde777afe56",
+        "fromTable": "hechos_pronosticos",
+        "fromColumn": "modelo_id",
+        "fromCardinality": "many",
+        "toTable": "dim_modelo",
+        "toColumn": "modelo_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "e9101aef-806a-52dc-b9a0-cff6885b613e",
+        "fromTable": "metricas_modelos",
+        "fromColumn": "modelo_id",
+        "fromCardinality": "many",
+        "toTable": "dim_modelo",
+        "toColumn": "modelo_id",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      }
+    ]
+  }
+}

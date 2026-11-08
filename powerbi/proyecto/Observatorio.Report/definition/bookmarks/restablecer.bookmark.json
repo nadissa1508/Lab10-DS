@@ -1,0 +1,643 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "name": "restablecer",
+  "displayName": "Restablecer filtros",
+  "options": {
+    "suppressActiveSection": false,
+    "suppressData": false,
+    "suppressDisplay": false,
+    "applyOnlyToTargetVisuals": false
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "resumen",
+    "sections": {
+      "resumen": {
+        "visualContainers": {
+          "resumen_serie": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_serie",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "etiqueta"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Total nacional'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "resumen_fecha": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter"
+                  }
+                ]
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "resumen_seleccion": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v1": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_fecha"
+                            }
+                          },
+                          "Hierarchy": "Periodo"
+                        }
+                      },
+                      "Level": "anio"
+                    }
+                  }
+                ]
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v2": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "kpi_0": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "kpi_1": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "kpi_2": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "kpi_3": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          }
+        },
+        "filters": {
+          "byName": {}
+        }
+      },
+      "estacionalidad": {
+        "visualContainers": {
+          "estacionalidad_serie": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_serie",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "etiqueta"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Total nacional'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "estacionalidad_fecha": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter"
+                  }
+                ]
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "estacionalidad_seleccion": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v3": {
+            "singleVisual": {
+              "visualType": "pivotTable"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v4": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          }
+        },
+        "filters": {
+          "byName": {}
+        }
+      },
+      "pronosticos": {
+        "visualContainers": {
+          "pronosticos_serie": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_serie",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "etiqueta"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Total nacional'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "pronosticos_fecha": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter"
+                  }
+                ]
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "pronosticos_seleccion": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "pronosticos_modelo": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_modelo",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "modelo"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Prophet'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "pronosticos_config": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "perdidas_lstm",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "config"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Modelo A (20 neuronas, 1 capa(s), dropout 0.0)'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v6": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v8": {
+            "singleVisual": {
+              "visualType": "lineChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "aviso_modelo": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "aviso_lstm": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          }
+        },
+        "filters": {
+          "byName": {}
+        }
+      },
+      "modelos": {
+        "visualContainers": {
+          "modelos_serie": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_serie",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "etiqueta"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Total nacional'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "modelos_fecha": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter"
+                  }
+                ]
+              }
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "modelos_seleccion": {
+            "singleVisual": {
+              "visualType": "card"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v7": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "v9": {
+            "singleVisual": {
+              "visualType": "scatterChart"
+            },
+            "filters": {
+              "byName": {}
+            }
+          },
+          "tabla_modelos": {
+            "singleVisual": {
+              "visualType": "tableEx"
+            },
+            "filters": {
+              "byName": {}
+            }
+          }
+        },
+        "filters": {
+          "byName": {}
+        }
+      },
+      "glosario": {
+        "visualContainers": {},
+        "filters": {
+          "byName": {}
+        }
+      }
+    },
+    "filters": {
+      "byName": {}
+    }
+  }
+}

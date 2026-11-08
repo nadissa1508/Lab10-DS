@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "v8",
+  "position": {
+    "x": 660,
+    "y": 405,
+    "z": 9,
+    "width": 600,
+    "height": 330,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "objects": {},
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pérdida LSTM por época'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#011C40'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "perdidas_lstm"
+                    }
+                  },
+                  "Property": "epoca"
+                }
+              },
+              "queryRef": "perdidas_lstm.epoca",
+              "nativeQueryRef": "epoca"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Pérdida de ajuste"
+                }
+              },
+              "queryRef": "Medidas.Pérdida de ajuste",
+              "nativeQueryRef": "Pérdida de ajuste"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Pérdida de validación"
+                }
+              },
+              "queryRef": "Medidas.Pérdida de validación",
+              "nativeQueryRef": "Pérdida de validación"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
