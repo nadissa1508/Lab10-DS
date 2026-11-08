@@ -61,6 +61,5 @@ Estas comprobaciones verifican la estructura. No ejecutan Power Query, no evalú
 3. Ejecutar las tres tareas en Power BI con las mismas selecciones. Registrar resultado, pasos, tiempo, dificultades, entorno y experiencia previa.
 4. Comprobar al menos dos indicadores en ambas interfaces y conservar las capturas correspondientes.
 5. Guardar el archivo `powerbi/observatorio_v1.0.pbix` y registrar la versión de Desktop.
-6. Registrar fechas de cierre, tiempos efectivos de trabajo y aportes verificables por persona. No se deducen horas trabajadas a partir de los commits.
-7. Completar la comparación de herramientas y sus recomendaciones con las pruebas de ambas versiones. Los documentos Word y PDF existentes no se actualizaron.
-8. Comprobar `docker compose up --build` cuando esté disponible el servicio de Docker.
+6. Completar la comparación de herramientas y sus recomendaciones con las pruebas de ambas versiones. Los documentos Word y PDF existentes no se actualizaron.
+7. Comprobar `docker compose up --build` cuando esté disponible el servicio de Docker.
