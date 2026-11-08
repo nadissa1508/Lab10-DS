@@ -1,4 +1,4 @@
-# Codebook: datos del tablero (Laboratorio 10)
+# Codebook: series y resultados del observatorio
 
 Los datos del tablero son **series mensuales agregadas** del ingreso de viajeros internacionales a
 Guatemala (enero de 2009 a junio de 2026, 210 meses). Provienen de los Laboratorios 1 y 2 y se
@@ -49,3 +49,33 @@ cuando aplican) y el mejor modelo por serie.
 - **2026** cubre solo enero a junio; los totales anuales de 2026 son parciales.
 - **Pandemia:** colapso desde marzo de 2020 y piso en 2020 y 2021.
 - Regiones y fronteras son cortes distintos del mismo total: no se suman entre sí.
+
+## Resultados de modelos en `series.json`
+
+| Campo | Contenido |
+|---|---|
+| `modelos.pronosticos` | Serie, modelo, detalle, índice inicial y valores predichos; incluye límites cuando existen |
+| `modelos.metricas` | MAE y RMSE de los 63 meses de prueba; AIC y BIC disponibles |
+| `modelos.perdidas` | Pérdidas estandarizadas de ajuste y validación, configuración y mejor época de LSTM |
+| `modelos.similitud` | Coordenadas PC1 y PC2, grupo y proporción de varianza de catch22/PCA |
+
+El índice `desde` alinea cada pronóstico con `meses`. Las predicciones cubren abril de 2021 a junio de 2026. Los intervalos ausentes se guardan como `null`; no representan cero.
+
+La web utiliza observaciones y pronósticos redondeados al entero. MAE y RMSE se calculan antes de redondear. Los CSV de Power BI conservan los decimales. Por ello, sumar los meses del JSON puede dar una cifra ligeramente distinta de redondear la suma de los CSV.
+
+## Tablas de `powerbi/datos/`
+
+| Tabla | Clave | Descripción |
+|---|---|---|
+| `dim_serie` | `serie_id` | Nombre, grupo, etiqueta y orden de cada serie |
+| `dim_fecha` | `fecha` | Mes, año, trimestre, conjunto y marca de pandemia |
+| `dim_modelo` | `modelo_id` | Nombre, rol y orden del modelo |
+| `hechos_viajeros` | `serie_id`, `fecha` | Valores observados sin redondear |
+| `hechos_pronosticos` | `serie_id`, `fecha`, `modelo_id` | Predicción, límites y error respecto al observado |
+| `metricas_modelos` | `serie_id`, `modelo_id` | Métricas por combinación y período de evaluación |
+| `perdidas_lstm` | `serie_id`, `config`, `epoca` | Error estandarizado durante el entrenamiento |
+| `similitud_series` | `serie_id` | Coordenadas PCA y grupo de K-medias |
+
+Se excluye LSTM de un paso. Se conserva LSTM recursiva para el total nacional y América del Centro. Los límites del 80 % solo están disponibles para ARIMA y Prophet. Las predicciones negativas se mantienen como resultado del modelo y se explican como limitación.
+
+Las métricas, pérdidas y coordenadas se refieren al análisis original. Cambiar el período de observaciones no vuelve a entrenar modelos ni recalcula esas salidas. El índice de recuperación sí depende del período y utiliza los mismos meses de 2019 como denominador.
