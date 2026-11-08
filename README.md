@@ -12,12 +12,13 @@ Se presenta el ingreso mensual de viajeros internacionales a Guatemala entre ene
 | `data/raw/` | Series y resultados agregados originales |
 | `powerbi/datos/` | Ocho tablas de Power BI |
 | `powerbi/proyecto/Observatorio.pbip` | Proyecto editable: cinco páginas, ocho visualizaciones y 24 medidas |
-| `powerbi/*.pbix` | Archivo existente de la versión 0.1, con dos gráficos |
+| `powerbi/observatorio_v1.0.pbix` | Versión final con datos cargados, cinco páginas y ocho visualizaciones |
+| `powerbi/observatorio_v0.1_avance.pbix` | Versión 0.1 conservada, con dos gráficos |
 | `powerbi/power_query.m`, `powerbi/medidas.dax` | Consultas y medidas |
-| `docs/evidencias/` | Capturas web y resultados de pruebas |
+| `docs/evidencias/` | Capturas de ambas versiones y resultados de pruebas |
 | `docs/validacion.md` | Verificaciones, diferencias y pendientes |
 
-El proyecto editable está pendiente de apertura y actualización en Desktop. No sustituye el archivo `.pbix` final solicitado para la entrega. El archivo 0.1 registra Power BI Desktop `2.159.1206.0`; no se comprobó el proyecto nuevo en esa aplicación.
+La versión final se abrió, actualizó y guardó con Power BI Desktop `2.159.1231.0` de 64 bits en Windows. El archivo `.pbix` incluye los datos y puede consultarse sin actualizar las fuentes. El proyecto `.pbip` conserva las definiciones editables para revisar los cambios con Git. La versión 0.1 registra Desktop `2.159.1206.0`.
 
 ## Preparación de datos
 
@@ -47,15 +48,15 @@ La configuración de Docker se ejecuta desde la raíz con `docker compose up --b
 
 ## Power BI Desktop
 
-1. Se abre `powerbi/proyecto/Observatorio.pbip`. También se puede abrir `powerbi/proyecto/Observatorio.Report/definition.pbir`.
-2. En Transformar datos > Administrar parámetros se cambia `RutaDatos` a la carpeta absoluta `powerbi\datos\`, con barra invertida al final. Ejemplo: `C:\Datos\Lab10-DS\powerbi\datos\`.
-3. Se aplican los cambios y se selecciona Actualizar. El proyecto no incluye caché; la primera apertura requiere cargar los CSV.
+1. Se abre `powerbi/observatorio_v1.0.pbix` para consultar la versión final. Para editar las definiciones se abre `powerbi/proyecto/Observatorio.pbip` o `powerbi/proyecto/Observatorio.Report/definition.pbir`.
+2. Para actualizar en otra ubicación, en Transformar datos > Administrar parámetros se cambia `RutaDatos` a la carpeta absoluta `powerbi\datos\`, con barra invertida al final. Ejemplo: `C:\Datos\Lab10-DS\powerbi\datos\`.
+3. Se aplican los cambios y se selecciona Actualizar. El `.pbix` incluye datos cargados. El proyecto editable no versiona la caché; su primera apertura requiere cargar los CSV.
 4. Se revisan las páginas Resumen, Estacionalidad, Pronósticos, Modelos y confianza y Glosario.
 5. En Resumen se selecciona una barra y se comprueba el cambio de la serie histórica. La jerarquía permite bajar y subir entre año, trimestre y mes.
 6. Se verifican los segmentadores sincronizados de serie y período y Restablecer filtros. En modo de edición los botones se activan con Ctrl + clic.
-7. Tras las verificaciones se guarda como `powerbi/observatorio_v1.0.pbix` y se registra la versión exacta de Desktop utilizada.
+7. Se guarda el archivo tras actualizar las fuentes. Si Desktop propone convertir el proyecto a TMDL, se selecciona No actualizar para conservar `model.bim`.
 
-La navegación utiliza las pestañas de página. Sin una serie seleccionada, los indicadores utilizan el total nacional. V2 y V9 conservan las categorías para permitir su comparación. El marcador Restablecer filtros define el regreso a Resumen y la selección inicial. Su ejecución, el formato y los cálculos DAX deben comprobarse en Desktop.
+La navegación utiliza las pestañas de página. Sin una serie seleccionada, los indicadores utilizan el total nacional. V2 y V9 conservan las categorías para permitir su comparación. Se comprobaron en Desktop el enlace V2–V1, la jerarquía anual, trimestral y mensual y el marcador Restablecer filtros. El marcador recupera Resumen, el período completo y el nivel anual; conserva el filtro de regiones y fronteras de V2.
 
 ## Tablas y reglas
 

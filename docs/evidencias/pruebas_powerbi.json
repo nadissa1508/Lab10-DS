@@ -1,0 +1,218 @@
+{
+  "fecha": "2026-11-08",
+  "modalidad": "Consultas DAX al modelo local de Power BI Desktop",
+  "version_desktop": "2.159.1231.0",
+  "formato_participacion": "0.0%",
+  "verificaciones": [
+    {
+      "prueba": "conteos_e_indicadores",
+      "consulta": "EVALUATE ROW(\"observaciones\", COUNTROWS(hechos_viajeros), \"predicciones\", COUNTROWS(hechos_pronosticos), \"metricas\", COUNTROWS(metricas_modelos), \"viajeros\", [Viajeros], \"promedio\", [Promedio mensual])",
+      "filas": [
+        {
+          "[observaciones]": 1470,
+          "[predicciones]": 2331,
+          "[metricas]": 37,
+          "[viajeros]": 46711912.88651752,
+          "[promedio]": 222437.68041198817
+        }
+      ]
+    },
+    {
+      "prueba": "la_aurora_2019",
+      "consulta": "EVALUATE CALCULATETABLE(ROW(\"viajeros\", [Viajeros], \"participacion\", [Participación], \"mes_mayor\", [Mes más alto (mes)], \"valor_mayor\", [Mes más alto (valor)]), dim_serie[serie_id]=\"frontera_aurora\", dim_fecha[anio]=2019)",
+      "filas": [
+        {
+          "[viajeros]": 1481701.5422789927,
+          "[participacion]": 0.35857010743877893,
+          "[mes_mayor]": "dic 2019",
+          "[valor_mayor]": 157465.00000000003
+        }
+      ]
+    },
+    {
+      "prueba": "total_2019",
+      "consulta": "EVALUATE CALCULATETABLE(ROW(\"viajeros\", [Viajeros]), dim_serie[serie_id]=\"total\", dim_fecha[anio]=2019)",
+      "filas": [
+        {
+          "[viajeros]": 4132250.601876994
+        }
+      ]
+    },
+    {
+      "prueba": "trimestres_2019",
+      "consulta": "EVALUATE SUMMARIZECOLUMNS(dim_fecha[trimestre_num], TREATAS({2019},dim_fecha[anio]), TREATAS({\"total\"},dim_serie[serie_id]), \"viajeros\",[Viajeros]) ORDER BY dim_fecha[trimestre_num]",
+      "filas": [
+        {
+          "dim_fecha[trimestre_num]": 1,
+          "[viajeros]": 1002754.6477908532
+        },
+        {
+          "dim_fecha[trimestre_num]": 2,
+          "[viajeros]": 1020997.4436416267
+        },
+        {
+          "dim_fecha[trimestre_num]": 3,
+          "[viajeros]": 1029096.5225015585
+        },
+        {
+          "dim_fecha[trimestre_num]": 4,
+          "[viajeros]": 1079401.987942956
+        }
+      ]
+    },
+    {
+      "prueba": "meses_t4_2019",
+      "consulta": "EVALUATE SUMMARIZECOLUMNS(dim_fecha[mes_num], TREATAS({2019},dim_fecha[anio]), TREATAS({4},dim_fecha[trimestre_num]), TREATAS({\"total\"},dim_serie[serie_id]), \"viajeros\",[Viajeros]) ORDER BY dim_fecha[mes_num]",
+      "filas": [
+        {
+          "dim_fecha[mes_num]": 10,
+          "[viajeros]": 294503.99136425246
+        },
+        {
+          "dim_fecha[mes_num]": 11,
+          "[viajeros]": 335783.9260785361
+        },
+        {
+          "dim_fecha[mes_num]": 12,
+          "[viajeros]": 449114.0705001674
+        }
+      ]
+    },
+    {
+      "prueba": "tres_modelos_dic_2023",
+      "consulta": "EVALUATE SUMMARIZECOLUMNS(dim_modelo[modelo], TREATAS({\"region_america_central\"},dim_serie[serie_id]), TREATAS({DATE(2023,12,1)},dim_fecha[fecha]), TREATAS({\"Principal\"},dim_modelo[rol]), \"observado\",[Viajeros], \"pronostico\",[Pronóstico], \"MAE\",[MAE], \"RMSE\",[RMSE])",
+      "filas": [
+        {
+          "dim_modelo[modelo]": "Prophet",
+          "[observado]": 221296.68974899905,
+          "[pronostico]": 185430.21512186856,
+          "[MAE]": 62484.74022838856,
+          "[RMSE]": 67837.56600151557
+        },
+        {
+          "dim_modelo[modelo]": "Holt-Winters",
+          "[observado]": 221296.68974899905,
+          "[pronostico]": 94202.86962755428,
+          "[MAE]": 94088.85020361167,
+          "[RMSE]": 105019.41929249521
+        },
+        {
+          "dim_modelo[modelo]": "LSTM",
+          "[observado]": 221296.68974899905,
+          "[pronostico]": 75532.1084158947,
+          "[MAE]": 86055.86350593591,
+          "[RMSE]": 106804.56650140611
+        }
+      ]
+    },
+    {
+      "prueba": "recuperacion_2019",
+      "consulta": "EVALUATE SUMMARIZECOLUMNS(dim_serie[serie_id], TREATAS({2019},dim_fecha[anio]), \"indice\",[Índice de recuperación])",
+      "filas": [
+        {
+          "dim_serie[serie_id]": "total",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "region_america_central",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "region_america_norte",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "region_europa",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "frontera_aurora",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "frontera_valle_nuevo",
+          "[indice]": 100
+        },
+        {
+          "dim_serie[serie_id]": "frontera_san_cristobal",
+          "[indice]": 100
+        }
+      ]
+    },
+    {
+      "prueba": "recuperacion_2026",
+      "consulta": "EVALUATE CALCULATETABLE(ROW(\"viajeros\",[Viajeros], \"base_2019\",[Viajeros mismos meses 2019], \"indice\",[Índice de recuperación]), dim_fecha[anio]=2026)",
+      "filas": [
+        {
+          "[viajeros]": 1576619.4764402814,
+          "[base_2019]": 2023752.09143248,
+          "[indice]": 77.90576143762237
+        }
+      ]
+    },
+    {
+      "prueba": "lstm_sin_datos_europa",
+      "consulta": "EVALUATE CALCULATETABLE(ROW(\"pronostico\",[Pronóstico], \"MAE\",[MAE], \"aviso\",[Aviso modelo sin datos], \"perdida\",[Pérdida de ajuste]), dim_serie[serie_id]=\"region_europa\",dim_modelo[modelo_id]=\"lstm\")",
+      "filas": [
+        {
+          "[pronostico]": null,
+          "[MAE]": null,
+          "[aviso]": "Este modelo no está disponible para la serie elegida. LSTM solo existe para el Total nacional y América del Centro.",
+          "[perdida]": null
+        }
+      ]
+    },
+    {
+      "prueba": "filtros_incompatibles",
+      "consulta": "EVALUATE CALCULATETABLE(ROW(\"viajeros\",[Viajeros],\"aviso\",[Aviso sin datos]),dim_serie[serie_id]=\"total\",dim_serie[grupo]=\"Frontera\")",
+      "filas": [
+        {
+          "[viajeros]": null,
+          "[aviso]": "No hay información para esta selección. Use Restablecer filtros."
+        }
+      ]
+    }
+  ],
+  "interfaz": {
+    "modalidad": "Inspección y acciones automatizadas en Power BI Desktop; sin medición humana comparable",
+    "sistema": "Windows x64",
+    "comprobaciones": [
+      {
+        "caso": "cinco_paginas",
+        "resultado": "Sin errores de carga; ocho visualizaciones analíticas"
+      },
+      {
+        "caso": "la_aurora_2019",
+        "seleccion": "La Aurora; 01/01/2019 a 31/12/2019",
+        "resultado": "1,481,702 viajeros; 35.9 %; máximo en dic 2019",
+        "captura": "powerbi/la_aurora_2019.png"
+      },
+      {
+        "caso": "enlace_v2_v1",
+        "seleccion": "Barra de La Aurora en V2; período completo",
+        "resultado": "V1, tarjetas y selección activa cambian a La Aurora"
+      },
+      {
+        "caso": "jerarquia",
+        "secuencia": [
+          "Expandir de año a trimestre",
+          "Expandir de trimestre a mes"
+        ],
+        "resultado": "Los tres niveles muestran datos",
+        "captura": "powerbi/jerarquia_mensual.png"
+      },
+      {
+        "caso": "restablecer",
+        "origen": "Panel Marcadores de Desktop, desde detalle mensual y selección de La Aurora",
+        "resultado": "Total nacional; ene 2009 a jun 2026; nivel anual; V2 conserva regiones y fronteras",
+        "captura": "powerbi/resumen.png"
+      },
+      {
+        "caso": "modelos",
+        "resultado": "Seis filas de métricas visibles; gráficas de errores y similitud sin recortes",
+        "captura": "powerbi/modelos.png"
+      }
+    ],
+    "limite": "Los resultados de las tres consultas de modelos se verificaron con DAX. No se registraron tres recorridos cronometrados equivalentes en ambas interfaces."
+  }
+}

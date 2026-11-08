@@ -1,13 +1,35 @@
 {
   "fecha": "2026-11-08",
-  "archivos_con_esquema_validados": 67,
-  "referencias_verificadas": 57,
+  "version_desktop": "2.159.1231.0",
   "tablas": 9,
   "medidas": 24,
   "relaciones": 9,
-  "sha256_modelo": "0f5f76948bc17a84a4bf925106244a4219b39d2cb70a02d3997159e74221c4aa",
-  "biblioteca_tom": "Microsoft.AnalysisServices.retail.amd64 19.84.1",
-  "apertura_en_desktop": false,
-  "evaluacion_dax": false,
-  "carga_power_query": false
+  "paginas": 5,
+  "visualizaciones_analiticas": 8,
+  "sha256_modelo": "5b9a9f6b891fd16c853b9557be3a7d60cec7f252b211ab435a273560af92f41f",
+  "apertura_en_desktop": true,
+  "evaluacion_dax": true,
+  "carga_power_query": true,
+  "archivo_final": {
+    "ruta": "powerbi/observatorio_v1.0.pbix",
+    "bytes": 241039,
+    "sha256": "38b0f1aeb9d0299dd9c95f0a85c7e5be224b63dac4562d8e966c2cb4f5e6c104",
+    "zip_integro": true,
+    "definiciones_iguales_al_proyecto": true,
+    "datos_incluidos": true
+  },
+  "expresiones_dax_sincronizadas": 24,
+  "validacion_previa_al_guardado_en_desktop": {
+    "fecha": "2026-11-08",
+    "archivos_con_esquema_validados": 67,
+    "referencias_verificadas": 57,
+    "tablas": 9,
+    "medidas": 24,
+    "relaciones": 9,
+    "sha256_modelo": "0f5f76948bc17a84a4bf925106244a4219b39d2cb70a02d3997159e74221c4aa",
+    "biblioteca_tom": "Microsoft.AnalysisServices.retail.amd64 19.84.1",
+    "apertura_en_desktop": false,
+    "evaluacion_dax": false,
+    "carga_power_query": false
+  }
 }
