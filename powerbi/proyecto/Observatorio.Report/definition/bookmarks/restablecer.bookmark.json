@@ -1,12 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
-  "name": "restablecer",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
   "displayName": "Restablecer filtros",
+  "name": "restablecer",
   "options": {
-    "suppressActiveSection": false,
-    "suppressData": false,
-    "suppressDisplay": false,
-    "applyOnlyToTargetVisuals": false
+    "targetVisualNames": []
   },
   "explorationState": {
     "version": "1.3",
@@ -14,49 +11,360 @@
     "sections": {
       "resumen": {
         "visualContainers": {
-          "resumen_serie": {
+          "kpi_0": {
             "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "remove": [
-                  {
-                    "object": "general",
-                    "property": "filter"
-                  }
-                ]
-              }
-            },
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "kpi_1": {
             "filters": {
-              "byName": {}
+              "byExpr": [
+                {
+                  "name": "5aa1f1794720c5bd8000",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Promedio mensual"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "kpi_2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "658689ae323992922d5d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Mes más alto (valor)"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "kpi_3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e413e48539550525cace",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Mes más bajo (valor)"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "nota_series": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
             }
           },
           "resumen_fecha": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3af5ae1a847739e609e8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_fecha"
+                        }
+                      },
+                      "Property": "fecha"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
             "singleVisual": {
               "visualType": "slicer",
               "objects": {
-                "remove": [
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
                   {
-                    "object": "general",
-                    "property": "filter"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_fecha"
+                        }
+                      },
+                      "Property": "fecha"
+                    }
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
+            }
+          },
+          "resumen_fuente": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "resumen_nota": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "resumen_restablecer": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
             }
           },
           "resumen_seleccion": {
-            "singleVisual": {
-              "visualType": "card"
-            },
             "filters": {
-              "byName": {}
+              "byExpr": [
+                {
+                  "name": "cd1a47f60c7037672398",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Selección activa"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "resumen_serie": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9ffd70dc4e000d7960c7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_serie"
+                        }
+                      },
+                      "Property": "etiqueta"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_serie"
+                        }
+                      },
+                      "Property": "etiqueta"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "resumen_sin_datos": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "69c62307d22413b048c0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Aviso sin datos"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "resumen_titulo": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
             }
           },
           "v1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ca2db7c9550187837847",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_fecha"
+                            }
+                          },
+                          "Hierarchy": "Periodo"
+                        }
+                      },
+                      "Level": "anio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7b93273749a31dc0a152",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_fecha"
+                            }
+                          },
+                          "Hierarchy": "Periodo"
+                        }
+                      },
+                      "Level": "trimestre"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b5de6288b71030d736a0",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_fecha"
+                            }
+                          },
+                          "Hierarchy": "Periodo"
+                        }
+                      },
+                      "Level": "mes"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "182c86c3040e6d588720",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Viajeros"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
             "singleVisual": {
               "visualType": "lineChart",
+              "objects": {},
               "activeProjections": {
                 "Category": [
                   {
@@ -76,57 +384,99 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v2": {
-            "singleVisual": {
-              "visualType": "clusteredBarChart"
-            },
             "filters": {
-              "byName": {}
-            }
-          },
-          "kpi_0": {
-            "singleVisual": {
-              "visualType": "card"
+              "byExpr": [
+                {
+                  "name": "solo_cortes",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "dim_serie",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "grupo"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Región'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Frontera'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_serie"
+                        }
+                      },
+                      "Property": "grupo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
             },
-            "filters": {
-              "byName": {}
-            }
-          },
-          "kpi_1": {
             "singleVisual": {
-              "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
-            }
-          },
-          "kpi_2": {
-            "singleVisual": {
-              "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
-            }
-          },
-          "kpi_3": {
-            "singleVisual": {
-              "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_serie"
+                        }
+                      },
+                      "Property": "etiqueta"
+                    }
+                  }
+                ]
+              }
             }
           }
-        },
-        "filters": {
-          "byName": {}
         }
       },
       "estacionalidad": {
+        "filters": {
+          "byName": {}
+        },
         "visualContainers": {
           "estacionalidad_serie": {
             "singleVisual": {
@@ -139,9 +489,6 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "estacionalidad_fecha": {
@@ -155,41 +502,29 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "estacionalidad_seleccion": {
             "singleVisual": {
               "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v3": {
             "singleVisual": {
               "visualType": "pivotTable"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v4": {
             "singleVisual": {
               "visualType": "lineChart"
-            },
-            "filters": {
-              "byName": {}
             }
           }
-        },
-        "filters": {
-          "byName": {}
         }
       },
       "pronosticos": {
+        "filters": {
+          "byName": {}
+        },
         "visualContainers": {
           "pronosticos_serie": {
             "singleVisual": {
@@ -202,9 +537,6 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "pronosticos_fecha": {
@@ -218,17 +550,11 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "pronosticos_seleccion": {
             "singleVisual": {
               "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "pronosticos_modelo": {
@@ -285,9 +611,6 @@
                   ]
                 }
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "pronosticos_config": {
@@ -344,49 +667,34 @@
                   ]
                 }
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v6": {
             "singleVisual": {
               "visualType": "lineChart"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v8": {
             "singleVisual": {
               "visualType": "lineChart"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "aviso_modelo": {
             "singleVisual": {
               "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "aviso_lstm": {
             "singleVisual": {
               "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
             }
           }
-        },
-        "filters": {
-          "byName": {}
         }
       },
       "modelos": {
+        "filters": {
+          "byName": {}
+        },
         "visualContainers": {
           "modelos_serie": {
             "singleVisual": {
@@ -399,9 +707,6 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "modelos_fecha": {
@@ -415,57 +720,37 @@
                   }
                 ]
               }
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "modelos_seleccion": {
             "singleVisual": {
               "visualType": "card"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v7": {
             "singleVisual": {
               "visualType": "clusteredBarChart"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "v9": {
             "singleVisual": {
               "visualType": "scatterChart"
-            },
-            "filters": {
-              "byName": {}
             }
           },
           "tabla_modelos": {
             "singleVisual": {
               "visualType": "tableEx"
-            },
-            "filters": {
-              "byName": {}
             }
           }
-        },
-        "filters": {
-          "byName": {}
         }
       },
       "glosario": {
-        "visualContainers": {},
         "filters": {
           "byName": {}
-        }
+        },
+        "visualContainers": {}
       }
     },
-    "filters": {
-      "byName": {}
-    }
+    "objects": {}
   }
 }

@@ -3,10 +3,10 @@
   "name": "nota_series",
   "position": {
     "x": 20,
-    "y": 850,
+    "y": 795,
     "z": 13,
     "width": 1240,
-    "height": 40,
+    "height": 30,
     "tabOrder": 13
   },
   "visual": {

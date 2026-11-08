@@ -3,10 +3,10 @@
   "name": "glosario_texto",
   "position": {
     "x": 20,
-    "y": 240,
+    "y": 215,
     "z": 3,
     "width": 1240,
-    "height": 600,
+    "height": 570,
     "tabOrder": 3
   },
   "visual": {

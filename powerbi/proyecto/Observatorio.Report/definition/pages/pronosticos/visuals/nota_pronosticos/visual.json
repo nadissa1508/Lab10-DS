@@ -3,10 +3,10 @@
   "name": "nota_pronosticos",
   "position": {
     "x": 20,
-    "y": 815,
+    "y": 780,
     "z": 12,
     "width": 1240,
-    "height": 70,
+    "height": 45,
     "tabOrder": 12
   },
   "visual": {

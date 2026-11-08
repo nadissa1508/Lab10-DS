@@ -3,10 +3,10 @@
   "name": "modelos_nota",
   "position": {
     "x": 20,
-    "y": 840,
+    "y": 950,
     "z": 9,
     "width": 1240,
-    "height": 55,
+    "height": 30,
     "tabOrder": 9
   },
   "visual": {

@@ -3,10 +3,10 @@
   "name": "estacionalidad_fuente",
   "position": {
     "x": 20,
-    "y": 65,
+    "y": 46,
     "z": 1,
     "width": 1230,
-    "height": 35,
+    "height": 24,
     "tabOrder": 1
   },
   "visual": {

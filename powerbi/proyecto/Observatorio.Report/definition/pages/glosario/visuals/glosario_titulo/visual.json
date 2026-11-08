@@ -3,10 +3,10 @@
   "name": "glosario_titulo",
   "position": {
     "x": 20,
-    "y": 15,
+    "y": 8,
     "z": 0,
     "width": 1230,
-    "height": 45,
+    "height": 36,
     "tabOrder": 0
   },
   "visual": {

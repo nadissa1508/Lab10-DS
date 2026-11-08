@@ -3,7 +3,7 @@
   "name": "modelos",
   "displayName": "Modelos y confianza",
   "displayOption": "FitToPage",
-  "height": 900,
+  "height": 1000,
   "width": 1280,
   "visualInteractions": [
     {

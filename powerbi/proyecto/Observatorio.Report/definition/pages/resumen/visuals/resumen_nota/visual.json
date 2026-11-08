@@ -3,10 +3,10 @@
   "name": "resumen_nota",
   "position": {
     "x": 20,
-    "y": 300,
+    "y": 280,
     "z": 6,
     "width": 1240,
-    "height": 40,
+    "height": 28,
     "tabOrder": 6
   },
   "visual": {

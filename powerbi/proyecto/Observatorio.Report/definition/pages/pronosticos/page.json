@@ -3,7 +3,7 @@
   "name": "pronosticos",
   "displayName": "Pronósticos",
   "displayOption": "FitToPage",
-  "height": 900,
+  "height": 840,
   "width": 1280,
   "visualInteractions": [
     {

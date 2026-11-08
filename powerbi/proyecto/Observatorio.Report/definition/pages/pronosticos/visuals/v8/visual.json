@@ -1,17 +1,71 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "v8",
   "position": {
     "x": 660,
-    "y": 405,
+    "y": 375,
     "z": 9,
+    "height": 320,
     "width": 600,
-    "height": 330,
     "tabOrder": 9
   },
   "visual": {
     "visualType": "lineChart",
-    "objects": {},
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "perdidas_lstm"
+                    }
+                  },
+                  "Property": "epoca"
+                }
+              },
+              "queryRef": "perdidas_lstm.epoca",
+              "nativeQueryRef": "epoca",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Pérdida de ajuste"
+                }
+              },
+              "queryRef": "Medidas.Pérdida de ajuste",
+              "nativeQueryRef": "Pérdida de ajuste"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Pérdida de validación"
+                }
+              },
+              "queryRef": "Medidas.Pérdida de validación",
+              "nativeQueryRef": "Pérdida de validación"
+            }
+          ]
+        }
+      }
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -52,60 +106,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
-    "query": {
-      "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "perdidas_lstm"
-                    }
-                  },
-                  "Property": "epoca"
-                }
-              },
-              "queryRef": "perdidas_lstm.epoca",
-              "nativeQueryRef": "epoca"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Pérdida de ajuste"
-                }
-              },
-              "queryRef": "Medidas.Pérdida de ajuste",
-              "nativeQueryRef": "Pérdida de ajuste"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Pérdida de validación"
-                }
-              },
-              "queryRef": "Medidas.Pérdida de validación",
-              "nativeQueryRef": "Pérdida de validación"
-            }
-          ]
-        }
-      }
-    }
+    "drillFilterOtherVisuals": true
   }
 }

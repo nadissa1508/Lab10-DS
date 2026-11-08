@@ -1,103 +1,180 @@
 {
-  "name": "Observatorio",
-  "compatibilityLevel": 1567,
+  "compatibilityLevel": 1606,
   "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"dim_fecha\",\"dim_modelo\",\"dim_serie\",\"hechos_pronosticos\",\"hechos_viajeros\",\"metricas_modelos\",\"perdidas_lstm\",\"similitud_series\",\"Medidas\",\"RutaDatos\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
     "culture": "es-GT",
-    "sourceQueryCulture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
     "expressions": [
       {
         "name": "RutaDatos",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:\\Users\\ninan\\OneDrive\\Documentos\\Escritorio\\UVG\\VIII SEMESTRE\\Data Science\\Lab10-DS\\powerbi\\datos\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
         "kind": "m",
-        "expression": "\"C:\\Users\\ninan\\OneDrive\\Documentos\\Escritorio\\UVG\\VIII SEMESTRE\\Data Science\\Lab10-DS\\powerbi\\datos\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+        "lineageTag": "14accf13-60c8-4a6d-9934-9a8cec9ba0a9"
       }
     ],
+    "relationships": [
+      {
+        "name": "53266940-349e-5e1a-9001-4a4ac492c692",
+        "fromColumn": "serie_id",
+        "fromTable": "hechos_viajeros",
+        "toColumn": "serie_id",
+        "toTable": "dim_serie"
+      },
+      {
+        "name": "94f141b1-574a-5b7e-9768-00722ecab019",
+        "fromColumn": "serie_id",
+        "fromTable": "hechos_pronosticos",
+        "toColumn": "serie_id",
+        "toTable": "dim_serie"
+      },
+      {
+        "name": "53bd9fb0-4bdf-5553-a3d4-00c4b6cb3070",
+        "fromColumn": "serie_id",
+        "fromTable": "metricas_modelos",
+        "toColumn": "serie_id",
+        "toTable": "dim_serie"
+      },
+      {
+        "name": "a9a5bc5a-9b39-5c41-b465-3dabcdff0710",
+        "fromColumn": "serie_id",
+        "fromTable": "perdidas_lstm",
+        "toColumn": "serie_id",
+        "toTable": "dim_serie"
+      },
+      {
+        "name": "18ce84fb-c43e-5bba-9aac-bb2e964aa067",
+        "fromColumn": "serie_id",
+        "fromTable": "similitud_series",
+        "toColumn": "serie_id",
+        "toTable": "dim_serie"
+      },
+      {
+        "name": "9b62d063-69f4-5f25-a228-ec9476d4ea9f",
+        "fromColumn": "fecha",
+        "fromTable": "hechos_viajeros",
+        "toColumn": "fecha",
+        "toTable": "dim_fecha"
+      },
+      {
+        "name": "8c12f5c2-0166-5ec3-8e72-7715dd357662",
+        "fromColumn": "fecha",
+        "fromTable": "hechos_pronosticos",
+        "toColumn": "fecha",
+        "toTable": "dim_fecha"
+      },
+      {
+        "name": "97d7fefb-986f-5cfb-b026-abde777afe56",
+        "fromColumn": "modelo_id",
+        "fromTable": "hechos_pronosticos",
+        "toColumn": "modelo_id",
+        "toTable": "dim_modelo"
+      },
+      {
+        "name": "e9101aef-806a-52dc-b9a0-cff6885b613e",
+        "fromColumn": "modelo_id",
+        "fromTable": "metricas_modelos",
+        "toColumn": "modelo_id",
+        "toTable": "dim_modelo"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
     "tables": [
       {
         "name": "dim_fecha",
         "columns": [
           {
             "name": "fecha",
-            "dataType": "dateTime",
-            "sourceColumn": "fecha",
-            "summarizeBy": "none",
-            "formatString": "yyyy-MM",
             "annotations": [
               {
                 "name": "UnderlyingDateTimeDataType",
                 "value": "Date"
               }
-            ]
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM",
+            "lineageTag": "1a04514d-fc5b-45ff-aae3-4b5517575b88",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none"
           },
           {
             "name": "anio",
             "dataType": "int64",
+            "lineageTag": "2361db83-0683-4ab1-8a84-cb7f101b5cde",
             "sourceColumn": "anio",
             "summarizeBy": "none"
           },
           {
             "name": "trimestre_num",
             "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "fce1bb23-7457-41c4-bf81-6f094952fb9f",
             "sourceColumn": "trimestre_num",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "trimestre",
             "dataType": "string",
+            "lineageTag": "74833a51-2944-4405-87e9-1f1f4bce9acf",
+            "sortByColumn": "trimestre_num",
             "sourceColumn": "trimestre",
-            "summarizeBy": "none",
-            "sortByColumn": "trimestre_num"
+            "summarizeBy": "none"
           },
           {
             "name": "mes_num",
             "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "67409879-e2d7-4b8f-a177-672078543335",
             "sourceColumn": "mes_num",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "mes",
             "dataType": "string",
+            "lineageTag": "3beac81e-227c-440f-bf0f-70684cdd176b",
+            "sortByColumn": "mes_num",
             "sourceColumn": "mes",
-            "summarizeBy": "none",
-            "sortByColumn": "mes_num"
+            "summarizeBy": "none"
           },
           {
             "name": "mes_anio",
             "dataType": "string",
+            "lineageTag": "42e78feb-ad32-44f4-a8c2-a9e050ac0f8e",
+            "sortByColumn": "fecha",
             "sourceColumn": "mes_anio",
-            "summarizeBy": "none",
-            "sortByColumn": "fecha"
+            "summarizeBy": "none"
           },
           {
             "name": "conjunto",
             "dataType": "string",
+            "lineageTag": "f7fd6c12-7e28-45dc-ba1a-a42d1bd9ba57",
             "sourceColumn": "conjunto",
             "summarizeBy": "none"
           },
           {
             "name": "pandemia",
             "dataType": "string",
+            "lineageTag": "9e98033b-7454-4f88-813f-5da8d62b91c7",
             "sourceColumn": "pandemia",
             "summarizeBy": "none"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "dim_fecha",
-            "mode": "import",
-            "source": {
-              "type": "m",
-              "expression": [
-                "let",
-                "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_fecha.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
-                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
-                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"anio\", Int64.Type}, {\"trimestre_num\", Int64.Type}, {\"trimestre\", type text}, {\"mes_num\", Int64.Type}, {\"mes\", type text}, {\"mes_anio\", type text}, {\"conjunto\", type text}, {\"pandemia\", type text}}, \"en-US\")",
-                "in",
-                "    Tipos"
-              ]
-            }
           }
         ],
         "hierarchies": [
@@ -106,20 +183,42 @@
             "levels": [
               {
                 "name": "anio",
-                "ordinal": 0,
-                "column": "anio"
+                "column": "anio",
+                "lineageTag": "26057521-de0f-457a-8a4c-31587de06a43",
+                "ordinal": 0
               },
               {
                 "name": "trimestre",
-                "ordinal": 1,
-                "column": "trimestre"
+                "column": "trimestre",
+                "lineageTag": "c2ab6d69-f64e-46b6-8a09-0c2deeb6b0df",
+                "ordinal": 1
               },
               {
                 "name": "mes",
-                "ordinal": 2,
-                "column": "mes"
+                "column": "mes",
+                "lineageTag": "5002984c-1211-476d-aad7-3dbfe7f01b2d",
+                "ordinal": 2
               }
-            ]
+            ],
+            "lineageTag": "478ddcd0-5c14-4d85-808e-98ef1f146ef8"
+          }
+        ],
+        "lineageTag": "6da3026c-1ecf-4655-8147-204b32c112ab",
+        "partitions": [
+          {
+            "name": "dim_fecha",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_fecha.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"anio\", Int64.Type}, {\"trimestre_num\", Int64.Type}, {\"trimestre\", type text}, {\"mes_num\", Int64.Type}, {\"mes\", type text}, {\"mes_anio\", type text}, {\"conjunto\", type text}, {\"pandemia\", type text}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
           }
         ]
       },
@@ -129,37 +228,41 @@
           {
             "name": "modelo_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "427ca262-e537-45cb-9249-d776f271829c",
             "sourceColumn": "modelo_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "modelo",
             "dataType": "string",
+            "lineageTag": "729141d6-4ef8-4800-8b6d-ca01b268b53d",
+            "sortByColumn": "orden",
             "sourceColumn": "modelo",
-            "summarizeBy": "none",
-            "sortByColumn": "orden"
+            "summarizeBy": "none"
           },
           {
             "name": "rol",
             "dataType": "string",
+            "lineageTag": "03c35d89-e5be-455b-94db-f3bd224ecbd4",
             "sourceColumn": "rol",
             "summarizeBy": "none"
           },
           {
             "name": "orden",
             "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "2ad95f57-dba0-4aa9-b8dc-11825a1b75fa",
             "sourceColumn": "orden",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           }
         ],
+        "lineageTag": "9c4a3d57-7c25-4e8a-994c-05540e62ab2e",
         "partitions": [
           {
             "name": "dim_modelo",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_modelo.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -167,7 +270,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"modelo_id\", type text}, {\"modelo\", type text}, {\"rol\", type text}, {\"orden\", Int64.Type}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -178,44 +282,49 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "30b24fe0-ba62-4f1b-aec8-b9c060cf1d68",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "serie",
             "dataType": "string",
+            "lineageTag": "2f518197-a6e1-4264-a4a5-25f962d85d64",
+            "sortByColumn": "orden",
             "sourceColumn": "serie",
-            "summarizeBy": "none",
-            "sortByColumn": "orden"
+            "summarizeBy": "none"
           },
           {
             "name": "grupo",
             "dataType": "string",
+            "lineageTag": "b0eab564-e725-487e-be30-41d929f997c3",
             "sourceColumn": "grupo",
             "summarizeBy": "none"
           },
           {
             "name": "orden",
             "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "5e709660-3a1b-46a7-96d2-45324c3637f6",
             "sourceColumn": "orden",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "etiqueta",
             "dataType": "string",
+            "lineageTag": "e5fced61-1520-4eaa-9fd6-147d2e9ebcf8",
+            "sortByColumn": "orden",
             "sourceColumn": "etiqueta",
-            "summarizeBy": "none",
-            "sortByColumn": "orden"
+            "summarizeBy": "none"
           }
         ],
+        "lineageTag": "8599aab8-f905-4dbd-96c4-4337c0d8919f",
         "partitions": [
           {
             "name": "dim_serie",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"dim_serie.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -223,7 +332,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"serie\", type text}, {\"grupo\", type text}, {\"orden\", Int64.Type}, {\"etiqueta\", type text}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -234,67 +344,75 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "1b7682a4-ab31-4da2-bbce-ec4356691dc6",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "fecha",
-            "dataType": "dateTime",
-            "sourceColumn": "fecha",
-            "summarizeBy": "none",
-            "formatString": "yyyy-MM",
             "annotations": [
               {
                 "name": "UnderlyingDateTimeDataType",
                 "value": "Date"
               }
-            ]
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM",
+            "lineageTag": "abc922c3-4548-4d2c-8437-f98c0b71c2e6",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none"
           },
           {
             "name": "modelo_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "4a923d13-de5e-4728-955a-0e4f2deb6e60",
             "sourceColumn": "modelo_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "detalle",
             "dataType": "string",
+            "lineageTag": "0565776f-2b0a-4816-ad6e-7d8dfbaec21f",
             "sourceColumn": "detalle",
             "summarizeBy": "none"
           },
           {
             "name": "predicho",
             "dataType": "double",
+            "lineageTag": "e900ae3f-9936-477f-a4ca-31951e7c8924",
             "sourceColumn": "predicho",
             "summarizeBy": "none"
           },
           {
             "name": "li",
             "dataType": "double",
+            "lineageTag": "a013ab80-8e18-43b2-8dce-4a0282dab99c",
             "sourceColumn": "li",
             "summarizeBy": "none"
           },
           {
             "name": "ls",
             "dataType": "double",
+            "lineageTag": "a00a6825-dc6e-4267-9f17-6c7b19e39f34",
             "sourceColumn": "ls",
             "summarizeBy": "none"
           },
           {
             "name": "error",
             "dataType": "double",
+            "lineageTag": "686386f3-2acb-4265-a872-4f6c029d564f",
             "sourceColumn": "error",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "7eda83f2-ebdb-44b7-8e02-a65b02aa5f85",
         "partitions": [
           {
             "name": "hechos_pronosticos",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"hechos_pronosticos.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -302,7 +420,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"fecha\", type date}, {\"modelo_id\", type text}, {\"detalle\", type text}, {\"predicho\", type number}, {\"li\", type number}, {\"ls\", type number}, {\"error\", type number}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -313,36 +432,39 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "de8c692f-35f8-4c65-b7ba-8fbc449990a1",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "fecha",
-            "dataType": "dateTime",
-            "sourceColumn": "fecha",
-            "summarizeBy": "none",
-            "formatString": "yyyy-MM",
             "annotations": [
               {
                 "name": "UnderlyingDateTimeDataType",
                 "value": "Date"
               }
-            ]
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM",
+            "lineageTag": "b9d54fe0-d5a4-459b-a119-ba845b6f68d4",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none"
           },
           {
             "name": "viajeros",
             "dataType": "double",
+            "lineageTag": "2e1627cb-c3a1-4495-9b80-df245ad85d06",
             "sourceColumn": "viajeros",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "1dc7ba66-98bc-40fa-abe3-135250bf280e",
         "partitions": [
           {
             "name": "hechos_viajeros",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"hechos_viajeros.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -350,7 +472,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"fecha\", type date}, {\"viajeros\", type number}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -361,78 +484,89 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "20640660-b199-46b1-ac74-3d55121729ae",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "modelo_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "b0b2afc5-7795-4f29-a7dc-294f01cf0152",
             "sourceColumn": "modelo_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "detalle",
             "dataType": "string",
+            "lineageTag": "c3c08be5-42b4-4c53-bbc9-1f9aa8888040",
             "sourceColumn": "detalle",
             "summarizeBy": "none"
           },
           {
             "name": "MAE",
             "dataType": "double",
+            "lineageTag": "0f705cdb-0e96-4ac0-bd71-96d3ab3498a9",
             "sourceColumn": "MAE",
             "summarizeBy": "none"
           },
           {
             "name": "RMSE",
             "dataType": "double",
+            "lineageTag": "b61bc546-052f-4f12-ba58-99ee1bdc4212",
             "sourceColumn": "RMSE",
             "summarizeBy": "none"
           },
           {
             "name": "MAE_pct_nivel",
             "dataType": "double",
+            "lineageTag": "978b205d-d513-426b-aaef-c779322af3e2",
             "sourceColumn": "MAE_pct_nivel",
             "summarizeBy": "none"
           },
           {
             "name": "RMSE_pct_nivel",
             "dataType": "double",
+            "lineageTag": "149004f6-b690-4866-a0c7-168ea22ee8fb",
             "sourceColumn": "RMSE_pct_nivel",
             "summarizeBy": "none"
           },
           {
             "name": "AIC",
             "dataType": "double",
+            "lineageTag": "63c95742-6781-4a36-b39a-1adc10fdb850",
             "sourceColumn": "AIC",
             "summarizeBy": "none"
           },
           {
             "name": "BIC",
             "dataType": "double",
+            "lineageTag": "0f70b776-7105-4438-b63c-76cc67ff9a11",
             "sourceColumn": "BIC",
             "summarizeBy": "none"
           },
           {
             "name": "meses_evaluados",
             "dataType": "int64",
+            "lineageTag": "3b1ae10b-014b-4669-9051-6797e8bbd34b",
             "sourceColumn": "meses_evaluados",
             "summarizeBy": "none"
           },
           {
             "name": "conjunto_evaluacion",
             "dataType": "string",
+            "lineageTag": "e2ba767c-5a62-4256-a331-39d9e7b87f32",
             "sourceColumn": "conjunto_evaluacion",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "b4bbd4bc-4d07-451f-89d5-0b7155b7362f",
         "partitions": [
           {
             "name": "metricas_modelos",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"metricas_modelos.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -440,7 +574,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"modelo_id\", type text}, {\"detalle\", type text}, {\"MAE\", type number}, {\"RMSE\", type number}, {\"MAE_pct_nivel\", type number}, {\"RMSE_pct_nivel\", type number}, {\"AIC\", type number}, {\"BIC\", type number}, {\"meses_evaluados\", Int64.Type}, {\"conjunto_evaluacion\", type text}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -451,47 +586,53 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "cf0fc756-469c-49b3-bab2-8741ce2e8038",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "config",
             "dataType": "string",
+            "lineageTag": "1e517070-ab9a-409f-840e-57862e93bc48",
             "sourceColumn": "config",
             "summarizeBy": "none"
           },
           {
             "name": "epoca",
             "dataType": "int64",
+            "lineageTag": "571b67b3-3024-4eec-8196-787397a41e4f",
             "sourceColumn": "epoca",
             "summarizeBy": "none"
           },
           {
             "name": "perdida_ajuste",
             "dataType": "double",
+            "lineageTag": "68925d96-9368-4166-98e8-8363f796d13b",
             "sourceColumn": "perdida_ajuste",
             "summarizeBy": "none"
           },
           {
             "name": "perdida_validacion",
             "dataType": "double",
+            "lineageTag": "23f357f5-7c42-4a28-aa39-d880c093e346",
             "sourceColumn": "perdida_validacion",
             "summarizeBy": "none"
           },
           {
             "name": "mejor_epoca",
             "dataType": "int64",
+            "lineageTag": "300c1406-ff48-4b6a-8fb7-6f4e4a785d92",
             "sourceColumn": "mejor_epoca",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "46e55504-34d3-4e70-85f0-4017b67e0a80",
         "partitions": [
           {
             "name": "perdidas_lstm",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"perdidas_lstm.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -499,7 +640,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"config\", type text}, {\"epoca\", Int64.Type}, {\"perdida_ajuste\", type number}, {\"perdida_validacion\", type number}, {\"mejor_epoca\", Int64.Type}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -510,47 +652,53 @@
           {
             "name": "serie_id",
             "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "08c7168d-a7d1-4c1b-a650-fa255c20f37b",
             "sourceColumn": "serie_id",
-            "summarizeBy": "none",
-            "isHidden": true
+            "summarizeBy": "none"
           },
           {
             "name": "PC1",
             "dataType": "double",
+            "lineageTag": "e126247c-5603-44db-8290-ce9ac7bff36d",
             "sourceColumn": "PC1",
             "summarizeBy": "none"
           },
           {
             "name": "PC2",
             "dataType": "double",
+            "lineageTag": "a9679163-2703-416e-ae39-ada95f397534",
             "sourceColumn": "PC2",
             "summarizeBy": "none"
           },
           {
             "name": "grupo_kmedias",
             "dataType": "int64",
+            "lineageTag": "497ea11e-df24-482c-aaba-c7d6d45fcde6",
             "sourceColumn": "grupo_kmedias",
             "summarizeBy": "none"
           },
           {
             "name": "var_PC1",
             "dataType": "double",
+            "lineageTag": "37e42411-b2d9-4bad-ac12-bef0b0c167f3",
             "sourceColumn": "var_PC1",
             "summarizeBy": "none"
           },
           {
             "name": "var_PC2",
             "dataType": "double",
+            "lineageTag": "d10a18a1-3b52-44fb-a3e0-d100dc09c61f",
             "sourceColumn": "var_PC2",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "811f0b09-2243-4749-ba20-0e5aca9434e9",
         "partitions": [
           {
             "name": "similitud_series",
             "mode": "import",
             "source": {
-              "type": "m",
               "expression": [
                 "let",
                 "    Origen = Csv.Document(File.Contents(RutaDatos & \"similitud_series.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
@@ -558,7 +706,8 @@
                 "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"serie_id\", type text}, {\"PC1\", type number}, {\"PC2\", type number}, {\"grupo_kmedias\", Int64.Type}, {\"var_PC1\", type number}, {\"var_PC2\", type number}}, \"en-US\")",
                 "in",
                 "    Tipos"
-              ]
+              ],
+              "type": "m"
             }
           }
         ]
@@ -569,14 +718,17 @@
           {
             "name": "Id",
             "dataType": "int64",
-            "sourceColumn": "Id",
             "isHidden": true,
+            "lineageTag": "6b040156-1e9a-4ab5-990b-9041ef183223",
+            "sourceColumn": "Id",
             "summarizeBy": "none"
           }
         ],
+        "lineageTag": "70da2d55-35b1-45d3-bf4a-bd5345aafe7b",
         "measures": [
           {
             "name": "Viajeros",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -591,11 +743,12 @@
               "        dim_serie[serie_id] = SerieActiva",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "3b8ce6de-5534-44b4-aa9f-437491bc33fb"
           },
           {
             "name": "Viajeros total nacional",
+            "displayFolder": "Indicadores",
             "expression": [
               "CALCULATE (",
               "    SUM ( hechos_viajeros[viajeros] ),",
@@ -603,64 +756,58 @@
               "    dim_serie[serie_id] = \"total\"",
               ")"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "d4152005-cf7c-4691-a19e-45c694a99563"
           },
           {
             "name": "Participación",
-            "expression": [
-              "DIVIDE ( [Viajeros], [Viajeros total nacional] )"
-            ],
             "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "expression": "DIVIDE ( [Viajeros], [Viajeros total nacional] )",
+            "formatString": "0.0%",
+            "lineageTag": "4fd48901-3898-41b0-b822-cee90192b0ed"
           },
           {
             "name": "Promedio mensual",
-            "expression": [
-              "DIVIDE ( [Viajeros], COUNTROWS ( VALUES ( dim_fecha[fecha] ) ) )"
-            ],
             "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "expression": "DIVIDE ( [Viajeros], COUNTROWS ( VALUES ( dim_fecha[fecha] ) ) )",
+            "formatString": "#,0",
+            "lineageTag": "e06c1c9c-b807-48d4-aa64-16c990a2b45c"
           },
           {
             "name": "Mes más alto (valor)",
-            "expression": [
-              "MAXX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )"
-            ],
             "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "expression": "MAXX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )",
+            "formatString": "#,0",
+            "lineageTag": "13ab5341-977f-4718-a05d-94fde1cc003f"
           },
           {
             "name": "Mes más alto (mes)",
-            "expression": [
-              "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], DESC ), dim_fecha[mes_anio] )"
-            ],
-            "displayFolder": "Indicadores"
+            "displayFolder": "Indicadores",
+            "expression": "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], DESC ), dim_fecha[mes_anio] )",
+            "lineageTag": "529d5772-02e4-4d52-aa5b-df911713d97f"
           },
           {
             "name": "Mes más bajo (valor)",
-            "expression": [
-              "MINX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )"
-            ],
             "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "expression": "MINX ( VALUES ( dim_fecha[fecha] ), [Viajeros] )",
+            "formatString": "#,0",
+            "lineageTag": "1bfb3f5b-8334-4b9d-aa10-2aa5f7ac46c9"
           },
           {
             "name": "Mes más bajo (mes)",
-            "expression": [
-              "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], ASC ), dim_fecha[mes_anio] )"
-            ],
-            "displayFolder": "Indicadores"
+            "displayFolder": "Indicadores",
+            "expression": "MAXX ( TOPN ( 1, VALUES ( dim_fecha[mes_anio] ), [Viajeros], ASC ), dim_fecha[mes_anio] )",
+            "lineageTag": "7579683a-9117-4b89-aa41-865471b17d9c"
           },
           {
             "name": "Título V1",
-            "expression": [
-              "\"Evolución de los viajeros: \" & SELECTEDVALUE ( dim_serie[serie], \"Total nacional\" )"
-            ],
-            "displayFolder": "Indicadores"
+            "displayFolder": "Indicadores",
+            "expression": "\"Evolución de los viajeros: \" & SELECTEDVALUE ( dim_serie[serie], \"Total nacional\" )",
+            "lineageTag": "0730b345-ba56-4d46-87fb-231ca5b3de56"
           },
           {
             "name": "Aviso sin datos",
+            "displayFolder": "Indicadores",
             "expression": [
               "IF (",
               "    ISBLANK ( [Viajeros] ),",
@@ -668,10 +815,11 @@
               "    \"\"",
               ")"
             ],
-            "displayFolder": "Indicadores"
+            "lineageTag": "7055e23d-401d-4900-8a8e-5d32a06b59bf"
           },
           {
             "name": "Pronóstico",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -689,11 +837,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "af77a285-c90d-4c32-be36-b7a05de7762e"
           },
           {
             "name": "MAE",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -711,11 +860,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "603247c9-fb01-4f50-94b0-6131485cda12"
           },
           {
             "name": "RMSE",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -733,11 +883,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "6c506da5-d939-456b-bc42-226a6a990464"
           },
           {
             "name": "MAE como % del mes promedio",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -755,11 +906,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "0.0%"
+            "formatString": "0.0%",
+            "lineageTag": "67c0a2cb-233e-4957-b233-5627d0a26bff"
           },
           {
             "name": "Aviso modelo sin datos",
+            "displayFolder": "Indicadores",
             "expression": [
               "IF (",
               "    HASONEVALUE ( dim_modelo[modelo_id] ) && ISBLANK ( [MAE] ),",
@@ -767,10 +919,11 @@
               "    \"\"",
               ")"
             ],
-            "displayFolder": "Indicadores"
+            "lineageTag": "9cdd3ec0-6c6a-4630-9f72-5ce724ca188d"
           },
           {
             "name": "Viajeros mismos meses 2019",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR Meses = VALUES ( dim_fecha[mes_num] )",
               "RETURN",
@@ -781,30 +934,31 @@
               "        TREATAS ( Meses, dim_fecha[mes_num] )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "e23faaca-cf8e-408d-885a-f121af478c68"
           },
           {
             "name": "Índice de recuperación",
+            "displayFolder": "Indicadores",
             "expression": [
               "IF (",
               "    MIN ( dim_fecha[anio] ) >= 2019,",
               "    DIVIDE ( [Viajeros], [Viajeros mismos meses 2019] ) * 100",
               ")"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "0.0"
+            "formatString": "0.0",
+            "lineageTag": "ce46f89a-58d5-4ccb-b543-a28914c77600"
           },
           {
             "name": "Nivel 2019",
-            "expression": [
-              "IF ( NOT ISBLANK ( [Índice de recuperación] ), 100 )"
-            ],
             "displayFolder": "Indicadores",
-            "formatString": "0.0"
+            "expression": "IF ( NOT ISBLANK ( [Índice de recuperación] ), 100 )",
+            "formatString": "0.0",
+            "lineageTag": "cc01256a-9208-47f7-9bd0-c9e6af2c2791"
           },
           {
             "name": "Límite inferior 80 %",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -822,11 +976,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "145ed3ba-0da7-4e41-9b9a-9abd1274292a"
           },
           {
             "name": "Límite superior 80 %",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -844,11 +999,12 @@
               "        )",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "#,0"
+            "formatString": "#,0",
+            "lineageTag": "0c408b7e-0f20-472e-ba94-884f6380881d"
           },
           {
             "name": "Pérdida de ajuste",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -865,11 +1021,12 @@
               "        perdidas_lstm[config] = Configuracion",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "0.0000"
+            "formatString": "0.0000",
+            "lineageTag": "fc54cd06-edcf-47b2-b5c1-6b8f0da55365"
           },
           {
             "name": "Pérdida de validación",
+            "displayFolder": "Indicadores",
             "expression": [
               "VAR SerieActiva =",
               "    IF (",
@@ -886,11 +1043,12 @@
               "        perdidas_lstm[config] = Configuracion",
               "    )"
             ],
-            "displayFolder": "Indicadores",
-            "formatString": "0.0000"
+            "formatString": "0.0000",
+            "lineageTag": "160f6f75-7682-4e83-9eaf-76f1d35ca686"
           },
           {
             "name": "Aviso entrenamiento",
+            "displayFolder": "Indicadores",
             "expression": [
               "IF (",
               "    ISBLANK ( [Pérdida de ajuste] ),",
@@ -898,16 +1056,17 @@
               "    \"MSE estandarizado; no está expresado en viajeros. El filtro de fechas no cambia el entrenamiento.\"",
               ")"
             ],
-            "displayFolder": "Indicadores"
+            "lineageTag": "ea382019-e914-413a-98c4-a108e658a1b5"
           },
           {
             "name": "Selección activa",
+            "displayFolder": "Indicadores",
             "expression": [
               "SELECTEDVALUE ( dim_serie[serie], \"Total nacional\" ) & \" | \" &",
               "FORMAT ( MIN ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" ) & \" a \" &",
               "FORMAT ( MAX ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" )"
             ],
-            "displayFolder": "Indicadores"
+            "lineageTag": "3274b972-73e2-421a-bd4d-c9bbe20b460f"
           }
         ],
         "partitions": [
@@ -915,114 +1074,11 @@
             "name": "Medidas",
             "mode": "import",
             "source": {
-              "type": "m",
-              "expression": [
-                "#table(type table [Id = Int64.Type], {{1}})"
-              ]
+              "expression": "#table(type table [Id = Int64.Type], {{1}})",
+              "type": "m"
             }
           }
         ]
-      }
-    ],
-    "relationships": [
-      {
-        "name": "53266940-349e-5e1a-9001-4a4ac492c692",
-        "fromTable": "hechos_viajeros",
-        "fromColumn": "serie_id",
-        "fromCardinality": "many",
-        "toTable": "dim_serie",
-        "toColumn": "serie_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "94f141b1-574a-5b7e-9768-00722ecab019",
-        "fromTable": "hechos_pronosticos",
-        "fromColumn": "serie_id",
-        "fromCardinality": "many",
-        "toTable": "dim_serie",
-        "toColumn": "serie_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "53bd9fb0-4bdf-5553-a3d4-00c4b6cb3070",
-        "fromTable": "metricas_modelos",
-        "fromColumn": "serie_id",
-        "fromCardinality": "many",
-        "toTable": "dim_serie",
-        "toColumn": "serie_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "a9a5bc5a-9b39-5c41-b465-3dabcdff0710",
-        "fromTable": "perdidas_lstm",
-        "fromColumn": "serie_id",
-        "fromCardinality": "many",
-        "toTable": "dim_serie",
-        "toColumn": "serie_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "18ce84fb-c43e-5bba-9aac-bb2e964aa067",
-        "fromTable": "similitud_series",
-        "fromColumn": "serie_id",
-        "fromCardinality": "many",
-        "toTable": "dim_serie",
-        "toColumn": "serie_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "9b62d063-69f4-5f25-a228-ec9476d4ea9f",
-        "fromTable": "hechos_viajeros",
-        "fromColumn": "fecha",
-        "fromCardinality": "many",
-        "toTable": "dim_fecha",
-        "toColumn": "fecha",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "8c12f5c2-0166-5ec3-8e72-7715dd357662",
-        "fromTable": "hechos_pronosticos",
-        "fromColumn": "fecha",
-        "fromCardinality": "many",
-        "toTable": "dim_fecha",
-        "toColumn": "fecha",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "97d7fefb-986f-5cfb-b026-abde777afe56",
-        "fromTable": "hechos_pronosticos",
-        "fromColumn": "modelo_id",
-        "fromCardinality": "many",
-        "toTable": "dim_modelo",
-        "toColumn": "modelo_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
-      },
-      {
-        "name": "e9101aef-806a-52dc-b9a0-cff6885b613e",
-        "fromTable": "metricas_modelos",
-        "fromColumn": "modelo_id",
-        "fromCardinality": "many",
-        "toTable": "dim_modelo",
-        "toColumn": "modelo_id",
-        "toCardinality": "one",
-        "crossFilteringBehavior": "oneDirection",
-        "isActive": true
       }
     ]
   }

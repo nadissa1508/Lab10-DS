@@ -1,19 +1,18 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "resumen_restablecer",
   "position": {
     "x": 970,
-    "y": 130,
+    "y": 110,
     "z": 5,
+    "height": 52,
     "width": 290,
-    "height": 70,
     "tabOrder": 5
   },
   "visual": {
     "visualType": "actionButton",
-    "objects": {},
-    "visualContainerObjects": {
-      "title": [
+    "objects": {
+      "text": [
         {
           "properties": {
             "show": {
@@ -22,7 +21,14 @@
                   "Value": "true"
                 }
               }
-            },
+            }
+          }
+        },
+        {
+          "selector": {
+            "id": "default"
+          },
+          "properties": {
             "text": {
               "expr": {
                 "Literal": {
@@ -42,9 +48,24 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#011C40'"
+                      "Value": "'#FFFFFF'"
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

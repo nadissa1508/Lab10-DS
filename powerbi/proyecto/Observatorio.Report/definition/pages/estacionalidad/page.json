@@ -1,11 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "estacionalidad",
   "displayName": "Estacionalidad",
   "displayOption": "FitToPage",
-  "height": 900,
+  "height": 840,
   "width": 1280,
-  "visualInteractions": [],
   "objects": {
     "background": [
       {
