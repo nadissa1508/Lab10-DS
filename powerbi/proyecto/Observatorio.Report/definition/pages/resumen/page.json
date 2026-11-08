@@ -15,6 +15,11 @@
       "source": "v2",
       "target": "v1",
       "type": "DataFilter"
+    },
+    {
+      "source": "resumen_serie",
+      "target": "v2",
+      "type": "NoFilter"
     }
   ],
   "objects": {

@@ -4,7 +4,12 @@
 // Valores observados.
 
 Viajeros =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     CALCULATE (
         SUM ( hechos_viajeros[viajeros] ),
@@ -58,7 +63,12 @@ IF (
 // Evalúa cada modelo sobre los 63 meses de prueba.
 
 Pronóstico =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -71,7 +81,12 @@ RETURN
 // Formato: número entero con separador de miles.
 
 MAE =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -84,7 +99,12 @@ RETURN
 // Existe una fila por serie y modelo.
 
 RMSE =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -96,7 +116,12 @@ RETURN
     )
 
 MAE como % del mes promedio =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -136,7 +161,12 @@ Nivel 2019 =
 IF ( NOT ISBLANK ( [Índice de recuperación] ), 100 )
 
 Límite inferior 80 % =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -148,7 +178,12 @@ RETURN
     )
 
 Límite superior 80 % =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 RETURN
     IF (
         HASONEVALUE ( dim_modelo[modelo_id] ),
@@ -160,7 +195,12 @@ RETURN
     )
 
 Pérdida de ajuste =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], "Modelo A (20 neuronas, 1 capa(s), dropout 0.0)" )
 RETURN
     CALCULATE (
@@ -171,7 +211,12 @@ RETURN
     )
 
 Pérdida de validación =
-VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], "total" )
+VAR SerieActiva =
+    IF (
+        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),
+        BLANK (),
+        SELECTEDVALUE ( dim_serie[serie_id], "total" )
+    )
 VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], "Modelo A (20 neuronas, 1 capa(s), dropout 0.0)" )
 RETURN
     CALCULATE (

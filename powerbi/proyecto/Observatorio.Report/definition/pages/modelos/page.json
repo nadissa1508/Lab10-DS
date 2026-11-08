@@ -15,6 +15,11 @@
       "source": "v7",
       "target": "tabla_modelos",
       "type": "DataFilter"
+    },
+    {
+      "source": "modelos_serie",
+      "target": "v9",
+      "type": "NoFilter"
     }
   ],
   "objects": {

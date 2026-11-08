@@ -578,7 +578,12 @@
           {
             "name": "Viajeros",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    CALCULATE (",
               "        SUM ( hechos_viajeros[viajeros] ),",
@@ -668,7 +673,12 @@
           {
             "name": "Pronóstico",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -685,7 +695,12 @@
           {
             "name": "MAE",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -702,7 +717,12 @@
           {
             "name": "RMSE",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -719,7 +739,12 @@
           {
             "name": "MAE como % del mes promedio",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -781,7 +806,12 @@
           {
             "name": "Límite inferior 80 %",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -798,7 +828,12 @@
           {
             "name": "Límite superior 80 %",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "RETURN",
               "    IF (",
               "        HASONEVALUE ( dim_modelo[modelo_id] ),",
@@ -815,7 +850,12 @@
           {
             "name": "Pérdida de ajuste",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], \"Modelo A (20 neuronas, 1 capa(s), dropout 0.0)\" )",
               "RETURN",
               "    CALCULATE (",
@@ -831,7 +871,12 @@
           {
             "name": "Pérdida de validación",
             "expression": [
-              "VAR SerieActiva = SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "VAR SerieActiva =",
+              "    IF (",
+              "        ISEMPTY ( VALUES ( dim_serie[serie_id] ) ),",
+              "        BLANK (),",
+              "        SELECTEDVALUE ( dim_serie[serie_id], \"total\" )",
+              "    )",
               "VAR Configuracion = SELECTEDVALUE ( perdidas_lstm[config], \"Modelo A (20 neuronas, 1 capa(s), dropout 0.0)\" )",
               "RETURN",
               "    CALCULATE (",
