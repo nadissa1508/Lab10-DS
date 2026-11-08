@@ -6,7 +6,7 @@ Fecha: 8 de noviembre de 2026.
 
 Se verificaron los datos, las ocho visualizaciones web y las cinco páginas de Power BI Desktop. Se guardó `powerbi/observatorio_v1.0.pbix` con los datos cargados y la vista inicial. Se conservaron las definiciones editables en `powerbi/proyecto/`.
 
-Las pruebas web son automatizadas. Las consultas DAX comprueban los cálculos del modelo local de Desktop. La inspección de la interfaz comprueba la presentación y las interacciones indicadas abajo. Estas comprobaciones no permiten comparar la facilidad de aprendizaje ni la velocidad de uso de una persona.
+Las pruebas del navegador comprueban el funcionamiento de la web. Las consultas DAX comprueban los cálculos del modelo local de Desktop. La inspección de la interfaz comprueba la presentación y las interacciones indicadas abajo. La comparación de facilidad de aprendizaje y velocidad de uso requiere completar los mismos recorridos en ambas interfaces.
 
 ## Datos
 
@@ -28,7 +28,7 @@ Se ejecutó `npm test` con Microsoft Edge 157.0.4341.42 sin interfaz visible, en
 | LSTM para Europa | Aparecen mensajes sin pronóstico y sin entrenamiento |
 | Período anterior a la prueba | No hay predicciones y se conserva el entrenamiento |
 
-Los siete casos pasaron. Las mediciones automatizadas están en [pruebas_web.json](evidencias/pruebas_web.json). Se incluyen capturas de [Resumen](evidencias/web/resumen.png), [Estacionalidad](evidencias/web/estacionalidad.png), [Pronósticos](evidencias/web/pronosticos.png) y [Modelos y confianza](evidencias/web/modelos.png). La compilación con `npm run build` terminó correctamente.
+Los siete casos pasaron. Los resultados están en [pruebas_web.json](evidencias/pruebas_web.json). Se incluyen capturas de [Resumen](evidencias/web/resumen.png), [Estacionalidad](evidencias/web/estacionalidad.png), [Pronósticos](evidencias/web/pronosticos.png) y [Modelos y confianza](evidencias/web/modelos.png). La compilación con `npm run build` terminó correctamente.
 
 ## Power BI Desktop
 
@@ -85,6 +85,6 @@ Para consultas periódicas de indicadores en Windows se recomienda el PBIX por s
 
 ## Límites y pendientes
 
-1. No se dispone de una medición humana comparable de las tres tareas en ambas interfaces. No se atribuyen diferencias de aprendizaje o velocidad a una herramienta.
+1. Falta completar y registrar los tres recorridos equivalentes en ambas interfaces. Con las comprobaciones disponibles no se establecen diferencias de aprendizaje o velocidad de uso.
 2. Los documentos Word y PDF existentes no se actualizaron. La documentación de esta revisión se limita a Markdown y evidencias técnicas.
 3. Falta comprobar `docker compose up --build` cuando esté disponible el servicio de Docker. La web local, sus pruebas y la compilación sí se verificaron.

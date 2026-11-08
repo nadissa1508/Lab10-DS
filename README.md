@@ -104,7 +104,7 @@ No se incluye V5 porque las fuentes versionadas no contienen agregados por vía 
 
 El total nacional de 2019 es 4,132,252 en la web y 4,132,250.60 en los CSV por el redondeo mensual del JSON. Las diferencias y los resultados obtenidos se registran en `docs/validacion.md`.
 
-Desde `dashboard/` se ejecuta `npm test`. En Windows se utiliza Microsoft Edge; en otros sistemas se instala Chromium con `npx playwright install chromium`. Las pruebas comprueban las tres tareas, las ocho gráficas, el enlace V1–V2 y dos selecciones sin pronósticos. Sus tiempos son automatizados y no representan tiempos humanos de uso.
+Desde `dashboard/` se ejecuta `npm test`. En Windows se utiliza Microsoft Edge; en otros sistemas se instala Chromium con `npx playwright install chromium`. Las pruebas comprueban las tres tareas, las ocho gráficas, el enlace V1–V2 y dos selecciones sin pronósticos. Los resultados se registran en `docs/evidencias/pruebas_web.json`. La comparación de uso requiere completar los mismos recorridos en ambas interfaces.
 
 ## Acceso y mantenimiento
 
