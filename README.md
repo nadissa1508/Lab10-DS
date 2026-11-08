@@ -104,7 +104,6 @@ No se incluye V5 porque las fuentes versionadas no contienen agregados por vía 
 
 El total nacional de 2019 es 4,132,252 en la web y 4,132,250.60 en los CSV por el redondeo mensual del JSON. Las diferencias y los resultados obtenidos se registran en `docs/validacion.md`.
 
-Desde `dashboard/` se ejecuta `npm test`. En Windows se utiliza Microsoft Edge; en otros sistemas se instala Chromium con `npx playwright install chromium`. Las pruebas comprueban las tres tareas, las ocho gráficas, el enlace V1–V2 y dos selecciones sin pronósticos. Los resultados se registran en `docs/evidencias/pruebas_web.json`. La comparación de uso requiere completar los mismos recorridos en ambas interfaces.
 
 ## Acceso y mantenimiento
 
@@ -116,11 +115,9 @@ Desde `dashboard/` se ejecuta `npm test`. En Windows se utiliza Microsoft Edge; 
 | Actualización | Regeneración de datos y nueva compilación | Actualización de fuentes CSV y ejecución de Actualizar |
 | Docker Desktop | El uso educativo figura entre los usos gratuitos; otras organizaciones deben revisar las condiciones | No es necesario para abrir el proyecto |
 
-Publicar en web de Power BI permite acceso público sin autenticación y puede exponer datos del modelo. Los datos académicos requieren acceso autorizado. El repositorio y cualquier alojamiento deben conservar esa restricción.
 
 ## Referencias técnicas
 
-Consulta: 8 de noviembre de 2026.
 
 - [Proyectos de Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview).
 - [Carpeta del informe y apertura de PBIR](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report).

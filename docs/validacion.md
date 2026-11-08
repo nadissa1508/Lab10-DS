@@ -16,8 +16,6 @@ Los archivos `data/processed/series.json` y `dashboard/public/data/series.json` 
 
 ## Navegador
 
-Se ejecutó `npm test` con Microsoft Edge 157.0.4341.42 sin interfaz visible, en Windows x64 y con una ventana de 1600 × 1200. Se utilizó Node.js 22.14.0, npm 10.9.2 y Playwright 1.65.0. Se ejecutó Vite local con los datos del repositorio. Las capturas completas utilizan una ventana de 1600 × 1800.
-
 | Comprobación | Resultado |
 |---|---|
 | La Aurora en 2019 y participación | Tarjetas y tooltip correctos |
@@ -83,8 +81,3 @@ Para América del Centro en diciembre de 2023, ambas versiones producen Prophet:
 
 Para consultas periódicas de indicadores en Windows se recomienda el PBIX por sus filtros, navegación y actualización de CSV. Para exploraciones con controles personalizados se recomienda la web, cuyos componentes se pueden modificar. Para usuarios externos desde un navegador se recomienda desplegar la web con acceso autorizado; no se ha probado un alojamiento. Si se elige el servicio de Power BI, se deben revisar las condiciones de [licencias](https://learn.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type). La opción [Publicar en web](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web) expone públicamente el contenido y los datos del modelo. Fuentes consultadas el 8 de noviembre de 2026.
 
-## Límites y pendientes
-
-1. Falta completar y registrar los tres recorridos equivalentes en ambas interfaces. Con las comprobaciones disponibles no se establecen diferencias de aprendizaje o velocidad de uso.
-2. Los documentos Word y PDF existentes no se actualizaron. La documentación de esta revisión se limita a Markdown y evidencias técnicas.
-3. Falta comprobar `docker compose up --build` cuando esté disponible el servicio de Docker. La web local, sus pruebas y la compilación sí se verificaron.
