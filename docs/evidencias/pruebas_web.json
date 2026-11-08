@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-11-08",
+  "zona_horaria": "America/Guatemala",
+  "revision_web": "fd6498e",
+  "modalidad": "automatizada; no representa tiempos humanos de uso",
+  "entorno": {
+    "sistema": "Windows x64",
+    "node": "22.14.0",
+    "npm": "10.9.2",
+    "playwright": "1.65.0",
+    "navegador": "Microsoft Edge 157.0.4341.42, headless",
+    "ventana_capturas": [1600, 1800],
+    "ventana": [
+      1600,
+      1200
+    ],
+    "servidor": "Vite en desarrollo; 127.0.0.1:5173"
+  },
+  "pruebas": [
+    {
+      "tarea": 1,
+      "segundos": 0.24572360000000004,
+      "acciones": 3,
+      "resultado": {
+        "viajeros": 1481702,
+        "participacion": 35.85700968866371,
+        "mesMayor": "2019-12"
+      },
+      "modalidad": "automatizada"
+    },
+    {
+      "tarea": 2,
+      "segundos": 0.7443380999999999,
+      "acciones": 6,
+      "resultado": {
+        "anio2019": 4132252,
+        "trimestreMayor": 1079402,
+        "diciembre": 449114,
+        "regreso": "Total nacional; ene 2009 a jun 2026; mensual"
+      },
+      "modalidad": "automatizada"
+    },
+    {
+      "tarea": 3,
+      "segundos": 0.8406262999999999,
+      "acciones": 8,
+      "resultado": {
+        "Prophet": 185430,
+        "Holt-Winters": 94203,
+        "LSTM": 75532,
+        "menorRMSE": "Prophet",
+        "RMSE": 67838
+      },
+      "modalidad": "automatizada"
+    }
+  ],
+  "resultado": {
+    "startTime": "2026-11-08T17:46:12.366Z",
+    "duration": 9425.485,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

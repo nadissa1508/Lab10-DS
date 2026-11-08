@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-11-08",
+  "archivos_con_esquema_validados": 67,
+  "referencias_verificadas": 57,
+  "tablas": 9,
+  "medidas": 24,
+  "relaciones": 9,
+  "sha256_modelo": "0f5f76948bc17a84a4bf925106244a4219b39d2cb70a02d3997159e74221c4aa",
+  "biblioteca_tom": "Microsoft.AnalysisServices.retail.amd64 19.84.1",
+  "apertura_en_desktop": false,
+  "evaluacion_dax": false,
+  "carga_power_query": false
+}
