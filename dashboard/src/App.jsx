@@ -4,19 +4,23 @@ import Participacion from './components/Participacion.jsx'
 import Recuperacion from './components/Recuperacion.jsx'
 import Glosario from './components/Glosario.jsx'
 import ErrorModelos, { TablaModelos } from './components/ErrorModelos.jsx'
+import Estacionalidad from './components/Estacionalidad.jsx'
+import Pronosticos, { MODELOS } from './components/Pronosticos.jsx'
+import Aprendizaje from './components/Aprendizaje.jsx'
+import Similitud from './components/Similitud.jsx'
 import { useSeries, nf, fmtCorto, etiquetaMes, sumaRango } from './data.js'
 
 const TITULOS = {
   resumen: 'Resumen: ¿cuántos viajeros llegan y de dónde?',
   temporal: 'Estacionalidad: ¿cuándo llegan y quién se recuperó?',
+  pronostico: 'Pronósticos: ¿qué se estimó y con qué límites?',
   modelos: 'Modelos y confianza: ¿qué pronóstico conviene usar?',
 }
 
 const PAGINAS = [
   { id: 'resumen', nombre: 'Resumen', icono: '▦', activa: true },
-  { id: 'demanda', nombre: 'Demanda y mercados', icono: '◔' },
   { id: 'temporal', nombre: 'Estacionalidad', icono: '∿', activa: true },
-  { id: 'pronostico', nombre: 'Pronósticos', icono: '↗' },
+  { id: 'pronostico', nombre: 'Pronósticos', icono: '↗', activa: true },
   { id: 'modelos', nombre: 'Modelos y confianza', icono: '✓', activa: true },
 ]
 
@@ -43,7 +47,7 @@ export default function App() {
   const serie = datos?.series.find((s) => s.clave === clave)
   const vacio = r[1] < r[0]
 
-  // Indicadores de la serie y el período visibles.
+  // Calcula los indicadores del período seleccionado.
   const k = useMemo(() => {
     if (!serie) return null
     let max = -1, min = Infinity, iMax = r[0], iMin = r[0]
@@ -66,9 +70,8 @@ export default function App() {
         <div className="marca"><span className="logo">GT</span><div><b>Observatorio</b><small>Turismo · Guatemala</small></div></div>
         <nav aria-label="Secciones del observatorio">
           {PAGINAS.map((p) => (
-            <button key={p.id} className={'nav' + (p.id === pagina ? ' on' : '')} disabled={!p.activa} aria-current={p.id === pagina ? 'page' : undefined}
-              title={p.activa ? '' : 'Disponible en la entrega final'} onClick={() => setPagina(p.id)}>
-              <span aria-hidden>{p.icono}</span>{p.nombre}{!p.activa && <em>pronto</em>}
+            <button key={p.id} className={'nav' + (p.id === pagina ? ' on' : '')} aria-current={p.id === pagina ? 'page' : undefined} onClick={() => setPagina(p.id)}>
+              <span aria-hidden>{p.icono}</span>{p.nombre}
             </button>
           ))}
         </nav>
@@ -87,16 +90,32 @@ export default function App() {
                 {datos.series.map((s) => <option key={s.clave} value={s.clave}>{s.grupo === 'General' ? s.nombre : `${s.grupo} · ${s.nombre}`}</option>)}
               </select>
             </label>
+            <label>Desde
+              <select value={r[0]} onChange={(e) => setRango([+e.target.value, Math.max(+e.target.value, r[1])])}>
+                {datos.meses.map((mes, i) => <option key={mes} value={i}>{etiquetaMes(mes)}</option>)}
+              </select>
+            </label>
+            <label>Hasta
+              <select value={r[1]} onChange={(e) => setRango([Math.min(r[0], +e.target.value), +e.target.value])}>
+                {datos.meses.map((mes, i) => <option key={mes} value={i}>{etiquetaMes(mes)}</option>)}
+              </select>
+            </label>
+            <label>Modelo
+              <select value={modelo} onChange={(e) => setModelo(e.target.value)}>
+                {MODELOS.map((m) => <option key={m}>{m}</option>)}
+              </select>
+            </label>
             <div className="seg" role="group" aria-label="Nivel de detalle">
               <span>Nivel de detalle</span>
               {['mensual', 'trimestral', 'anual'].map((n) => (
                 <button key={n} className={nivel === n ? 'on' : ''} aria-pressed={nivel === n} onClick={() => setNivel(n)}>{n}</button>
               ))}
             </div>
-            <button className="reset" onClick={() => { setClave('total'); setModelo('Prophet'); setNivel('mensual'); setRango(null) }}>Restablecer filtros</button>
+            <button className="reset" onClick={() => { setClave('total'); setModelo('Prophet'); setNivel('mensual'); setRango(null); setPagina('resumen') }}>Restablecer filtros</button>
             <button className="reset ayuda" onClick={() => setGlosario(true)}>? Glosario</button>
           </div>
         </header>
+        <p className="seleccion" role="status">{serie.nombre} · {etiquetaMes(datos.meses[r[0]])} a {etiquetaMes(datos.meses[r[1]])} · {nivel} · {modelo}</p>
 
         <section className="kpis" aria-label="Indicadores del período seleccionado">
           <Kpi titulo="Viajeros en el período" valor={vacio ? '—' : nf.format(k.total)} nota={`${etiquetaMes(datos.meses[r[0]])} – ${etiquetaMes(datos.meses[r[1]])}`} />
@@ -123,10 +142,29 @@ export default function App() {
 
         {pagina === 'temporal' && <div className="grid grid-1">
           <section className="card">
+            <h2>¿En qué meses se concentran los viajeros?</h2>
+            <p className="sub">Cada celda representa un mes. Un tono más oscuro indica más viajeros. Haga clic en una celda para filtrar el período del tablero.</p>
+            <Estacionalidad datos={datos} serie={serie} rango={r} onRango={setRango} />
+            <p className="nota">Una celda ausente significa que el mes queda fuera de la selección o no tiene dato. No equivale a cero. En 2026 solo se dispone de enero a junio.</p>
+          </section>
+          <section className="card">
             <h2>¿Qué mercados ya volvieron al nivel de 2019?</h2>
             <p className="sub">Cada línea compara los viajeros de un período con los mismos meses de 2019 (100 = igual que en 2019; 80 = 20 % menos). Haga clic en una línea para seleccionar esa serie en todo el tablero.</p>
             <Recuperacion datos={datos} seleccion={clave} nivel={nivel} rango={r} onSeleccion={setClave} />
-            <p className="nota"><b>Observado:</b> el índice describe cuánto se parece cada período a 2019; no explica por qué cambió. Desde 2023 la fuente es otra (sistema depurado del INGUAT), por lo que parte de la diferencia puede deberse al cambio de registro. 2026 incluye solo enero a junio.</p>
+            <p className="nota">El índice describe cuánto se parece cada período a 2019; no explica por qué cambió. Desde 2023 la fuente es otra (sistema depurado del INGUAT), por lo que parte de la diferencia puede deberse al cambio de registro. 2026 incluye solo enero a junio.</p>
+          </section>
+        </div>}
+
+        {pagina === 'pronostico' && <div className="grid grid-1">
+          <section className="card">
+            <h2>¿Qué estimó {modelo} para {serie.nombre}?</h2>
+            <p className="sub">El dato observado se muestra en azul y la estimación en rosa con línea discontinua. Se reutilizan los pronósticos de abril de 2021 a junio de 2026; no se estiman meses posteriores.</p>
+            <Pronosticos datos={datos} serie={serie} modelo={modelo} nivel={nivel} rango={r} />
+          </section>
+          <section className="card">
+            <h2>¿Cómo cambió el error durante el entrenamiento LSTM?</h2>
+            <p className="sub">Se comparan el error de ajuste y el de validación por época. La marca rosa indica la mejor época registrada.</p>
+            <Aprendizaje datos={datos} clave={clave} />
           </section>
         </div>}
 
@@ -141,7 +179,12 @@ export default function App() {
             <h2>Comparación de modelos</h2>
             <p className="sub">Ordenada de menor a mayor RMSE. Cambie la serie en el selector superior.</p>
             <TablaModelos datos={datos} clave={clave} modelo={modelo} onModelo={setModelo} />
-            <p className="nota"><b>Limitación:</b> todos los modelos aprendieron con datos que terminan en plena pandemia (mar 2021) y se evalúan a 63 meses de distancia, por eso sus errores son altos. Sirven para comparar modelos entre sí y como orden de magnitud, no como cifra exacta para planificar.</p>
+            <p className="nota">Todos los modelos aprendieron con datos que terminan en plena pandemia (mar 2021) y se evalúan a 63 meses de distancia. Los errores corresponden al conjunto de prueba completo y no cambian con el filtro de fechas.</p>
+          </section>
+          <section className="card card-ancha">
+            <h2>¿Qué series tienen un comportamiento parecido?</h2>
+            <p className="sub">Cada punto representa una serie y cada símbolo distingue un grupo. Haga clic en un punto para seleccionar su serie en el tablero.</p>
+            <Similitud datos={datos} seleccion={clave} onSeleccion={setClave} />
           </section>
         </div>}
       </main>

@@ -10,7 +10,7 @@ export function useSeries() {
   const [error, setError] = useState(null)
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/series.json')
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
       .then(setDatos)
       .catch((e) => setError(e.message))
   }, [])
@@ -22,7 +22,7 @@ export const etiquetaMes = (ym) => {
   return `${MESES_ES[+m - 1]} ${y}`
 }
 
-// Agrupa los meses [desde, hasta] (índices) en cubetas mensual / trimestral / anual.
+// Agrupa meses y conserva los períodos parciales.
 export function agrupar(meses, valores, nivel, desde = 0, hasta = meses.length - 1) {
   const mapa = new Map()
   for (let i = desde; i <= hasta; i++) {
@@ -38,9 +38,7 @@ export function agrupar(meses, valores, nivel, desde = 0, hasta = meses.length -
   return [...mapa.values()].map((c) => ({ ...c, valor: c.n ? c.valor : null, parcial: c.n < esperado }))
 }
 
-// Índice de recuperación (2019 = 100) por cubeta, desde 2019 en adelante. Cada cubeta se
-// compara con los mismos meses de 2019, de modo que un año o trimestre parcial no
-// aparece como una caída.
+// Compara los mismos meses con 2019.
 export function indiceRecuperacion(meses, valores, nivel, desde = 0, hasta = meses.length - 1) {
   const base = {}
   meses.forEach((ym, i) => { if (ym.startsWith('2019-')) base[ym.slice(5)] = valores[i] })

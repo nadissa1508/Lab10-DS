@@ -28,7 +28,7 @@ export default function Participacion({ datos, seleccion, rango, onSeleccion }) 
       axisLabel: { color: C.texto, fontSize: 12.5, fontWeight: 600 }, axisLine: { show: false }, axisTick: { show: false } },
     series: [{
       type: 'bar', barWidth: 20, cursor: 'pointer',
-      data: filas.map((f) => ({ value: +f.pct.toFixed(2),
+      data: filas.map((f) => ({ value: f.pct,
         itemStyle: f.clave === seleccion
           ? { color: C.marino, borderRadius: [0, 4, 4, 0] }
           : { color: C.celeste, borderColor: C.azul, borderWidth: 1.5, borderRadius: [0, 4, 4, 0] } })),
