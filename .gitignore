@@ -21,3 +21,10 @@ mio/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Archivos locales de desarrollo
+tmp/
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
+dashboard/test-results/
+dashboard/playwright-report/

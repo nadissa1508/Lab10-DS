@@ -47,7 +47,7 @@ export default function Pronosticos({ datos, serie, modelo, nivel, rango }) {
   if (!pron) return <p className="vacio">No hay pronóstico {modelo} para {serie.nombre}. LSTM está disponible para el total nacional y América del Centro.</p>
   if (!hayPred) return <p className="vacio">No hay predicciones en este período. Seleccione meses entre abril de 2021 y junio de 2026.</p>
   return <>
-    <label className="check"><input type="checkbox" checked={intervalo} onChange={(e) => setIntervalo(e.target.checked)} /> Mostrar intervalo de predicción del 80 %</label>
+    <label className="check"><input type="checkbox" checked={intervalo && hayIntervalo} disabled={!hayIntervalo} onChange={(e) => setIntervalo(e.target.checked)} /> Mostrar intervalo de predicción del 80 %</label>
     <Chart option={option} height={370} label={`Valores observados y estimados por ${modelo} para ${serie.nombre}`} />
     <p className="nota">{hayIntervalo ? 'La banda representa el intervalo mensual disponible.' : nivel !== 'mensual' ? 'Los intervalos se muestran en el nivel mensual; sumar límites mensuales no produce un intervalo válido para un año o trimestre.' : 'Este modelo no incluye intervalos de predicción.'}</p>
     <p className="nota">Se conservan los pronósticos originales, incluidos los negativos. Un valor negativo no representa viajeros posibles; indica una limitación del modelo. Las métricas se calculan sobre los 63 meses de prueba.</p>

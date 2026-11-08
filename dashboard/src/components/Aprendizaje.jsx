@@ -11,7 +11,7 @@ export default function Aprendizaje({ datos, clave }) {
     grid: { left: 65, right: 20, top: 50, bottom: 45 },
     legend: { data: ['Ajuste', 'Validación'], textStyle: { color: C.texto } },
     tooltip: { trigger: 'axis', valueFormatter: (v) => Number(v).toFixed(4) },
-    xAxis: { type: 'category', name: 'Época', data: curva?.ajuste.map((_, i) => i + 1) ?? [], axisLabel: { color: C.textoSuave } },
+    xAxis: { type: 'category', name: 'Época', nameLocation: 'middle', nameGap: 25, data: curva?.ajuste.map((_, i) => i + 1) ?? [], axisLabel: { color: C.textoSuave } },
     yAxis: { type: 'value', name: 'MSE estandarizado', axisLabel: { color: C.textoSuave } },
     series: [
       { name: 'Ajuste', type: 'line', showSymbol: false, data: curva?.ajuste ?? [], itemStyle: { color: C.marino } },
