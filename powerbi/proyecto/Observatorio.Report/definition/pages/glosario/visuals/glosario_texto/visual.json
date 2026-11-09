@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "glosario_texto",
   "position": {
-    "x": 20,
+    "x": 220,
     "y": 215,
     "z": 3,
     "width": 1240,

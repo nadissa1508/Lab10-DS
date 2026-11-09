@@ -237,3 +237,36 @@ Selección activa =
 SELECTEDVALUE ( dim_serie[serie], "Total nacional" ) & " | " &
 FORMAT ( MIN ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" ) & " a " &
 FORMAT ( MAX ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" )
+
+
+Viajeros por composición =
+SUM ( hechos_composicion[viajeros] )
+
+Participación en la composición =
+IF (
+    HASONEVALUE ( hechos_composicion[dimension] ),
+    DIVIDE (
+        [Viajeros por composición],
+        CALCULATE (
+            [Viajeros por composición],
+            REMOVEFILTERS ( hechos_composicion[categoria], hechos_composicion[orden_categoria] )
+        )
+    )
+)
+
+Aviso composición =
+IF (
+    NOT HASONEVALUE ( hechos_composicion[dimension] ),
+    "Seleccione una sola dimensión: vía de ingreso o tipo de viajero.",
+    IF (
+        ISBLANK ( [Viajeros por composición] ),
+        "No hay información para esta selección. Use Restablecer filtros.",
+        ""
+    )
+)
+
+Selección composición =
+"Total nacional | " &
+SELECTEDVALUE ( hechos_composicion[dimension], "Sin dimensión" ) & " | " &
+FORMAT ( MIN ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" ) & " a " &
+FORMAT ( MAX ( dim_fecha[fecha] ), "mmm yyyy", "es-GT" )

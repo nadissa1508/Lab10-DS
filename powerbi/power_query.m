@@ -75,3 +75,13 @@ let
     Tipos = Table.TransformColumnTypes(Encabezados, {{"serie_id", type text}, {"PC1", type number}, {"PC2", type number}, {"grupo_kmedias", Int64.Type}, {"var_PC1", type number}, {"var_PC2", type number}}, "en-US")
 in
     Tipos
+
+
+
+// ---- hechos_composicion (V5) ----------------------------------------------------------------
+let
+    Origen = Csv.Document(File.Contents(RutaDatos & "hechos_composicion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+    Tipos = Table.TransformColumnTypes(Encabezados, {{"fecha", type date}, {"dimension_id", type text}, {"dimension", type text}, {"orden_dimension", Int64.Type}, {"categoria", type text}, {"orden_categoria", Int64.Type}, {"viajeros", type number}}, "en-US")
+in
+    Tipos

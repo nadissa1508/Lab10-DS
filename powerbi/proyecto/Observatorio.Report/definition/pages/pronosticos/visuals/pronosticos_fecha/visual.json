@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "pronosticos_fecha",
   "position": {
-    "x": 400,
+    "x": 600,
     "y": 105,
     "z": 3,
     "height": 68,

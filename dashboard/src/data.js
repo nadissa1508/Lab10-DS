@@ -17,6 +17,19 @@ export function useSeries() {
   return { datos, error }
 }
 
+// V5: agregados por vía y tipo de viajero (Laboratorio 10, src/exportar_composicion.py).
+export function useComposicion() {
+  const [comp, setComp] = useState(null)
+  const [error, setError] = useState(null)
+  useEffect(() => {
+    fetch(import.meta.env.BASE_URL + 'data/composicion.json')
+      .then((r) => { if (!r.ok) throw new Error('No se pudo leer la composición'); return r.json() })
+      .then(setComp)
+      .catch((e) => setError(e.message))
+  }, [])
+  return { comp, error }
+}
+
 export const etiquetaMes = (ym) => {
   const [y, m] = ym.split('-')
   return `${MESES_ES[+m - 1]} ${y}`

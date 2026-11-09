@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "estacionalidad_serie",
   "position": {
-    "x": 20,
+    "x": 220,
     "y": 105,
     "z": 2,
     "height": 68,

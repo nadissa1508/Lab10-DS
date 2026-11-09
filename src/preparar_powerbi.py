@@ -115,6 +115,21 @@ def tabla_similitud() -> pd.DataFrame:
     return pca[["serie_id", "PC1", "PC2", "grupo_kmedias", "var_PC1", "var_PC2"]]
 
 
+DIMENSIONES_COMPOSICION = {"via": ("Vía de ingreso", 1), "tipo": ("Tipo de viajero", 2)}
+ORDEN_CATEGORIAS = {"Terrestre": 1, "Aérea": 2, "Marítima": 3, "Turista": 1, "Excursionista": 2}
+
+
+def tabla_composicion() -> pd.DataFrame:
+    """V5: agregados por vía y tipo de viajero exportados en el Laboratorio 10 (src/exportar_composicion.py)."""
+    comp = pd.read_csv(RAIZ / "data" / "processed" / "composicion_mensual.csv")
+    comp["fecha"] = pd.to_datetime(comp["fecha"] + "-01").dt.strftime("%Y-%m-%d")
+    comp["dimension_id"] = comp["dimension"]
+    comp["dimension"] = comp["dimension_id"].map(lambda d: DIMENSIONES_COMPOSICION[d][0])
+    comp["orden_dimension"] = comp["dimension_id"].map(lambda d: DIMENSIONES_COMPOSICION[d][1])
+    comp["orden_categoria"] = comp["categoria"].map(ORDEN_CATEGORIAS)
+    return comp[["fecha", "dimension_id", "dimension", "orden_dimension", "categoria", "orden_categoria", "viajeros"]]
+
+
 def validar(tablas: dict[str, pd.DataFrame], pron: pd.DataFrame) -> None:
     """Falla si las tablas podrían duplicar registros o alterar los resultados del Lab 10."""
     series = set(tablas["dim_serie"]["serie_id"])
@@ -149,6 +164,18 @@ def validar(tablas: dict[str, pd.DataFrame], pron: pd.DataFrame) -> None:
     dif = (cruce["real"] - cruce["viajeros"]).abs().max()
     if pd.isna(dif) or dif > 0.5:
         raise ValueError(f"El valor real de los pronósticos difiere de la serie observada (máx. {dif})")
+
+    # V5: cada dimensión reparte el total nacional del mes; no se suman entre sí.
+    comp = tablas["hechos_composicion"]
+    if comp.duplicated(["fecha", "dimension_id", "categoria"]).any() or comp["orden_categoria"].isna().any():
+        raise ValueError("hechos_composicion tiene claves duplicadas o categorías desconocidas")
+    if not set(comp["fecha"]) <= fechas:
+        raise ValueError("hechos_composicion tiene fechas que no están en dim_fecha")
+    total = viajeros[viajeros["serie_id"] == "total"].set_index("fecha")["viajeros"]
+    for dim, g in comp.groupby("dimension_id"):
+        dif = (g.groupby("fecha")["viajeros"].sum().reindex(total.index) - total).abs().max()
+        if pd.isna(dif) or dif > 0.51:
+            raise ValueError(f"La composición por {dim} no concilia con el total nacional (máx. {dif})")
 
     # Cada combinación serie y modelo cubre los 63 meses de prueba.
     if set(metricas["meses_evaluados"]) != {63}:
@@ -232,6 +259,7 @@ def main() -> None:
         "metricas_modelos": tabla_metricas(pron, crudo),
         "perdidas_lstm": tabla_perdidas(),
         "similitud_series": tabla_similitud(),
+        "hechos_composicion": tabla_composicion(),
     }
     validar(tablas, pron)
 

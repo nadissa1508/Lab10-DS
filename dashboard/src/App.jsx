@@ -8,10 +8,12 @@ import Estacionalidad from './components/Estacionalidad.jsx'
 import Pronosticos, { MODELOS } from './components/Pronosticos.jsx'
 import Aprendizaje from './components/Aprendizaje.jsx'
 import Similitud from './components/Similitud.jsx'
+import Composicion from './components/Composicion.jsx'
 import { useSeries, nf, fmtCorto, etiquetaMes, sumaRango } from './data.js'
 
 const TITULOS = {
   resumen: 'Resumen: ¿cuántos viajeros llegan y de dónde?',
+  demanda: 'Demanda y mercados: ¿por qué vía y quiénes ingresan?',
   temporal: 'Estacionalidad: ¿cuándo llegan y quién se recuperó?',
   pronostico: 'Pronósticos: ¿qué se estimó y con qué límites?',
   modelos: 'Modelos y confianza: ¿qué pronóstico conviene usar?',
@@ -19,6 +21,7 @@ const TITULOS = {
 
 const PAGINAS = [
   { id: 'resumen', nombre: 'Resumen', icono: '▦', activa: true },
+  { id: 'demanda', nombre: 'Demanda y mercados', icono: '◔', activa: true },
   { id: 'temporal', nombre: 'Estacionalidad', icono: '∿', activa: true },
   { id: 'pronostico', nombre: 'Pronósticos', icono: '↗', activa: true },
   { id: 'modelos', nombre: 'Modelos y confianza', icono: '✓', activa: true },
@@ -139,6 +142,14 @@ export default function App() {
             <p className="nota">Regiones y fronteras son cortes distintos del mismo total: no se suman entre sí.</p>
           </section>
         </div>}
+
+        {pagina === 'demanda' && <section className="card">
+          <h2>¿Por qué vía y con qué tipo de viajero ingresa el país?</h2>
+          <p className="sub">Cada barra reparte el total de un período entre vías (terrestre, aérea, marítima) o entre turistas y excursionistas. Cambie el nivel de detalle arriba y haga clic en una barra para acotar el período en todo el tablero.</p>
+          {vacio ? <p className="vacio">No hay información para el período seleccionado.</p>
+            : <Composicion datos={datos} nivel={nivel} rango={r} onRango={setRango} />}
+          <p className="nota"><b>Observado:</b> vía y tipo son dos cortes distintos del mismo total; no se suman entre sí. La vía marítima pierde detalle desde 2017 y desde 2023 la fuente cambia, por lo que los cambios de composición en esos años pueden deberse al registro y no a los viajeros. La serie seleccionada arriba no filtra esta vista: siempre es el total nacional.</p>
+        </section>}
 
         {pagina === 'temporal' && <div className="grid grid-1">
           <section className="card">

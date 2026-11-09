@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"dim_fecha\",\"dim_modelo\",\"dim_serie\",\"hechos_pronosticos\",\"hechos_viajeros\",\"metricas_modelos\",\"perdidas_lstm\",\"similitud_series\",\"Medidas\",\"RutaDatos\"]"
+        "value": "[\"dim_fecha\",\"dim_modelo\",\"dim_serie\",\"hechos_pronosticos\",\"hechos_viajeros\",\"metricas_modelos\",\"perdidas_lstm\",\"similitud_series\",\"hechos_composicion\",\"Medidas\",\"RutaDatos\"]"
       },
       {
         "name": "PBI_ProTooling",
@@ -94,6 +94,13 @@
         "fromTable": "metricas_modelos",
         "toColumn": "modelo_id",
         "toTable": "dim_modelo"
+      },
+      {
+        "name": "7f67f051-3745-4986-bcc1-e8785df81030",
+        "fromColumn": "fecha",
+        "fromTable": "hechos_composicion",
+        "toColumn": "fecha",
+        "toTable": "dim_fecha"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -713,6 +720,91 @@
         ]
       },
       {
+        "name": "hechos_composicion",
+        "columns": [
+          {
+            "name": "fecha",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM",
+            "isHidden": true,
+            "lineageTag": "f21c1a07-64a2-4885-babd-a52951055873",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dimension_id",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "25f6adab-5624-4bd6-a94c-99804b83fdaf",
+            "sourceColumn": "dimension_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dimension",
+            "dataType": "string",
+            "lineageTag": "2ff4d063-c1f5-4eb4-b975-0d356bddbe06",
+            "sourceColumn": "dimension",
+            "sortByColumn": "orden_dimension",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "orden_dimension",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "ad57be21-0a79-4144-bf38-11228e209cf3",
+            "sourceColumn": "orden_dimension",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "categoria",
+            "dataType": "string",
+            "lineageTag": "746343da-1422-469a-a08e-e30857494bb5",
+            "sourceColumn": "categoria",
+            "sortByColumn": "orden_categoria",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "orden_categoria",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "8a62247b-d8fd-4b13-ad7b-485cfcb0ba9c",
+            "sourceColumn": "orden_categoria",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "viajeros",
+            "dataType": "double",
+            "lineageTag": "f5538cbd-75ee-4c25-bd34-a807b38bffb6",
+            "sourceColumn": "viajeros",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5ceb1410-f896-49a9-9e98-ba181bfa15bf",
+        "partitions": [
+          {
+            "name": "hechos_composicion",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Csv.Document(File.Contents(RutaDatos & \"hechos_composicion.csv\"), [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),",
+                "    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"dimension_id\", type text}, {\"dimension\", type text}, {\"orden_dimension\", Int64.Type}, {\"categoria\", type text}, {\"orden_categoria\", Int64.Type}, {\"viajeros\", type number}}, \"en-US\")",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
         "name": "Medidas",
         "columns": [
           {
@@ -1067,6 +1159,58 @@
               "FORMAT ( MAX ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" )"
             ],
             "lineageTag": "3274b972-73e2-421a-bd4d-c9bbe20b460f"
+          },
+          {
+            "name": "Viajeros por composición",
+            "displayFolder": "Composición (V5)",
+            "expression": "SUM ( hechos_composicion[viajeros] )",
+            "formatString": "#,0",
+            "lineageTag": "10ed0d64-6be2-4819-a06c-1f07d4d536a4"
+          },
+          {
+            "name": "Participación en la composición",
+            "displayFolder": "Composición (V5)",
+            "expression": [
+              "IF (",
+              "    HASONEVALUE ( hechos_composicion[dimension] ),",
+              "    DIVIDE (",
+              "        [Viajeros por composición],",
+              "        CALCULATE (",
+              "            [Viajeros por composición],",
+              "            REMOVEFILTERS ( hechos_composicion[categoria], hechos_composicion[orden_categoria] )",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "formatString": "0.0%",
+            "lineageTag": "7765b495-041d-433c-8a06-cafc62be70d8"
+          },
+          {
+            "name": "Aviso composición",
+            "displayFolder": "Composición (V5)",
+            "expression": [
+              "IF (",
+              "    NOT HASONEVALUE ( hechos_composicion[dimension] ),",
+              "    \"Seleccione una sola dimensión: vía de ingreso o tipo de viajero.\",",
+              "    IF (",
+              "        ISBLANK ( [Viajeros por composición] ),",
+              "        \"No hay información para esta selección. Use Restablecer filtros.\",",
+              "        \"\"",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "5aaf1009-b438-479f-adef-10fb8bd6023f"
+          },
+          {
+            "name": "Selección composición",
+            "displayFolder": "Composición (V5)",
+            "expression": [
+              "\"Total nacional | \" &",
+              "SELECTEDVALUE ( hechos_composicion[dimension], \"Sin dimensión\" ) & \" | \" &",
+              "FORMAT ( MIN ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" ) & \" a \" &",
+              "FORMAT ( MAX ( dim_fecha[fecha] ), \"mmm yyyy\", \"es-GT\" )"
+            ],
+            "lineageTag": "97e10036-65f8-4f35-9b18-3174941ff714"
           }
         ],
         "partitions": [

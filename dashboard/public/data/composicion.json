@@ -1,0 +1,6325 @@
+{
+  "metadatos": {
+    "universo": "Turista + Excursionista; incluye etiqueta País = Guatemala, igual al histórico del equipo",
+    "fuente": {
+      "rama": "Lab1",
+      "commit": "ee275aa2a2617b9d8c093d820e209107e57d7e6b",
+      "archivo": "L01_series_tiempo/data/raw/Base_Migracion_2009-2026jun.xlsx",
+      "sha256": "cdaba77918ae889c847ba8459503f9cce2441efac41b3d3aa0f05ac9ab283846"
+    },
+    "cobertura": [
+      "2009-01",
+      "2026-06"
+    ],
+    "meses": 210,
+    "oficial": false,
+    "limitaciones": [
+      "Quiebre metodológico en enero de 2023",
+      "Vía marítima pierde detalle desde 2017",
+      "2026 solo cubre enero a junio",
+      "Cada dimensión suma por separado el total; no sumarlas entre sí"
+    ]
+  },
+  "registros": [
+    {
+      "fecha": "2009-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 14902.279306915052
+    },
+    {
+      "fecha": "2009-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 135041.75003825783
+    },
+    {
+      "fecha": "2009-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 81693.0
+    },
+    {
+      "fecha": "2009-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 809.0
+    },
+    {
+      "fecha": "2009-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 67442.02934517288
+    },
+    {
+      "fecha": "2009-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24332.993577716043
+    },
+    {
+      "fecha": "2009-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 102970.69862566146
+    },
+    {
+      "fecha": "2009-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 70099.0
+    },
+    {
+      "fecha": "2009-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 938.0
+    },
+    {
+      "fecha": "2009-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 56266.69220337751
+    },
+    {
+      "fecha": "2009-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 20599.633679356633
+    },
+    {
+      "fecha": "2009-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 138196.0401392462
+    },
+    {
+      "fecha": "2009-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 84494.0
+    },
+    {
+      "fecha": "2009-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1190.0
+    },
+    {
+      "fecha": "2009-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 73111.67381860285
+    },
+    {
+      "fecha": "2009-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29049.646900235744
+    },
+    {
+      "fecha": "2009-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 142963.8207937807
+    },
+    {
+      "fecha": "2009-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 80618.0
+    },
+    {
+      "fecha": "2009-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1498.0
+    },
+    {
+      "fecha": "2009-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 89897.46769401644
+    },
+    {
+      "fecha": "2009-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 17525.748433490946
+    },
+    {
+      "fecha": "2009-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 107033.77591720213
+    },
+    {
+      "fecha": "2009-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 64621.0
+    },
+    {
+      "fecha": "2009-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1040.0
+    },
+    {
+      "fecha": "2009-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 58898.52435069307
+    },
+    {
+      "fecha": "2009-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 21466.958693099583
+    },
+    {
+      "fecha": "2009-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 129975.84468517316
+    },
+    {
+      "fecha": "2009-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 81500.0
+    },
+    {
+      "fecha": "2009-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 842.0
+    },
+    {
+      "fecha": "2009-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 69100.80337827274
+    },
+    {
+      "fecha": "2009-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 17378.822207034154
+    },
+    {
+      "fecha": "2009-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 120238.12953518535
+    },
+    {
+      "fecha": "2009-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 74818.0
+    },
+    {
+      "fecha": "2009-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1115.0
+    },
+    {
+      "fecha": "2009-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 61683.951742219506
+    },
+    {
+      "fecha": "2009-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26580.966721212728
+    },
+    {
+      "fecha": "2009-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 152763.07508255166
+    },
+    {
+      "fecha": "2009-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 76026.0
+    },
+    {
+      "fecha": "2009-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1174.0
+    },
+    {
+      "fecha": "2009-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 102144.0418037644
+    },
+    {
+      "fecha": "2009-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 19318.126062926996
+    },
+    {
+      "fecha": "2009-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 113473.00747267458
+    },
+    {
+      "fecha": "2009-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 61974.0
+    },
+    {
+      "fecha": "2009-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 771.0
+    },
+    {
+      "fecha": "2009-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 70046.13353560158
+    },
+    {
+      "fecha": "2009-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 20834.44467736837
+    },
+    {
+      "fecha": "2009-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 132319.16510950055
+    },
+    {
+      "fecha": "2009-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 72950.0
+    },
+    {
+      "fecha": "2009-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 846.0
+    },
+    {
+      "fecha": "2009-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 79357.60978686891
+    },
+    {
+      "fecha": "2009-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 22318.95956563994
+    },
+    {
+      "fecha": "2009-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 151304.31339305168
+    },
+    {
+      "fecha": "2009-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 82455.0
+    },
+    {
+      "fecha": "2009-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 873.0
+    },
+    {
+      "fecha": "2009-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 90295.27295869161
+    },
+    {
+      "fecha": "2009-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29789.57830083077
+    },
+    {
+      "fecha": "2009-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 189805.0728963087
+    },
+    {
+      "fecha": "2009-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 104131.0
+    },
+    {
+      "fecha": "2009-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1262.0
+    },
+    {
+      "fecha": "2009-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 114201.65119713946
+    },
+    {
+      "fecha": "2010-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 19537.43594628021
+    },
+    {
+      "fecha": "2010-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 142795.82956537616
+    },
+    {
+      "fecha": "2010-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 85216.0
+    },
+    {
+      "fecha": "2010-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1172.0
+    },
+    {
+      "fecha": "2010-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 75945.26551165637
+    },
+    {
+      "fecha": "2010-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26839.178478116686
+    },
+    {
+      "fecha": "2010-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 105688.28174790807
+    },
+    {
+      "fecha": "2010-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 69352.0
+    },
+    {
+      "fecha": "2010-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1030.0
+    },
+    {
+      "fecha": "2010-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 62145.460226024756
+    },
+    {
+      "fecha": "2010-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 25250.56743827034
+    },
+    {
+      "fecha": "2010-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 138100.5253212707
+    },
+    {
+      "fecha": "2010-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 88849.0
+    },
+    {
+      "fecha": "2010-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1289.0
+    },
+    {
+      "fecha": "2010-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 73213.09275954103
+    },
+    {
+      "fecha": "2010-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29095.186264756867
+    },
+    {
+      "fecha": "2010-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 141775.71903841427
+    },
+    {
+      "fecha": "2010-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 76466.0
+    },
+    {
+      "fecha": "2010-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1355.0
+    },
+    {
+      "fecha": "2010-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 93049.90530317114
+    },
+    {
+      "fecha": "2010-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 23838.554709681353
+    },
+    {
+      "fecha": "2010-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 117453.05423800476
+    },
+    {
+      "fecha": "2010-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 65070.0
+    },
+    {
+      "fecha": "2010-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1039.0
+    },
+    {
+      "fecha": "2010-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 75182.6089476861
+    },
+    {
+      "fecha": "2010-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 22224.73113945978
+    },
+    {
+      "fecha": "2010-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 133244.21593516704
+    },
+    {
+      "fecha": "2010-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 84570.0
+    },
+    {
+      "fecha": "2010-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 943.0
+    },
+    {
+      "fecha": "2010-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 69955.9470746268
+    },
+    {
+      "fecha": "2010-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29453.953827164314
+    },
+    {
+      "fecha": "2010-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 170213.87903281685
+    },
+    {
+      "fecha": "2010-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 102317.0
+    },
+    {
+      "fecha": "2010-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 988.0
+    },
+    {
+      "fecha": "2010-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 96362.83285998115
+    },
+    {
+      "fecha": "2010-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27805.149861024795
+    },
+    {
+      "fecha": "2010-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 156125.8807552709
+    },
+    {
+      "fecha": "2010-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 79180.0
+    },
+    {
+      "fecha": "2010-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1202.0
+    },
+    {
+      "fecha": "2010-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 103549.03061629568
+    },
+    {
+      "fecha": "2010-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 19332.73591862188
+    },
+    {
+      "fecha": "2010-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 111427.61377977011
+    },
+    {
+      "fecha": "2010-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 62853.0
+    },
+    {
+      "fecha": "2010-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 714.0
+    },
+    {
+      "fecha": "2010-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 67193.34969839198
+    },
+    {
+      "fecha": "2010-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 21987.77618233875
+    },
+    {
+      "fecha": "2010-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 135644.34813888802
+    },
+    {
+      "fecha": "2010-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 76272.0
+    },
+    {
+      "fecha": "2010-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 784.0
+    },
+    {
+      "fecha": "2010-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 80576.12432122677
+    },
+    {
+      "fecha": "2010-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 22674.89453732683
+    },
+    {
+      "fecha": "2010-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 156863.44115941724
+    },
+    {
+      "fecha": "2010-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 84445.0
+    },
+    {
+      "fecha": "2010-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 938.0
+    },
+    {
+      "fecha": "2010-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 94155.33569674406
+    },
+    {
+      "fecha": "2010-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31962.917453058453
+    },
+    {
+      "fecha": "2010-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 195448.1289136306
+    },
+    {
+      "fecha": "2010-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 99643.0
+    },
+    {
+      "fecha": "2010-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1221.0
+    },
+    {
+      "fecha": "2010-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 126547.04636668903
+    },
+    {
+      "fecha": "2011-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 21517.62568086722
+    },
+    {
+      "fecha": "2011-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 148190.9315461481
+    },
+    {
+      "fecha": "2011-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 81827.0
+    },
+    {
+      "fecha": "2011-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1291.0
+    },
+    {
+      "fecha": "2011-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 86590.5572270153
+    },
+    {
+      "fecha": "2011-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 30966.885109101728
+    },
+    {
+      "fecha": "2011-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 108902.98048176496
+    },
+    {
+      "fecha": "2011-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 69199.0
+    },
+    {
+      "fecha": "2011-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1015.0
+    },
+    {
+      "fecha": "2011-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 69655.86559086668
+    },
+    {
+      "fecha": "2011-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26405.301350847953
+    },
+    {
+      "fecha": "2011-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 143552.48965780932
+    },
+    {
+      "fecha": "2011-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 77868.0
+    },
+    {
+      "fecha": "2011-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1030.0
+    },
+    {
+      "fecha": "2011-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 91059.79100865728
+    },
+    {
+      "fecha": "2011-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 37285.376732141835
+    },
+    {
+      "fecha": "2011-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 154370.38826294802
+    },
+    {
+      "fecha": "2011-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 77120.0
+    },
+    {
+      "fecha": "2011-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1456.0
+    },
+    {
+      "fecha": "2011-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 113079.76499508986
+    },
+    {
+      "fecha": "2011-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 22991.601804187096
+    },
+    {
+      "fecha": "2011-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 122931.94597707281
+    },
+    {
+      "fecha": "2011-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 68133.0
+    },
+    {
+      "fecha": "2011-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1101.0
+    },
+    {
+      "fecha": "2011-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 76689.54778125991
+    },
+    {
+      "fecha": "2011-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 25601.47157769166
+    },
+    {
+      "fecha": "2011-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 137412.99714821324
+    },
+    {
+      "fecha": "2011-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 82437.0
+    },
+    {
+      "fecha": "2011-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 912.0
+    },
+    {
+      "fecha": "2011-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 79665.4687259049
+    },
+    {
+      "fecha": "2011-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31104.65133127037
+    },
+    {
+      "fecha": "2011-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 169416.35337051138
+    },
+    {
+      "fecha": "2011-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 97679.0
+    },
+    {
+      "fecha": "2011-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1260.0
+    },
+    {
+      "fecha": "2011-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 101582.00470178174
+    },
+    {
+      "fecha": "2011-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26354.395314347636
+    },
+    {
+      "fecha": "2011-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 148421.09839023245
+    },
+    {
+      "fecha": "2011-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 77477.0
+    },
+    {
+      "fecha": "2011-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1218.0
+    },
+    {
+      "fecha": "2011-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 96080.49370458008
+    },
+    {
+      "fecha": "2011-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 21959.622680163196
+    },
+    {
+      "fecha": "2011-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 119224.21703957877
+    },
+    {
+      "fecha": "2011-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 65329.0
+    },
+    {
+      "fecha": "2011-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 641.0
+    },
+    {
+      "fecha": "2011-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 75213.83971974195
+    },
+    {
+      "fecha": "2011-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 21154.4390990091
+    },
+    {
+      "fecha": "2011-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 130894.64149689877
+    },
+    {
+      "fecha": "2011-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 71644.0
+    },
+    {
+      "fecha": "2011-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 792.0
+    },
+    {
+      "fecha": "2011-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 79613.08059590786
+    },
+    {
+      "fecha": "2011-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24449.55845551806
+    },
+    {
+      "fecha": "2011-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 162870.51944572575
+    },
+    {
+      "fecha": "2011-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 86040.0
+    },
+    {
+      "fecha": "2011-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 952.0
+    },
+    {
+      "fecha": "2011-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 100328.07790124381
+    },
+    {
+      "fecha": "2011-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34396.147718852866
+    },
+    {
+      "fecha": "2011-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 209338.96295188315
+    },
+    {
+      "fecha": "2011-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 101211.0
+    },
+    {
+      "fecha": "2011-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1301.0
+    },
+    {
+      "fecha": "2011-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 141223.11067073603
+    },
+    {
+      "fecha": "2012-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24288.194319465412
+    },
+    {
+      "fecha": "2012-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 152837.76344883564
+    },
+    {
+      "fecha": "2012-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 81067.0
+    },
+    {
+      "fecha": "2012-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1223.0
+    },
+    {
+      "fecha": "2012-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 94835.95776830107
+    },
+    {
+      "fecha": "2012-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 35433.28467699705
+    },
+    {
+      "fecha": "2012-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 112386.15752131613
+    },
+    {
+      "fecha": "2012-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 70168.0
+    },
+    {
+      "fecha": "2012-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1091.0
+    },
+    {
+      "fecha": "2012-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 76560.44219831318
+    },
+    {
+      "fecha": "2012-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31532.669050896082
+    },
+    {
+      "fecha": "2012-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 154704.53920125202
+    },
+    {
+      "fecha": "2012-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 84564.0
+    },
+    {
+      "fecha": "2012-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1177.0
+    },
+    {
+      "fecha": "2012-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 100496.2082521481
+    },
+    {
+      "fecha": "2012-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 37412.636227883944
+    },
+    {
+      "fecha": "2012-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 145478.60003478164
+    },
+    {
+      "fecha": "2012-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 75122.0
+    },
+    {
+      "fecha": "2012-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1299.0
+    },
+    {
+      "fecha": "2012-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 106470.2362626656
+    },
+    {
+      "fecha": "2012-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26057.212721493444
+    },
+    {
+      "fecha": "2012-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 126080.29932230935
+    },
+    {
+      "fecha": "2012-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 71959.0
+    },
+    {
+      "fecha": "2012-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1066.0
+    },
+    {
+      "fecha": "2012-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 79112.5120438028
+    },
+    {
+      "fecha": "2012-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 28061.125884614983
+    },
+    {
+      "fecha": "2012-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 145179.43834226727
+    },
+    {
+      "fecha": "2012-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87824.0
+    },
+    {
+      "fecha": "2012-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 965.0
+    },
+    {
+      "fecha": "2012-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 84451.56422688226
+    },
+    {
+      "fecha": "2012-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 32843.663661244624
+    },
+    {
+      "fecha": "2012-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 166496.70701158393
+    },
+    {
+      "fecha": "2012-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 96204.0
+    },
+    {
+      "fecha": "2012-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1158.0
+    },
+    {
+      "fecha": "2012-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 101978.37067282856
+    },
+    {
+      "fecha": "2012-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27662.599867692392
+    },
+    {
+      "fecha": "2012-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 143003.80337269022
+    },
+    {
+      "fecha": "2012-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 72237.0
+    },
+    {
+      "fecha": "2012-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1026.0
+    },
+    {
+      "fecha": "2012-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 97403.40324038261
+    },
+    {
+      "fecha": "2012-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24542.92496496233
+    },
+    {
+      "fecha": "2012-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 123304.6030215272
+    },
+    {
+      "fecha": "2012-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 65651.0
+    },
+    {
+      "fecha": "2012-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 819.0
+    },
+    {
+      "fecha": "2012-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 81377.52798648954
+    },
+    {
+      "fecha": "2012-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27010.771270045385
+    },
+    {
+      "fecha": "2012-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 140984.6662267182
+    },
+    {
+      "fecha": "2012-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 75434.0
+    },
+    {
+      "fecha": "2012-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 921.0
+    },
+    {
+      "fecha": "2012-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 91640.43749676358
+    },
+    {
+      "fecha": "2012-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27943.2263299869
+    },
+    {
+      "fecha": "2012-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 167456.84198857017
+    },
+    {
+      "fecha": "2012-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87872.0
+    },
+    {
+      "fecha": "2012-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1167.0
+    },
+    {
+      "fecha": "2012-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 106361.06831855707
+    },
+    {
+      "fecha": "2012-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 36515.84969556086
+    },
+    {
+      "fecha": "2012-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 202323.90281171678
+    },
+    {
+      "fecha": "2012-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 102428.0
+    },
+    {
+      "fecha": "2012-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1370.0
+    },
+    {
+      "fecha": "2012-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 135041.75250727762
+    },
+    {
+      "fecha": "2013-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24373.525730115904
+    },
+    {
+      "fecha": "2013-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 146485.17080530812
+    },
+    {
+      "fecha": "2013-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 80051.0
+    },
+    {
+      "fecha": "2013-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1281.0
+    },
+    {
+      "fecha": "2013-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 89526.69653542402
+    },
+    {
+      "fecha": "2013-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34391.592841782796
+    },
+    {
+      "fecha": "2013-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 105772.30661981276
+    },
+    {
+      "fecha": "2013-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 69139.0
+    },
+    {
+      "fecha": "2013-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1070.0
+    },
+    {
+      "fecha": "2013-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 69954.89946159556
+    },
+    {
+      "fecha": "2013-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 41464.51672116675
+    },
+    {
+      "fecha": "2013-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 175628.03864179595
+    },
+    {
+      "fecha": "2013-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90893.0
+    },
+    {
+      "fecha": "2013-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1650.0
+    },
+    {
+      "fecha": "2013-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 124549.5553629627
+    },
+    {
+      "fecha": "2013-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31943.217330208623
+    },
+    {
+      "fecha": "2013-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 147582.8198924938
+    },
+    {
+      "fecha": "2013-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 72202.0
+    },
+    {
+      "fecha": "2013-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1034.0
+    },
+    {
+      "fecha": "2013-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 106290.03722270243
+    },
+    {
+      "fecha": "2013-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 30290.32007595117
+    },
+    {
+      "fecha": "2013-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 148953.33683901286
+    },
+    {
+      "fecha": "2013-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 71046.0
+    },
+    {
+      "fecha": "2013-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1135.0
+    },
+    {
+      "fecha": "2013-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 107062.65691496404
+    },
+    {
+      "fecha": "2013-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31623.04092383171
+    },
+    {
+      "fecha": "2013-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 165541.95393179124
+    },
+    {
+      "fecha": "2013-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 89180.0
+    },
+    {
+      "fecha": "2013-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 943.0
+    },
+    {
+      "fecha": "2013-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 107041.99485562296
+    },
+    {
+      "fecha": "2013-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34555.969576698364
+    },
+    {
+      "fecha": "2013-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 177040.04768796932
+    },
+    {
+      "fecha": "2013-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 95206.0
+    },
+    {
+      "fecha": "2013-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1248.0
+    },
+    {
+      "fecha": "2013-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 115142.0172646677
+    },
+    {
+      "fecha": "2013-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 30333.81249642173
+    },
+    {
+      "fecha": "2013-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 166817.12667323617
+    },
+    {
+      "fecha": "2013-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 77913.0
+    },
+    {
+      "fecha": "2013-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 988.0
+    },
+    {
+      "fecha": "2013-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 118249.93916965791
+    },
+    {
+      "fecha": "2013-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26040.991380159998
+    },
+    {
+      "fecha": "2013-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 137826.0704911866
+    },
+    {
+      "fecha": "2013-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 66627.0
+    },
+    {
+      "fecha": "2013-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 711.0
+    },
+    {
+      "fecha": "2013-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 96529.06187134661
+    },
+    {
+      "fecha": "2013-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 25806.47291408952
+    },
+    {
+      "fecha": "2013-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 141817.99596888153
+    },
+    {
+      "fecha": "2013-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 79527.0
+    },
+    {
+      "fecha": "2013-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 752.0
+    },
+    {
+      "fecha": "2013-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 87345.46888297105
+    },
+    {
+      "fecha": "2013-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 28711.006336841536
+    },
+    {
+      "fecha": "2013-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 174254.01666777697
+    },
+    {
+      "fecha": "2013-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 92515.0
+    },
+    {
+      "fecha": "2013-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1117.0
+    },
+    {
+      "fecha": "2013-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 109333.0230046185
+    },
+    {
+      "fecha": "2013-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 39580.09467977455
+    },
+    {
+      "fecha": "2013-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 222869.30725958387
+    },
+    {
+      "fecha": "2013-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 112488.0
+    },
+    {
+      "fecha": "2013-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1313.0
+    },
+    {
+      "fecha": "2013-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 148648.40193935842
+    },
+    {
+      "fecha": "2014-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34125.876935530876
+    },
+    {
+      "fecha": "2014-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 185334.46974085955
+    },
+    {
+      "fecha": "2014-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90200.0
+    },
+    {
+      "fecha": "2014-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1124.0
+    },
+    {
+      "fecha": "2014-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 128136.34667639041
+    },
+    {
+      "fecha": "2014-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27038.81617608429
+    },
+    {
+      "fecha": "2014-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 146437.42968866258
+    },
+    {
+      "fecha": "2014-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 78209.0
+    },
+    {
+      "fecha": "2014-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1296.0
+    },
+    {
+      "fecha": "2014-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 93971.24586474686
+    },
+    {
+      "fecha": "2014-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 30801.572319759296
+    },
+    {
+      "fecha": "2014-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 169335.7579029099
+    },
+    {
+      "fecha": "2014-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 92135.0
+    },
+    {
+      "fecha": "2014-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1246.0
+    },
+    {
+      "fecha": "2014-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 106756.33022266922
+    },
+    {
+      "fecha": "2014-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 30373.47617289639
+    },
+    {
+      "fecha": "2014-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 198985.65697602122
+    },
+    {
+      "fecha": "2014-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 89600.0
+    },
+    {
+      "fecha": "2014-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1497.0
+    },
+    {
+      "fecha": "2014-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 138262.1331489176
+    },
+    {
+      "fecha": "2014-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26990.609665702057
+    },
+    {
+      "fecha": "2014-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 163273.95508690586
+    },
+    {
+      "fecha": "2014-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 80383.0
+    },
+    {
+      "fecha": "2014-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1342.0
+    },
+    {
+      "fecha": "2014-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 108539.56475260793
+    },
+    {
+      "fecha": "2014-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 25717.57729282915
+    },
+    {
+      "fecha": "2014-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 174375.89600845778
+    },
+    {
+      "fecha": "2014-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 99084.0
+    },
+    {
+      "fecha": "2014-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 937.0
+    },
+    {
+      "fecha": "2014-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 100072.47330128694
+    },
+    {
+      "fecha": "2014-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 33953.0348383686
+    },
+    {
+      "fecha": "2014-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 203605.5599675344
+    },
+    {
+      "fecha": "2014-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 102729.0
+    },
+    {
+      "fecha": "2014-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1077.0
+    },
+    {
+      "fecha": "2014-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 133752.594805903
+    },
+    {
+      "fecha": "2014-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 43057.99601593885
+    },
+    {
+      "fecha": "2014-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 182043.63595157734
+    },
+    {
+      "fecha": "2014-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 86492.0
+    },
+    {
+      "fecha": "2014-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1156.0
+    },
+    {
+      "fecha": "2014-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 137453.63196751618
+    },
+    {
+      "fecha": "2014-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 35408.93667134078
+    },
+    {
+      "fecha": "2014-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 152275.8439222185
+    },
+    {
+      "fecha": "2014-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 73602.0
+    },
+    {
+      "fecha": "2014-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 818.0
+    },
+    {
+      "fecha": "2014-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 113264.78059355928
+    },
+    {
+      "fecha": "2014-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 45488.501704153816
+    },
+    {
+      "fecha": "2014-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 178162.36919097265
+    },
+    {
+      "fecha": "2014-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 86265.0
+    },
+    {
+      "fecha": "2014-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 718.0
+    },
+    {
+      "fecha": "2014-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 136667.87089512649
+    },
+    {
+      "fecha": "2014-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 50895.44343462438
+    },
+    {
+      "fecha": "2014-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 197122.1665510858
+    },
+    {
+      "fecha": "2014-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 95776.0
+    },
+    {
+      "fecha": "2014-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 905.0
+    },
+    {
+      "fecha": "2014-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 151336.60998571018
+    },
+    {
+      "fecha": "2014-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 65406.009407342
+    },
+    {
+      "fecha": "2014-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 259966.72524226207
+    },
+    {
+      "fecha": "2014-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 117878.0
+    },
+    {
+      "fecha": "2014-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1140.0
+    },
+    {
+      "fecha": "2014-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 206354.73464960407
+    },
+    {
+      "fecha": "2015-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 48756.07420132098
+    },
+    {
+      "fecha": "2015-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 195364.8770078804
+    },
+    {
+      "fecha": "2015-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 95064.0
+    },
+    {
+      "fecha": "2015-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1182.0
+    },
+    {
+      "fecha": "2015-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 147874.9512092014
+    },
+    {
+      "fecha": "2015-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 41533.013258060884
+    },
+    {
+      "fecha": "2015-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 155674.23428642977
+    },
+    {
+      "fecha": "2015-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 79878.0
+    },
+    {
+      "fecha": "2015-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 915.0
+    },
+    {
+      "fecha": "2015-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 116414.24754449066
+    },
+    {
+      "fecha": "2015-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 41745.217414917315
+    },
+    {
+      "fecha": "2015-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 207842.19062440173
+    },
+    {
+      "fecha": "2015-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 98121.0
+    },
+    {
+      "fecha": "2015-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1097.0
+    },
+    {
+      "fecha": "2015-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 150369.40803931904
+    },
+    {
+      "fecha": "2015-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 35858.83062935967
+    },
+    {
+      "fecha": "2015-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 211702.67749225817
+    },
+    {
+      "fecha": "2015-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87540.0
+    },
+    {
+      "fecha": "2015-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1356.0
+    },
+    {
+      "fecha": "2015-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 158665.50812161784
+    },
+    {
+      "fecha": "2015-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 42528.01317715628
+    },
+    {
+      "fecha": "2015-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 183886.59454529147
+    },
+    {
+      "fecha": "2015-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 84334.0
+    },
+    {
+      "fecha": "2015-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1006.0
+    },
+    {
+      "fecha": "2015-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 141074.60772244775
+    },
+    {
+      "fecha": "2015-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 46600.609181366235
+    },
+    {
+      "fecha": "2015-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 198782.07773564226
+    },
+    {
+      "fecha": "2015-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 104893.0
+    },
+    {
+      "fecha": "2015-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 894.0
+    },
+    {
+      "fecha": "2015-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 139595.68691700848
+    },
+    {
+      "fecha": "2015-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 49099.947431536835
+    },
+    {
+      "fecha": "2015-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 203935.22970061796
+    },
+    {
+      "fecha": "2015-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 106927.0
+    },
+    {
+      "fecha": "2015-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 996.0
+    },
+    {
+      "fecha": "2015-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 145112.1771321548
+    },
+    {
+      "fecha": "2015-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 46706.34764100813
+    },
+    {
+      "fecha": "2015-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 198959.80777074333
+    },
+    {
+      "fecha": "2015-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90600.0
+    },
+    {
+      "fecha": "2015-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1102.0
+    },
+    {
+      "fecha": "2015-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 153964.15541175148
+    },
+    {
+      "fecha": "2015-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 36858.94929601831
+    },
+    {
+      "fecha": "2015-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 169841.82150664565
+    },
+    {
+      "fecha": "2015-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 82888.0
+    },
+    {
+      "fecha": "2015-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 662.0
+    },
+    {
+      "fecha": "2015-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 123150.77080266396
+    },
+    {
+      "fecha": "2015-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34618.78751360032
+    },
+    {
+      "fecha": "2015-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 193181.4913098451
+    },
+    {
+      "fecha": "2015-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 97243.0
+    },
+    {
+      "fecha": "2015-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 646.0
+    },
+    {
+      "fecha": "2015-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 129911.27882344542
+    },
+    {
+      "fecha": "2015-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34640.67180746474
+    },
+    {
+      "fecha": "2015-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 210543.33829275536
+    },
+    {
+      "fecha": "2015-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 110173.0
+    },
+    {
+      "fecha": "2015-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 887.0
+    },
+    {
+      "fecha": "2015-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 134124.0101002201
+    },
+    {
+      "fecha": "2015-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 46177.890294158366
+    },
+    {
+      "fecha": "2015-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 283047.34823763126
+    },
+    {
+      "fecha": "2015-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 129751.0
+    },
+    {
+      "fecha": "2015-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1138.0
+    },
+    {
+      "fecha": "2015-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 198336.23853178963
+    },
+    {
+      "fecha": "2016-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29681.366429360176
+    },
+    {
+      "fecha": "2016-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 232425.26292274642
+    },
+    {
+      "fecha": "2016-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 109052.0
+    },
+    {
+      "fecha": "2016-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1164.0
+    },
+    {
+      "fecha": "2016-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 151890.6293521066
+    },
+    {
+      "fecha": "2016-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 26938.353901902286
+    },
+    {
+      "fecha": "2016-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 187700.3758889902
+    },
+    {
+      "fecha": "2016-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90944.0
+    },
+    {
+      "fecha": "2016-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 994.0
+    },
+    {
+      "fecha": "2016-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 122700.72979089251
+    },
+    {
+      "fecha": "2016-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 42093.201652285024
+    },
+    {
+      "fecha": "2016-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 279937.1310082227
+    },
+    {
+      "fecha": "2016-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 117172.0
+    },
+    {
+      "fecha": "2016-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 1133.0
+    },
+    {
+      "fecha": "2016-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 203725.33266050773
+    },
+    {
+      "fecha": "2016-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31457.47179890015
+    },
+    {
+      "fecha": "2016-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 179987.44855123374
+    },
+    {
+      "fecha": "2016-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90938.0
+    },
+    {
+      "fecha": "2016-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 917.0
+    },
+    {
+      "fecha": "2016-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 119589.92035013388
+    },
+    {
+      "fecha": "2016-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 37610.387675155805
+    },
+    {
+      "fecha": "2016-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 186322.54007469612
+    },
+    {
+      "fecha": "2016-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 96379.0
+    },
+    {
+      "fecha": "2016-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 784.0
+    },
+    {
+      "fecha": "2016-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 126769.92774985194
+    },
+    {
+      "fecha": "2016-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24859.510249703373
+    },
+    {
+      "fecha": "2016-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 201427.78503228453
+    },
+    {
+      "fecha": "2016-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 113143.0
+    },
+    {
+      "fecha": "2016-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 728.0
+    },
+    {
+      "fecha": "2016-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 112416.2952819879
+    },
+    {
+      "fecha": "2016-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 28163.193542538815
+    },
+    {
+      "fecha": "2016-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 240849.04601599614
+    },
+    {
+      "fecha": "2016-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 130062.0
+    },
+    {
+      "fecha": "2016-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 864.0
+    },
+    {
+      "fecha": "2016-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 138086.23955853496
+    },
+    {
+      "fecha": "2016-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 27050.67049937707
+    },
+    {
+      "fecha": "2016-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 231749.25722414703
+    },
+    {
+      "fecha": "2016-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 100986.0
+    },
+    {
+      "fecha": "2016-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 826.0
+    },
+    {
+      "fecha": "2016-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 156987.92772352407
+    },
+    {
+      "fecha": "2016-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 23063.484658281475
+    },
+    {
+      "fecha": "2016-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 163755.8236591186
+    },
+    {
+      "fecha": "2016-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 80637.42857142864
+    },
+    {
+      "fecha": "2016-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 662.0
+    },
+    {
+      "fecha": "2016-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 105519.87974597144
+    },
+    {
+      "fecha": "2016-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 29048.841263950122
+    },
+    {
+      "fecha": "2016-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 220072.42319832148
+    },
+    {
+      "fecha": "2016-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 102214.0
+    },
+    {
+      "fecha": "2016-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 730.0
+    },
+    {
+      "fecha": "2016-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 146177.26446227162
+    },
+    {
+      "fecha": "2016-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 28362.262112910383
+    },
+    {
+      "fecha": "2016-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 223169.7184149884
+    },
+    {
+      "fecha": "2016-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 111954.0
+    },
+    {
+      "fecha": "2016-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 801.0
+    },
+    {
+      "fecha": "2016-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 138776.9805278988
+    },
+    {
+      "fecha": "2016-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 31274.392317531954
+    },
+    {
+      "fecha": "2016-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 290026.79634816595
+    },
+    {
+      "fecha": "2016-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 111842.0
+    },
+    {
+      "fecha": "2016-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 975.0
+    },
+    {
+      "fecha": "2016-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 208484.1886656979
+    },
+    {
+      "fecha": "2017-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24931.317669565644
+    },
+    {
+      "fecha": "2017-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 234710.2902795033
+    },
+    {
+      "fecha": "2017-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 99217.0
+    },
+    {
+      "fecha": "2017-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 160424.60794906894
+    },
+    {
+      "fecha": "2017-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 34044.50289199315
+    },
+    {
+      "fecha": "2017-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 199673.7259587714
+    },
+    {
+      "fecha": "2017-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 94604.0
+    },
+    {
+      "fecha": "2017-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 139114.22885076454
+    },
+    {
+      "fecha": "2017-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 52776.852082649304
+    },
+    {
+      "fecha": "2017-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 241667.62303095925
+    },
+    {
+      "fecha": "2017-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 106339.0
+    },
+    {
+      "fecha": "2017-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 188105.47511360855
+    },
+    {
+      "fecha": "2017-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 74330.30830748436
+    },
+    {
+      "fecha": "2017-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 303498.420662352
+    },
+    {
+      "fecha": "2017-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 110230.00000000001
+    },
+    {
+      "fecha": "2017-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 267598.7289698364
+    },
+    {
+      "fecha": "2017-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 40394.49007625819
+    },
+    {
+      "fecha": "2017-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 203347.29512013626
+    },
+    {
+      "fecha": "2017-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 89750.0
+    },
+    {
+      "fecha": "2017-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 153991.78519639446
+    },
+    {
+      "fecha": "2017-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 50400.325757488914
+    },
+    {
+      "fecha": "2017-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 197453.0822099452
+    },
+    {
+      "fecha": "2017-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 114128.0
+    },
+    {
+      "fecha": "2017-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 133725.40796743412
+    },
+    {
+      "fecha": "2017-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 49963.06031908006
+    },
+    {
+      "fecha": "2017-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 241611.2126973434
+    },
+    {
+      "fecha": "2017-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 134449.0
+    },
+    {
+      "fecha": "2017-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 157125.27301642345
+    },
+    {
+      "fecha": "2017-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 60497.434709143374
+    },
+    {
+      "fecha": "2017-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 213796.1585063065
+    },
+    {
+      "fecha": "2017-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 100536.0
+    },
+    {
+      "fecha": "2017-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 173757.59321544986
+    },
+    {
+      "fecha": "2017-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 42641.87681449822
+    },
+    {
+      "fecha": "2017-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 171054.72516479765
+    },
+    {
+      "fecha": "2017-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 91091.0
+    },
+    {
+      "fecha": "2017-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 122605.60197929587
+    },
+    {
+      "fecha": "2017-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 40453.371282511405
+    },
+    {
+      "fecha": "2017-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 198602.29873742265
+    },
+    {
+      "fecha": "2017-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 109105.00000000001
+    },
+    {
+      "fecha": "2017-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 129950.67001993403
+    },
+    {
+      "fecha": "2017-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 44775.18724583728
+    },
+    {
+      "fecha": "2017-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 230918.22854347463
+    },
+    {
+      "fecha": "2017-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 121392.0
+    },
+    {
+      "fecha": "2017-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 154301.41578931193
+    },
+    {
+      "fecha": "2017-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 67631.27247431062
+    },
+    {
+      "fecha": "2017-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 288478.22644721443
+    },
+    {
+      "fecha": "2017-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 142949.0
+    },
+    {
+      "fecha": "2017-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2017-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 213160.49892152505
+    },
+    {
+      "fecha": "2018-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 60116.56203201073
+    },
+    {
+      "fecha": "2018-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 243702.65594225758
+    },
+    {
+      "fecha": "2018-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 117446.0
+    },
+    {
+      "fecha": "2018-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 186373.2179742683
+    },
+    {
+      "fecha": "2018-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 52182.441171194325
+    },
+    {
+      "fecha": "2018-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 199484.55039930486
+    },
+    {
+      "fecha": "2018-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 96337.0
+    },
+    {
+      "fecha": "2018-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 155329.99157049917
+    },
+    {
+      "fecha": "2018-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 93313.70644428782
+    },
+    {
+      "fecha": "2018-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 299707.07651614444
+    },
+    {
+      "fecha": "2018-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 124266.0
+    },
+    {
+      "fecha": "2018-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 268754.78296043223
+    },
+    {
+      "fecha": "2018-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 71304.74477141058
+    },
+    {
+      "fecha": "2018-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 236935.11658236143
+    },
+    {
+      "fecha": "2018-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 104951.0
+    },
+    {
+      "fecha": "2018-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 203288.861353772
+    },
+    {
+      "fecha": "2018-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 60802.62468854963
+    },
+    {
+      "fecha": "2018-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 216947.45742700968
+    },
+    {
+      "fecha": "2018-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 103815.0
+    },
+    {
+      "fecha": "2018-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 173935.08211555931
+    },
+    {
+      "fecha": "2018-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 71850.76816165136
+    },
+    {
+      "fecha": "2018-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 239429.58234685956
+    },
+    {
+      "fecha": "2018-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 120718.00000000068
+    },
+    {
+      "fecha": "2018-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 190562.35050851022
+    },
+    {
+      "fecha": "2018-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 66172.50201592816
+    },
+    {
+      "fecha": "2018-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 271128.0879316262
+    },
+    {
+      "fecha": "2018-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 134933.0
+    },
+    {
+      "fecha": "2018-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 202367.58994755434
+    },
+    {
+      "fecha": "2018-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 86303.66742281895
+    },
+    {
+      "fecha": "2018-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 266012.90431717265
+    },
+    {
+      "fecha": "2018-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 110568.00000000073
+    },
+    {
+      "fecha": "2018-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 241748.57173999088
+    },
+    {
+      "fecha": "2018-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 62691.18207141552
+    },
+    {
+      "fecha": "2018-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 210085.8863961228
+    },
+    {
+      "fecha": "2018-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 94931.29173150647
+    },
+    {
+      "fecha": "2018-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 177845.77673603187
+    },
+    {
+      "fecha": "2018-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 51116.4950558502
+    },
+    {
+      "fecha": "2018-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 231055.7176419576
+    },
+    {
+      "fecha": "2018-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 115003.99628460119
+    },
+    {
+      "fecha": "2018-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 167168.2164132066
+    },
+    {
+      "fecha": "2018-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 47214.20067736274
+    },
+    {
+      "fecha": "2018-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 262473.4359836866
+    },
+    {
+      "fecha": "2018-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 135409.36194730835
+    },
+    {
+      "fecha": "2018-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 174278.274713741
+    },
+    {
+      "fecha": "2018-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 61212.58592520828
+    },
+    {
+      "fecha": "2018-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 332516.90538900363
+    },
+    {
+      "fecha": "2018-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 156607.3959668107
+    },
+    {
+      "fecha": "2018-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2018-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 237122.09534740122
+    },
+    {
+      "fecha": "2019-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 77050.27010446237
+    },
+    {
+      "fecha": "2019-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 280595.4797118794
+    },
+    {
+      "fecha": "2019-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 126566.13349998859
+    },
+    {
+      "fecha": "2019-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 231079.6163163532
+    },
+    {
+      "fecha": "2019-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 78983.35881905294
+    },
+    {
+      "fecha": "2019-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 206367.54881284563
+    },
+    {
+      "fecha": "2019-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 106574.12156398408
+    },
+    {
+      "fecha": "2019-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 178776.78606791448
+    },
+    {
+      "fecha": "2019-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 97543.18619068149
+    },
+    {
+      "fecha": "2019-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 262214.80415193137
+    },
+    {
+      "fecha": "2019-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 118895.93695089713
+    },
+    {
+      "fecha": "2019-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 240862.05339171574
+    },
+    {
+      "fecha": "2019-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 95710.29055320339
+    },
+    {
+      "fecha": "2019-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 292828.25760929415
+    },
+    {
+      "fecha": "2019-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 125309.99999999897
+    },
+    {
+      "fecha": "2019-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 263228.54816249857
+    },
+    {
+      "fecha": "2019-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 81602.63533776085
+    },
+    {
+      "fecha": "2019-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 217694.70477538428
+    },
+    {
+      "fecha": "2019-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 109523.99999999949
+    },
+    {
+      "fecha": "2019-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 189773.34011314565
+    },
+    {
+      "fecha": "2019-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 94913.65444582622
+    },
+    {
+      "fecha": "2019-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 238247.90092015782
+    },
+    {
+      "fecha": "2019-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 127604.99999999904
+    },
+    {
+      "fecha": "2019-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 205556.55536598503
+    },
+    {
+      "fecha": "2019-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 95452.13804104785
+    },
+    {
+      "fecha": "2019-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 269881.55293089134
+    },
+    {
+      "fecha": "2019-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 138562.64109759167
+    },
+    {
+      "fecha": "2019-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 226771.04987434752
+    },
+    {
+      "fecha": "2019-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 114525.4099550342
+    },
+    {
+      "fecha": "2019-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 250987.34433162864
+    },
+    {
+      "fecha": "2019-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 115044.99999999999
+    },
+    {
+      "fecha": "2019-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 250467.75428666285
+    },
+    {
+      "fecha": "2019-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 83907.14186851212
+    },
+    {
+      "fecha": "2019-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 214342.93537444444
+    },
+    {
+      "fecha": "2019-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 101240.07692307641
+    },
+    {
+      "fecha": "2019-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 197010.00031988014
+    },
+    {
+      "fecha": "2019-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 73588.13305879661
+    },
+    {
+      "fecha": "2019-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 220915.85830545585
+    },
+    {
+      "fecha": "2019-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 119128.99999999866
+    },
+    {
+      "fecha": "2019-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 175374.9913642538
+    },
+    {
+      "fecha": "2019-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 82871.75217652663
+    },
+    {
+      "fecha": "2019-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 252912.17390200947
+    },
+    {
+      "fecha": "2019-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 137092.00000000227
+    },
+    {
+      "fecha": "2019-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 198691.92607853384
+    },
+    {
+      "fecha": "2019-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 105102.87821493162
+    },
+    {
+      "fecha": "2019-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 344011.1922852358
+    },
+    {
+      "fecha": "2019-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 157842.00000000003
+    },
+    {
+      "fecha": "2019-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2019-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 291272.0705001674
+    },
+    {
+      "fecha": "2020-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 107385.8761623657
+    },
+    {
+      "fecha": "2020-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 280836.7264992459
+    },
+    {
+      "fecha": "2020-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 130697.00219828535
+    },
+    {
+      "fecha": "2020-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 257525.60046332626
+    },
+    {
+      "fecha": "2020-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 97933.4336537368
+    },
+    {
+      "fecha": "2020-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 219984.54286385525
+    },
+    {
+      "fecha": "2020-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 112885.99999999996
+    },
+    {
+      "fecha": "2020-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 205031.97651759212
+    },
+    {
+      "fecha": "2020-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 45664.70451778982
+    },
+    {
+      "fecha": "2020-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 109750.87157427458
+    },
+    {
+      "fecha": "2020-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 54830.992130115425
+    },
+    {
+      "fecha": "2020-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 100584.58396194897
+    },
+    {
+      "fecha": "2020-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 10039.0
+    },
+    {
+      "fecha": "2020-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 489.0
+    },
+    {
+      "fecha": "2020-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 9550.0
+    },
+    {
+      "fecha": "2020-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 9779.0
+    },
+    {
+      "fecha": "2020-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 610.0
+    },
+    {
+      "fecha": "2020-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 9169.0
+    },
+    {
+      "fecha": "2020-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 11817.0
+    },
+    {
+      "fecha": "2020-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 1418.0
+    },
+    {
+      "fecha": "2020-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 10399.0
+    },
+    {
+      "fecha": "2020-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 13484.0
+    },
+    {
+      "fecha": "2020-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 1047.0
+    },
+    {
+      "fecha": "2020-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 12437.0
+    },
+    {
+      "fecha": "2020-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 15357.0
+    },
+    {
+      "fecha": "2020-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 1259.0
+    },
+    {
+      "fecha": "2020-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 14098.0
+    },
+    {
+      "fecha": "2020-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 353.0
+    },
+    {
+      "fecha": "2020-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 12219.49268292683
+    },
+    {
+      "fecha": "2020-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 5606.0
+    },
+    {
+      "fecha": "2020-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 6966.49268292683
+    },
+    {
+      "fecha": "2020-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 1705.1302395120001
+    },
+    {
+      "fecha": "2020-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 14975.654109443129
+    },
+    {
+      "fecha": "2020-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 5307.932304319845
+    },
+    {
+      "fecha": "2020-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 11372.852044635285
+    },
+    {
+      "fecha": "2020-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 939.0
+    },
+    {
+      "fecha": "2020-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 51926.0
+    },
+    {
+      "fecha": "2020-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 38994.0
+    },
+    {
+      "fecha": "2020-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 13871.0
+    },
+    {
+      "fecha": "2020-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 8592.0
+    },
+    {
+      "fecha": "2020-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 47028.0
+    },
+    {
+      "fecha": "2020-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 50380.0
+    },
+    {
+      "fecha": "2020-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2020-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 5240.0
+    },
+    {
+      "fecha": "2021-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 11337.0
+    },
+    {
+      "fecha": "2021-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 78623.0
+    },
+    {
+      "fecha": "2021-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 40805.0
+    },
+    {
+      "fecha": "2021-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 49155.0
+    },
+    {
+      "fecha": "2021-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 3287.0
+    },
+    {
+      "fecha": "2021-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 49318.0
+    },
+    {
+      "fecha": "2021-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 28784.0
+    },
+    {
+      "fecha": "2021-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 23821.0
+    },
+    {
+      "fecha": "2021-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 2314.0
+    },
+    {
+      "fecha": "2021-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 82703.39633341735
+    },
+    {
+      "fecha": "2021-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 58807.13961892685
+    },
+    {
+      "fecha": "2021-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 26210.2567144905
+    },
+    {
+      "fecha": "2021-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 2831.0
+    },
+    {
+      "fecha": "2021-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 56912.1902214643
+    },
+    {
+      "fecha": "2021-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 33048.102901499005
+    },
+    {
+      "fecha": "2021-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 26695.087319965296
+    },
+    {
+      "fecha": "2021-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 3928.0
+    },
+    {
+      "fecha": "2021-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 69945.0
+    },
+    {
+      "fecha": "2021-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 58366.0
+    },
+    {
+      "fecha": "2021-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 15507.0
+    },
+    {
+      "fecha": "2021-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 7299.0
+    },
+    {
+      "fecha": "2021-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 87847.0
+    },
+    {
+      "fecha": "2021-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 73416.0
+    },
+    {
+      "fecha": "2021-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 21730.0
+    },
+    {
+      "fecha": "2021-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 3681.0
+    },
+    {
+      "fecha": "2021-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 93913.66433359256
+    },
+    {
+      "fecha": "2021-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 70340.0
+    },
+    {
+      "fecha": "2021-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 27254.664333592562
+    },
+    {
+      "fecha": "2021-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 3210.0
+    },
+    {
+      "fecha": "2021-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 69117.0
+    },
+    {
+      "fecha": "2021-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 50329.0
+    },
+    {
+      "fecha": "2021-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 21998.0
+    },
+    {
+      "fecha": "2021-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 5005.0
+    },
+    {
+      "fecha": "2021-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 62017.99999999996
+    },
+    {
+      "fecha": "2021-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 45550.99999999996
+    },
+    {
+      "fecha": "2021-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 21472.0
+    },
+    {
+      "fecha": "2021-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 8779.0
+    },
+    {
+      "fecha": "2021-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 74749.0
+    },
+    {
+      "fecha": "2021-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 53420.0
+    },
+    {
+      "fecha": "2021-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 30108.0
+    },
+    {
+      "fecha": "2021-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 6003.0
+    },
+    {
+      "fecha": "2021-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 92575.0
+    },
+    {
+      "fecha": "2021-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 68351.0
+    },
+    {
+      "fecha": "2021-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 30227.0
+    },
+    {
+      "fecha": "2021-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 24796.047826086957
+    },
+    {
+      "fecha": "2021-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 198773.07997510963
+    },
+    {
+      "fecha": "2021-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 122254.0
+    },
+    {
+      "fecha": "2021-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2021-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 101315.12780119659
+    },
+    {
+      "fecha": "2022-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 6785.0
+    },
+    {
+      "fecha": "2022-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 127518.0
+    },
+    {
+      "fecha": "2022-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 97752.0
+    },
+    {
+      "fecha": "2022-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 36551.0
+    },
+    {
+      "fecha": "2022-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 22600.0
+    },
+    {
+      "fecha": "2022-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 171303.6
+    },
+    {
+      "fecha": "2022-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 80539.0
+    },
+    {
+      "fecha": "2022-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 113364.6
+    },
+    {
+      "fecha": "2022-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 28579.0
+    },
+    {
+      "fecha": "2022-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 199307.0
+    },
+    {
+      "fecha": "2022-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 106141.0
+    },
+    {
+      "fecha": "2022-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 121745.0
+    },
+    {
+      "fecha": "2022-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 58769.0
+    },
+    {
+      "fecha": "2022-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 233879.0
+    },
+    {
+      "fecha": "2022-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 121028.0
+    },
+    {
+      "fecha": "2022-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 171620.0
+    },
+    {
+      "fecha": "2022-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 57927.0
+    },
+    {
+      "fecha": "2022-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 202086.0
+    },
+    {
+      "fecha": "2022-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 111839.0
+    },
+    {
+      "fecha": "2022-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 148174.0
+    },
+    {
+      "fecha": "2022-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 49520.0
+    },
+    {
+      "fecha": "2022-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 219846.0
+    },
+    {
+      "fecha": "2022-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 123396.0
+    },
+    {
+      "fecha": "2022-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 145970.0
+    },
+    {
+      "fecha": "2022-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 54594.0
+    },
+    {
+      "fecha": "2022-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 251652.0
+    },
+    {
+      "fecha": "2022-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 124663.0
+    },
+    {
+      "fecha": "2022-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 181583.0
+    },
+    {
+      "fecha": "2022-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 61445.0
+    },
+    {
+      "fecha": "2022-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 236157.0
+    },
+    {
+      "fecha": "2022-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 108896.0
+    },
+    {
+      "fecha": "2022-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 188706.0
+    },
+    {
+      "fecha": "2022-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 37762.0
+    },
+    {
+      "fecha": "2022-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 208702.0
+    },
+    {
+      "fecha": "2022-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 103209.0
+    },
+    {
+      "fecha": "2022-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 143255.0
+    },
+    {
+      "fecha": "2022-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 45039.0
+    },
+    {
+      "fecha": "2022-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 236899.0
+    },
+    {
+      "fecha": "2022-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 122939.0
+    },
+    {
+      "fecha": "2022-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 158999.0
+    },
+    {
+      "fecha": "2022-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 47888.0
+    },
+    {
+      "fecha": "2022-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 270805.0
+    },
+    {
+      "fecha": "2022-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 131410.0
+    },
+    {
+      "fecha": "2022-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 187283.0
+    },
+    {
+      "fecha": "2022-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 79463.0
+    },
+    {
+      "fecha": "2022-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 320803.0
+    },
+    {
+      "fecha": "2022-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 158463.0
+    },
+    {
+      "fecha": "2022-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2022-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 241803.0
+    },
+    {
+      "fecha": "2023-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 74801.33906138409
+    },
+    {
+      "fecha": "2023-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 183364.8491512625
+    },
+    {
+      "fecha": "2023-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 76401.0
+    },
+    {
+      "fecha": "2023-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 181765.18821264658
+    },
+    {
+      "fecha": "2023-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 51332.50650942367
+    },
+    {
+      "fecha": "2023-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 147419.35115985572
+    },
+    {
+      "fecha": "2023-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 75406.0
+    },
+    {
+      "fecha": "2023-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 123345.8576692794
+    },
+    {
+      "fecha": "2023-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 59008.374910733146
+    },
+    {
+      "fecha": "2023-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 192831.1277625069
+    },
+    {
+      "fecha": "2023-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 92733.0
+    },
+    {
+      "fecha": "2023-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 159106.50267324003
+    },
+    {
+      "fecha": "2023-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 81669.44728734154
+    },
+    {
+      "fecha": "2023-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 201509.80836844313
+    },
+    {
+      "fecha": "2023-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 79354.0
+    },
+    {
+      "fecha": "2023-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 203825.25565578465
+    },
+    {
+      "fecha": "2023-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 60276.886999059956
+    },
+    {
+      "fecha": "2023-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 152914.15191934697
+    },
+    {
+      "fecha": "2023-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 71802.0
+    },
+    {
+      "fecha": "2023-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 141389.03891840694
+    },
+    {
+      "fecha": "2023-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 63203.927753972384
+    },
+    {
+      "fecha": "2023-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 161376.24607378335
+    },
+    {
+      "fecha": "2023-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87780.0
+    },
+    {
+      "fecha": "2023-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 136800.17382775573
+    },
+    {
+      "fecha": "2023-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 78438.85118024613
+    },
+    {
+      "fecha": "2023-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 179188.09926768363
+    },
+    {
+      "fecha": "2023-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 99032.0
+    },
+    {
+      "fecha": "2023-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 158594.95044792976
+    },
+    {
+      "fecha": "2023-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 73062.94201105584
+    },
+    {
+      "fecha": "2023-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 191451.145935311
+    },
+    {
+      "fecha": "2023-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 79152.0
+    },
+    {
+      "fecha": "2023-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 185362.08794636687
+    },
+    {
+      "fecha": "2023-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 59427.57955057885
+    },
+    {
+      "fecha": "2023-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 159058.89855440104
+    },
+    {
+      "fecha": "2023-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 67306.0
+    },
+    {
+      "fecha": "2023-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 151180.4781049799
+    },
+    {
+      "fecha": "2023-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 45913.58900787754
+    },
+    {
+      "fecha": "2023-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 118585.79945782752
+    },
+    {
+      "fecha": "2023-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 59326.0
+    },
+    {
+      "fecha": "2023-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 105173.38846570507
+    },
+    {
+      "fecha": "2023-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 53801.90129088012
+    },
+    {
+      "fecha": "2023-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 202092.37494352038
+    },
+    {
+      "fecha": "2023-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 89140.0
+    },
+    {
+      "fecha": "2023-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 166754.27623440052
+    },
+    {
+      "fecha": "2023-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 92909.71274174098
+    },
+    {
+      "fecha": "2023-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 234187.90042437855
+    },
+    {
+      "fecha": "2023-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 108408.0
+    },
+    {
+      "fecha": "2023-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2023-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 218689.61316611952
+    },
+    {
+      "fecha": "2024-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 78212.46387425091
+    },
+    {
+      "fecha": "2024-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 214519.40293248065
+    },
+    {
+      "fecha": "2024-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 96039.0
+    },
+    {
+      "fecha": "2024-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 196692.86680673156
+    },
+    {
+      "fecha": "2024-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 76049.02782873645
+    },
+    {
+      "fecha": "2024-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 189941.64538444454
+    },
+    {
+      "fecha": "2024-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 98871.0
+    },
+    {
+      "fecha": "2024-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 167119.67321318097
+    },
+    {
+      "fecha": "2024-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 80969.88108884176
+    },
+    {
+      "fecha": "2024-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 241340.5129134478
+    },
+    {
+      "fecha": "2024-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 108491.0
+    },
+    {
+      "fecha": "2024-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 213819.39400228957
+    },
+    {
+      "fecha": "2024-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 64730.1786178078
+    },
+    {
+      "fecha": "2024-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 176258.63867624357
+    },
+    {
+      "fecha": "2024-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87857.0
+    },
+    {
+      "fecha": "2024-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 153131.81729405138
+    },
+    {
+      "fecha": "2024-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 67347.12034657913
+    },
+    {
+      "fecha": "2024-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 171460.83446852356
+    },
+    {
+      "fecha": "2024-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87997.0
+    },
+    {
+      "fecha": "2024-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 150810.9548151027
+    },
+    {
+      "fecha": "2024-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 63506.6574183385
+    },
+    {
+      "fecha": "2024-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 171274.56944365517
+    },
+    {
+      "fecha": "2024-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 104464.0
+    },
+    {
+      "fecha": "2024-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 130317.22686199368
+    },
+    {
+      "fecha": "2024-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 60992.7844395197
+    },
+    {
+      "fecha": "2024-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 205982.17062977084
+    },
+    {
+      "fecha": "2024-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 110379.0
+    },
+    {
+      "fecha": "2024-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 156595.95506929053
+    },
+    {
+      "fecha": "2024-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 71379.64449966882
+    },
+    {
+      "fecha": "2024-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 210722.1865112757
+    },
+    {
+      "fecha": "2024-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 88635.0
+    },
+    {
+      "fecha": "2024-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 193466.83101094453
+    },
+    {
+      "fecha": "2024-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 55287.33050667143
+    },
+    {
+      "fecha": "2024-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 160371.47932748767
+    },
+    {
+      "fecha": "2024-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 69269.0
+    },
+    {
+      "fecha": "2024-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 146389.8098341591
+    },
+    {
+      "fecha": "2024-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 54122.338503796265
+    },
+    {
+      "fecha": "2024-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 195543.36233354284
+    },
+    {
+      "fecha": "2024-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 81187.0
+    },
+    {
+      "fecha": "2024-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 168478.70083733913
+    },
+    {
+      "fecha": "2024-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 74492.7096994215
+    },
+    {
+      "fecha": "2024-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 228181.3672114075
+    },
+    {
+      "fecha": "2024-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 97137.0
+    },
+    {
+      "fecha": "2024-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 205537.07691082897
+    },
+    {
+      "fecha": "2024-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 86437.35003032752
+    },
+    {
+      "fecha": "2024-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 275312.3384493572
+    },
+    {
+      "fecha": "2024-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 113027.0
+    },
+    {
+      "fecha": "2024-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2024-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 248722.6884796847
+    },
+    {
+      "fecha": "2025-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 73810.95495636793
+    },
+    {
+      "fecha": "2025-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 215732.6432990176
+    },
+    {
+      "fecha": "2025-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 101124.0
+    },
+    {
+      "fecha": "2025-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 188419.59825538553
+    },
+    {
+      "fecha": "2025-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 42945.4528289102
+    },
+    {
+      "fecha": "2025-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 211483.43360443247
+    },
+    {
+      "fecha": "2025-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 92703.0
+    },
+    {
+      "fecha": "2025-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 161725.88643334268
+    },
+    {
+      "fecha": "2025-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 64159.89624765989
+    },
+    {
+      "fecha": "2025-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 214378.35473651046
+    },
+    {
+      "fecha": "2025-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 107244.0
+    },
+    {
+      "fecha": "2025-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 171294.25098417036
+    },
+    {
+      "fecha": "2025-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 77539.05758189975
+    },
+    {
+      "fecha": "2025-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 222748.63349169967
+    },
+    {
+      "fecha": "2025-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 93466.0
+    },
+    {
+      "fecha": "2025-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 206821.69107359942
+    },
+    {
+      "fecha": "2025-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 64014.915403409665
+    },
+    {
+      "fecha": "2025-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 183967.01056868452
+    },
+    {
+      "fecha": "2025-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 87753.0
+    },
+    {
+      "fecha": "2025-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 160228.9259720942
+    },
+    {
+      "fecha": "2025-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 67267.54090086608
+    },
+    {
+      "fecha": "2025-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 186922.55525265553
+    },
+    {
+      "fecha": "2025-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 99411.0
+    },
+    {
+      "fecha": "2025-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 154779.0961535216
+    },
+    {
+      "fecha": "2025-07",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 63710.14618306693
+    },
+    {
+      "fecha": "2025-07",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 219678.55260354484
+    },
+    {
+      "fecha": "2025-07",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 117361.0
+    },
+    {
+      "fecha": "2025-07",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-07",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 166027.69878661176
+    },
+    {
+      "fecha": "2025-08",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 80833.42471125993
+    },
+    {
+      "fecha": "2025-08",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 212947.099681787
+    },
+    {
+      "fecha": "2025-08",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90643.0
+    },
+    {
+      "fecha": "2025-08",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-08",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 203137.52439304692
+    },
+    {
+      "fecha": "2025-09",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 58316.676738597605
+    },
+    {
+      "fecha": "2025-09",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 159752.83448198144
+    },
+    {
+      "fecha": "2025-09",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 70416.0
+    },
+    {
+      "fecha": "2025-09",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-09",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 147653.51122057904
+    },
+    {
+      "fecha": "2025-10",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 66929.4325916895
+    },
+    {
+      "fecha": "2025-10",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 188991.49973044117
+    },
+    {
+      "fecha": "2025-10",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 90000.0
+    },
+    {
+      "fecha": "2025-10",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-10",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 165920.93232213068
+    },
+    {
+      "fecha": "2025-11",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 70903.22049858427
+    },
+    {
+      "fecha": "2025-11",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 239682.29960859093
+    },
+    {
+      "fecha": "2025-11",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 111567.0
+    },
+    {
+      "fecha": "2025-11",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-11",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 199018.5201071752
+    },
+    {
+      "fecha": "2025-12",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 80960.7968240083
+    },
+    {
+      "fecha": "2025-12",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 284612.2249827896
+    },
+    {
+      "fecha": "2025-12",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 127283.0
+    },
+    {
+      "fecha": "2025-12",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2025-12",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 238290.0218067979
+    },
+    {
+      "fecha": "2026-01",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 63684.54814638023
+    },
+    {
+      "fecha": "2026-01",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 236979.52712684084
+    },
+    {
+      "fecha": "2026-01",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 113435.0
+    },
+    {
+      "fecha": "2026-01",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-01",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 187229.07527322107
+    },
+    {
+      "fecha": "2026-02",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 46665.42116609937
+    },
+    {
+      "fecha": "2026-02",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 190178.69245201626
+    },
+    {
+      "fecha": "2026-02",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 106821.0
+    },
+    {
+      "fecha": "2026-02",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-02",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 130023.11361811563
+    },
+    {
+      "fecha": "2026-03",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 57682.43819845667
+    },
+    {
+      "fecha": "2026-03",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 233477.92750189127
+    },
+    {
+      "fecha": "2026-03",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 127540.0
+    },
+    {
+      "fecha": "2026-03",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-03",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 163620.36570034793
+    },
+    {
+      "fecha": "2026-04",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 54431.42328062479
+    },
+    {
+      "fecha": "2026-04",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 206519.62233174354
+    },
+    {
+      "fecha": "2026-04",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 102029.0
+    },
+    {
+      "fecha": "2026-04",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-04",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 158922.04561236833
+    },
+    {
+      "fecha": "2026-05",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 63547.04075091976
+    },
+    {
+      "fecha": "2026-05",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 177765.25450813866
+    },
+    {
+      "fecha": "2026-05",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 95804.0
+    },
+    {
+      "fecha": "2026-05",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-05",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 145508.29525905842
+    },
+    {
+      "fecha": "2026-06",
+      "dimension": "tipo",
+      "categoria": "Excursionista",
+      "viajeros": 59928.50799591502
+    },
+    {
+      "fecha": "2026-06",
+      "dimension": "tipo",
+      "categoria": "Turista",
+      "viajeros": 185759.072981255
+    },
+    {
+      "fecha": "2026-06",
+      "dimension": "via",
+      "categoria": "Aérea",
+      "viajeros": 98211.0
+    },
+    {
+      "fecha": "2026-06",
+      "dimension": "via",
+      "categoria": "Marítima",
+      "viajeros": 0.0
+    },
+    {
+      "fecha": "2026-06",
+      "dimension": "via",
+      "categoria": "Terrestre",
+      "viajeros": 147476.58097717003
+    }
+  ]
+}

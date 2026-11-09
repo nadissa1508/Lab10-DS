@@ -93,17 +93,17 @@ test('predicciones de tres modelos y comparación del RMSE', async ({ page }, in
   await registrar(page, info, 3, inicio, 8, { ...resultados, menorRMSE: 'Prophet', RMSE: 67838 })
 })
 
-test('ocho gráficas disponibles sin errores de ejecución', async ({ page }, info) => {
+test('nueve gráficas disponibles sin errores de ejecución', async ({ page }, info) => {
   const errores = []
   page.on('pageerror', (error) => errores.push(error.message))
   let cantidad = 0
-  for (const nombre of ['Resumen', 'Estacionalidad', 'Pronósticos', 'Modelos y confianza']) {
+  for (const [nombre, graficas] of [['Resumen', 2], ['Demanda y mercados', 1], ['Estacionalidad', 2], ['Pronósticos', 2], ['Modelos y confianza', 2]]) {
     await navegar(page, nombre)
-    await expect(page.locator('canvas')).toHaveCount(2)
+    await expect(page.locator('canvas')).toHaveCount(graficas)
     cantidad += await page.locator('canvas').count()
     await page.screenshot({ path: info.outputPath(`${nombre}.png`), fullPage: true })
   }
-  expect(cantidad).toBe(8)
+  expect(cantidad).toBe(9)
   expect(errores).toEqual([])
 })
 
