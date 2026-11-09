@@ -6,13 +6,15 @@ Se presenta el ingreso mensual de viajeros internacionales a Guatemala entre ene
 
 | Ubicación | Contenido |
 |---|---|
-| `dashboard/` | Web con ocho visualizaciones y siete pruebas de navegador |
+| `dashboard/` | Web con nueve visualizaciones (V1–V9) y siete pruebas de navegador |
 | `src/limpieza.py` | Preparación del JSON |
+| `src/exportar_composicion.py` | Exportación de V5 (vía y tipo de viajero) desde la base original, traída de `main` (Lab 10) |
 | `src/preparar_powerbi.py` | Preparación y validación de los CSV |
 | `data/raw/` | Series y resultados agregados originales |
-| `powerbi/datos/` | Ocho tablas de Power BI |
-| `powerbi/proyecto/Observatorio.pbip` | Proyecto editable: cinco páginas, ocho visualizaciones y 24 medidas |
-| `powerbi/observatorio_v1.0.pbix` | Versión final con datos cargados, cinco páginas y ocho visualizaciones |
+| `powerbi/datos/` | Nueve tablas de Power BI |
+| `powerbi/proyecto/Observatorio.pbip` | Proyecto editable: seis páginas, nueve visualizaciones, menú lateral y 28 medidas |
+| `powerbi/observatorio_v1.1.pbix` | Versión final: se guarda desde el PBIP tras cargar `hechos_composicion` (ver pasos abajo) |
+| `powerbi/observatorio_v1.0.pbix` | Versión 1.0 conservada: cinco páginas y ocho visualizaciones, sin V5 ni menú lateral |
 | `powerbi/observatorio_v0.1_avance.pbix` | Versión 0.1 conservada, con dos gráficos |
 | `powerbi/power_query.m`, `powerbi/medidas.dax` | Consultas y medidas |
 | `docs/evidencias/` | Capturas de ambas versiones y resultados de pruebas |
@@ -30,7 +32,7 @@ python src/limpieza.py
 python src/preparar_powerbi.py
 ```
 
-Los CSV necesarios ya están en `data/raw/`. Los scripts transforman resultados existentes y verifican claves, fechas y métricas; no entrenan modelos. La base de microdatos no es necesaria para reproducir estas ocho visualizaciones y permanece excluida de Git.
+Los CSV necesarios ya están en `data/raw/`. Los scripts transforman resultados existentes y verifican claves, fechas y métricas; no entrenan modelos. La base de microdatos no es necesaria: los agregados de V5 ya están en `data/processed/composicion_mensual.csv` y la base permanece excluida de Git.
 
 ## Versión web
 
@@ -56,7 +58,15 @@ La configuración de Docker se ejecuta desde la raíz con `docker compose up --b
 6. Se verifican los segmentadores sincronizados de serie y período y Restablecer filtros. En modo de edición los botones se activan con Ctrl + clic.
 7. Se guarda el archivo tras actualizar las fuentes. Si Desktop propone convertir el proyecto a TMDL, se selecciona No actualizar para conservar `model.bim`.
 
-La navegación utiliza las pestañas de página. Sin una serie seleccionada, los indicadores utilizan el total nacional. V2 y V9 conservan las categorías para permitir su comparación. Se comprobaron en Desktop el enlace V2–V1, la jerarquía anual, trimestral y mensual y el marcador Restablecer filtros. El marcador recupera Resumen, el período completo y el nivel anual; conserva el filtro de regiones y fronteras de V2.
+La navegación utiliza un menú lateral azul noche con un botón por página; la página activa se distingue por relleno celeste, texto en negrita y borde blanco. En modo de edición los botones requieren Ctrl + clic. Sin una serie seleccionada, los indicadores utilizan el total nacional. V2 y V9 conservan las categorías para permitir su comparación. Se comprobaron en Desktop el enlace V2–V1, la jerarquía anual, trimestral y mensual y el marcador Restablecer filtros. El marcador recupera Resumen, el período completo y el nivel anual; conserva el filtro de regiones y fronteras de V2.
+
+### Generar `observatorio_v1.1.pbix` (V5 y menú lateral)
+
+1. Ejecutar `python src/preparar_powerbi.py` para crear `powerbi/datos/hechos_composicion.csv`.
+2. Abrir `powerbi/proyecto/Observatorio.pbip` en Desktop y ajustar `RutaDatos` a la carpeta local `powerbi\datos\`.
+3. Seleccionar Actualizar. Debe cargarse `hechos_composicion` con 1,050 filas.
+4. Comprobar la página Demanda y mercados y los botones del menú lateral (Ctrl + clic en edición).
+5. Archivo > Guardar como > `powerbi/observatorio_v1.1.pbix`.
 
 ## Tablas y reglas
 
@@ -70,8 +80,9 @@ La navegación utiliza las pestañas de página. Sin una serie seleccionada, los
 | `metricas_modelos` | 37 | MAE, RMSE, AIC y BIC disponibles |
 | `perdidas_lstm` | 288 | Ajuste y validación por época y configuración |
 | `similitud_series` | 7 | Coordenadas PCA y grupos catch22 |
+| `hechos_composicion` | 1,050 | V5: viajeros del total nacional por vía (3) y por tipo de viajero (2), por mes |
 
-Se definen nueve relaciones activas de uno a varios, desde dimensiones hacia hechos. Las métricas no tienen relación con la fecha: corresponden a los 63 meses de prueba, de abril de 2021 a junio de 2026. Las series son cortes del mismo total y no se suman entre sí.
+Se definen diez relaciones activas de uno a varios, desde dimensiones hacia hechos. `hechos_composicion` solo se relaciona con `dim_fecha`: V5 siempre muestra el total nacional y la vía y el tipo son dos cortes del mismo total, por lo que el segmentador Dimensión exige una sola opción y la medida de participación queda en blanco si hay más de una. Las métricas no tienen relación con la fecha: corresponden a los 63 meses de prueba, de abril de 2021 a junio de 2026. Las series son cortes del mismo total y no se suman entre sí.
 
 LSTM está disponible únicamente para el total nacional y América del Centro. Se utiliza la variante recursiva. Seasonal naive es la referencia; ARIMA y suavizamiento exponencial simple son complementarios. Solo ARIMA y Prophet incluyen intervalos del 80 %.
 
@@ -92,7 +103,9 @@ Se conservan los pronósticos negativos para mantener los resultados originales 
 
 La matriz de Power BI permite leer las cifras exactas representadas por intensidad de color en la web. Los intervalos se consultan mensualmente; sumar límites no produce un intervalo válido para un año o trimestre. Las métricas, pérdidas y coordenadas conservan su período original.
 
-No se incluye V5 porque las fuentes versionadas no contienen agregados por vía y tipo de viajero. Las ocho vistas anteriores cubren el alcance implementado.
+| V5. Vía y tipo de viajero | Barras apiladas por período, selector de dimensión y de porcentaje o viajeros | Columnas apiladas de participación con jerarquía año, trimestre y mes y segmentador Dimensión |
+
+V5 se implementó en el Laboratorio 10 (rama `main`) y se incorporó a la rama `Lab_12` en ambas versiones, en la página Demanda y mercados. En Power BI la cifra en viajeros se consulta en la información sobre herramientas, en lugar del selector Porcentaje/Viajeros de la web.
 
 ## Tres tareas de comparación
 

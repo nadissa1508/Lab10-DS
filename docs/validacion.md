@@ -21,7 +21,7 @@ Los archivos `data/processed/series.json` y `dashboard/public/data/series.json` 
 | La Aurora en 2019 y participación | Tarjetas y tooltip correctos |
 | Nivel anual, trimestral, mensual y regreso | Valores y filtros iniciales correctos |
 | Predicciones de tres modelos y menor RMSE | Tooltips y tabla correctos |
-| Ocho gráficas entre cuatro páginas | Dos por página, sin errores de ejecución |
+| Nueve gráficas entre cinco páginas | Dos por página y una en Demanda y mercados, sin errores de ejecución |
 | Selección de una barra de V2 | Cambian la serie seleccionada y V1 |
 | LSTM para Europa | Aparecen mensajes sin pronóstico y sin entrenamiento |
 | Período anterior a la prueba | No hay predicciones y se conserva el entrenamiento |
@@ -81,3 +81,19 @@ Para América del Centro en diciembre de 2023, ambas versiones producen Prophet:
 
 Para consultas periódicas de indicadores en Windows se recomienda el PBIX por sus filtros, navegación y actualización de CSV. Para exploraciones con controles personalizados se recomienda la web, cuyos componentes se pueden modificar. Para usuarios externos desde un navegador se recomienda desplegar la web con acceso autorizado; no se ha probado un alojamiento. Si se elige el servicio de Power BI, se deben revisar las condiciones de [licencias](https://learn.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type). La opción [Publicar en web](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web) expone públicamente el contenido y los datos del modelo. Fuentes consultadas el 8 de noviembre de 2026.
 
+
+
+## Cambios posteriores: V5 y menú lateral
+
+Se incorporó V5 (composición por vía de ingreso y tipo de viajero), implementada en el Laboratorio 10 en la rama `main`, para que ambas versiones respondan P3 con el mismo alcance. Los agregados provienen de `data/processed/composicion_mensual.csv`, generados por `src/exportar_composicion.py`.
+
+| Comprobación | Resultado |
+|---|---|
+| Suma por vía y por tipo frente al total nacional, 210 meses | Diferencia máxima ≤ 0.51; la validación de `preparar_powerbi.py` pasó |
+| `hechos_composicion` | 1,050 filas, sin claves duplicadas |
+| Total nacional 2019 por vía | Terrestre 64.1 %, Aérea 35.9 %, Marítima 0.0 % |
+| Total nacional 2019 por tipo | Turista 73.8 %, Excursionista 26.2 % |
+| Web: siete pruebas de Playwright y compilación | Correctas; la prueba de gráficas cuenta nueve |
+| PBIP: 124 archivos de páginas y visuales contra los esquemas de Microsoft | Sin errores de estructura |
+
+En Power BI se agregó la página Demanda y mercados y un menú lateral con un botón por página, como en el bosquejo del avance. Las páginas pasaron de 1280 a 1480 px de ancho y los visuales se desplazaron 200 px sin cambiar su tamaño. Estos cambios deben abrirse, actualizarse y guardarse en Desktop como `observatorio_v1.1.pbix`; hasta entonces `observatorio_v1.0.pbix` no contiene V5 ni el menú.
